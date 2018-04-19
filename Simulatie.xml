@@ -1,0 +1,42 @@
+<SIMULATIE>
+    <AIRPORT>
+        <name>Antwerp International Airport</name>
+        <iata>ANR</iata>
+        <callsign>Antwerp Tower</callsign>
+        <gates>10</gates>
+    </AIRPORT>
+
+    <RUNWAY>
+        <name>11R</name>
+        <airport>ANR</airport>
+    </RUNWAY>
+
+    <AIRPLANE>
+        <number>N11842</number>
+        <callsign>Cessna 842</callsign>
+        <model>Cessna 340</model>
+        <status>Approaching</status>
+        <capacity>6</capacity>
+    </AIRPLANE>
+
+
+    <AIRPORT>
+        <name>Brussel International Airport</name>
+        <iata>BNR</iata>
+        <callsign>Brussel Tower</callsign>
+        <gates>5</gates>
+    </AIRPORT>
+
+    <RUNWAY>
+        <name>12G</name>
+        <airport>BNR</airport>
+    </RUNWAY>
+
+    <AIRPLANE>
+        <number>N12125</number>
+        <callsign>Cessna 841</callsign>
+        <model>Cessna 341</model>
+        <status>Standing at gate</status>
+        <capacity>4</capacity>
+    </AIRPLANE>
+</SIMULATIE>
