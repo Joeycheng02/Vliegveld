@@ -12,7 +12,7 @@ int Simulation::outputfile(vector<Airport> &airports, vector<Airplane> &airplane
     REQUIRE(airports.size() != 0, "There are no airports available");
 
     //Open the file + exception.
-    ofstream file ("/home/nightnarumi/CLionProjects/Vliegveld/output.txt");
+    ofstream file ("output.txt");
     if ( !file ) {
         cout << "Couldn't open the file." << endl;
         return -1;

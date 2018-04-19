@@ -29,7 +29,7 @@ TEST_F(VliegveldTest, DefaultConstructor) {
 TEST_F(VliegveldTest, Parsing) {
 
     simulation.parser(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
-                      "/home/nightnarumi/CLionProjects/Vliegveld/Simulatie.xml");
+                      "Simulatie.xml");
     simulation.addRunway(simulation.getAirports(), simulation.getRunways());
 
     EXPECT_EQ("Antwerp International Airport", simulation.getAirports()[0].getName());
@@ -52,7 +52,7 @@ TEST_F(VliegveldTest, Parsing) {
 
 TEST_F(VliegveldTest, Descending) {
     simulation.parser(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
-                      "/home/nightnarumi/CLionProjects/Vliegveld/Simulatie.xml");
+                      "Simulatie.xml");
     simulation.addRunway(simulation.getAirports(), simulation.getRunways());
     simulation.descending(simulation.getAirplanes()[0],simulation.getAirports()[0]);
     EXPECT_EQ("Standing at gate", simulation.getAirplanes()[0].getStatus());
@@ -60,16 +60,16 @@ TEST_F(VliegveldTest, Descending) {
 
 TEST_F(VliegveldTest, ExpectedErrors) {
     simulation.parser(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
-                      "/home/nightnarumi/CLionProjects/Vliegveld/Simulatie.xml");
+                      "Simulatie.xml");
     simulation.addRunway(simulation.getAirports(), simulation.getRunways());
     Airplane airplanetest;
     EXPECT_DEATH(simulation.descending(airplanetest, simulation.getAirports()[0]), "Airplane is not approaching");
-    EXPECT_DEATH(simulation.parser(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "/home/nightnarumi/CLionProjects/Vliegveld/Simulatie.xml"), "Airplanes must be empty");
+    EXPECT_DEATH(simulation.parser(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "Simulatie.xml"), "Airplanes must be empty");
 }
 
 TEST_F(VliegveldTest, ascending){
     simulation.parser(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
-                      "/home/nightnarumi/CLionProjects/Vliegveld/Simulatie.xml");
+                      "Simulatie.xml");
     simulation.addRunway(simulation.getAirports(), simulation.getRunways());
 
     EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "Standing at gate");
