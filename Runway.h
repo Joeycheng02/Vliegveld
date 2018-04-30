@@ -13,9 +13,17 @@ class Runway {
 private:
     string name;
     string airport;
+    string type;
+    int length;
     bool vacant;
-
 public:
+    const string &getType() const;
+
+    void setType(const string &type);
+
+    const int &getLength() const;
+
+    void setLength(const int &length);
 
     Runway();
 

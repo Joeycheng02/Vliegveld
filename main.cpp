@@ -10,6 +10,5 @@ int main() {
         simulation.ascending(simulation.getAirplanes()[0], simulation.getAirports()[0]);
         simulation.approaching(simulation.getAirplanes()[0]);
         simulation.descending(simulation.getAirplanes()[0], simulation.getAirports()[1]);
-
     }
 }

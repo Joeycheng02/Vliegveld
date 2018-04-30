@@ -72,3 +72,27 @@ Airplane::Airplane() {
     gateNumber = -1;
 
 }
+
+const string &Airplane::getType() const {
+    return type;
+}
+
+void Airplane::setType(const string &type) {
+    Airplane::type = type;
+}
+
+const string &Airplane::getEngine() const {
+    return engine;
+}
+
+void Airplane::setEngine(const string &engine) {
+    Airplane::engine = engine;
+}
+
+const string &Airplane::getSize() const {
+    return size;
+}
+
+void Airplane::setSize(const string &size) {
+    Airplane::size = size;
+}

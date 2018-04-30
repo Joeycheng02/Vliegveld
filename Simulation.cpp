@@ -43,7 +43,6 @@ int Simulation::outputfile(vector<Airport> &airports, vector<Airplane> &airplane
 
         file << "Airplane: " << airplanes[i].getCallsign() << " " << "(" << airplanes[i].getNumber() << ")" << endl;
         file << " --> model: " << airplanes[i].getModel() << endl;
-        file << " --> Capacity: " << airplanes[i].getPassengers() << endl;
         file << endl;
 
     }
@@ -275,6 +274,26 @@ int Simulation::parser(vector<Airport> &airports, vector<Airplane> &airplanes, v
                         runway.setAirport(t);
                     }
                 }
+                if (elem2Name == "type"){
+                    for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
+                        TiXmlText *text = e->ToText();
+                        if (text == NULL)
+                            continue;
+                        std::string t = text->Value();
+                        runway.setType(t);
+                    }
+                }
+                if (elem2Name == "length"){
+                    for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
+                        TiXmlText *text = e->ToText();
+                        if (text == NULL)
+                            continue;
+                        std::string t = text->Value();
+                        int i;
+                        sscanf(t.c_str(), "%d", &i);
+                        runway.setLength(i);
+                    }
+                }
             }
             runways.push_back(runway);
         }
@@ -309,6 +328,33 @@ int Simulation::parser(vector<Airport> &airports, vector<Airplane> &airplanes, v
                             continue;
                         std::string t = text->Value();
                         airplane.setModel(t);
+                    }
+                }
+                if (elem2Name == "type") {
+                    for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
+                        TiXmlText *text = e->ToText();
+                        if (text == NULL)
+                            continue;
+                        std::string t = text->Value();
+                        airplane.setType(t);
+                    }
+                }
+                if (elem2Name == "engine") {
+                    for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
+                        TiXmlText *text = e->ToText();
+                        if (text == NULL)
+                            continue;
+                        std::string t = text->Value();
+                        airplane.setEngine(t);
+                    }
+                }
+                if (elem2Name == "size") {
+                    for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
+                        TiXmlText *text = e->ToText();
+                        if (text == NULL)
+                            continue;
+                        std::string t = text->Value();
+                        airplane.setSize(t);
                     }
                 }
                 if (elem2Name == "status") {

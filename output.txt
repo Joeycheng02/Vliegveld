@@ -10,9 +10,7 @@ Airport: Brussel International Airport (BNR)
 
 Airplane: Cessna 842 (N11842)
  --> model: Cessna 340
- --> Capacity: 6
 
 Airplane: Cessna 841 (N12125)
  --> model: Cessna 341
- --> Capacity: 4
 

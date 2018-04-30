@@ -31,3 +31,19 @@ void Runway::setVacant(bool vacant) {
 Runway::Runway() {
     vacant = true;
 }
+
+const string &Runway::getType() const {
+    return type;
+}
+
+void Runway::setType(const string &type) {
+    Runway::type = type;
+}
+
+const int &Runway::getLength() const {
+    return length;
+}
+
+void Runway::setLength(const int &length) {
+    Runway::length = length;
+}

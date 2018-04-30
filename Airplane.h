@@ -16,6 +16,9 @@ private:
     string number;
     string callsign;
     string model;
+    string type;
+    string engine;
+    string size;
     string status;
     string airport;
     int passengers;
@@ -53,6 +56,18 @@ public:
     const string &getModel() const;
 
     void setModel(const string &model);
+
+    const string &getType() const;
+
+    void setType(const string &type);
+
+    const string &getEngine() const;
+
+    void setEngine(const string &engine);
+
+    const string &getSize() const;
+
+    void setSize(const string &size);
 
     const string &getStatus() const;
 

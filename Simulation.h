@@ -44,6 +44,7 @@ public:
     //ENSURE airplane is approaching
 
     void addRunway(vector <Airport> &airports, vector <Runway> &runways);
+    
     int parser(vector<Airport> &airports, vector<Airplane> &airplanes, vector<Runway> &runways, const char* path);
 };
 
