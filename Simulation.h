@@ -26,8 +26,6 @@ public:
 
     vector<Runway> &getRunways();
 
-public:
-
     //REQUIRE airports and airplanes cant be empty.
     int outputfile (vector <Airport> &airports, vector <Airplane> &airplanes);
 
@@ -42,10 +40,6 @@ public:
     //REQUIRE airplane is in the air and not approaching
     int approaching (Airplane &airplane);
     //ENSURE airplane is approaching
-
-    void addRunway(vector <Airport> &airports, vector <Runway> &runways);
-    
-    int parser(vector<Airport> &airports, vector<Airplane> &airplanes, vector<Runway> &runways, const char* path);
 };
 
 

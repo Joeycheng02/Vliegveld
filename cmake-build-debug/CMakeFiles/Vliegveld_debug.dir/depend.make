@@ -53,8 +53,20 @@ CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.o: ../Gate.h
 CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.o: ../Runway.h
 CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.o: ../Simulation.h
 CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.o: ../mainTest.cpp
+CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.o: ../parser.h
 CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.o: ../tinystr.h
 CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.o: ../tinyxml.h
+
+CMakeFiles/Vliegveld_debug.dir/parser.cpp.o: ../Airplane.h
+CMakeFiles/Vliegveld_debug.dir/parser.cpp.o: ../Airport.h
+CMakeFiles/Vliegveld_debug.dir/parser.cpp.o: ../DesignByContract.h
+CMakeFiles/Vliegveld_debug.dir/parser.cpp.o: ../Gate.h
+CMakeFiles/Vliegveld_debug.dir/parser.cpp.o: ../Runway.h
+CMakeFiles/Vliegveld_debug.dir/parser.cpp.o: ../Simulation.h
+CMakeFiles/Vliegveld_debug.dir/parser.cpp.o: ../parser.cpp
+CMakeFiles/Vliegveld_debug.dir/parser.cpp.o: ../parser.h
+CMakeFiles/Vliegveld_debug.dir/parser.cpp.o: ../tinystr.h
+CMakeFiles/Vliegveld_debug.dir/parser.cpp.o: ../tinyxml.h
 
 CMakeFiles/Vliegveld_debug.dir/tinystr.cpp.o: ../tinystr.cpp
 CMakeFiles/Vliegveld_debug.dir/tinystr.cpp.o: ../tinystr.h

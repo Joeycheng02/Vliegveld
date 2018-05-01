@@ -48,10 +48,10 @@ RM = /opt/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/knoetson/Desktop/PSE/Airport_Simulation
+CMAKE_SOURCE_DIR = /home/knoetson/Desktop/PSE/Vliegveld
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug
+CMAKE_BINARY_DIR = /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -340,6 +340,36 @@ mainTest.cpp.s:
 	$(MAKE) -f CMakeFiles/Vliegveld_debug.dir/build.make CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.s
 .PHONY : mainTest.cpp.s
 
+parser.o: parser.cpp.o
+
+.PHONY : parser.o
+
+# target to build an object file
+parser.cpp.o:
+	$(MAKE) -f CMakeFiles/Vliegveld_debug.dir/build.make CMakeFiles/Vliegveld_debug.dir/parser.cpp.o
+	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/parser.cpp.o
+.PHONY : parser.cpp.o
+
+parser.i: parser.cpp.i
+
+.PHONY : parser.i
+
+# target to preprocess a source file
+parser.cpp.i:
+	$(MAKE) -f CMakeFiles/Vliegveld_debug.dir/build.make CMakeFiles/Vliegveld_debug.dir/parser.cpp.i
+	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/parser.cpp.i
+.PHONY : parser.cpp.i
+
+parser.s: parser.cpp.s
+
+.PHONY : parser.s
+
+# target to generate assembly for a file
+parser.cpp.s:
+	$(MAKE) -f CMakeFiles/Vliegveld_debug.dir/build.make CMakeFiles/Vliegveld_debug.dir/parser.cpp.s
+	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/parser.cpp.s
+.PHONY : parser.cpp.s
+
 tinystr.o: tinystr.cpp.o
 
 .PHONY : tinystr.o
@@ -491,6 +521,9 @@ help:
 	@echo "... mainTest.o"
 	@echo "... mainTest.i"
 	@echo "... mainTest.s"
+	@echo "... parser.o"
+	@echo "... parser.i"
+	@echo "... parser.s"
 	@echo "... tinystr.o"
 	@echo "... tinystr.i"
 	@echo "... tinystr.s"

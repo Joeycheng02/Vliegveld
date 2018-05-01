@@ -25,7 +25,9 @@ set(RELEASE_SOURCE_FILES Airplane.cpp
         Gate.cpp
         Gate.h
         Simulation.cpp
-        Simulation.h)
+        Simulation.h
+        parser.cpp
+        parser.h)
 
 set(DEBUG_SOURCE_FILES Airplane.cpp
         Airplane.h
@@ -43,7 +45,9 @@ set(DEBUG_SOURCE_FILES Airplane.cpp
         Gate.h
         mainTest.cpp
         Simulation.cpp
-        Simulation.h)
+        Simulation.h
+        parser.cpp
+        parser.h)
 
 add_executable(Vliegveld ${RELEASE_SOURCE_FILES})
 add_executable(Vliegveld_debug ${DEBUG_SOURCE_FILES})

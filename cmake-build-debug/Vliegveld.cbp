@@ -8,43 +8,43 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Vliegveld_debug">
-				<Option output="/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Vliegveld_debug" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug"/>
+				<Option output="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Vliegveld_debug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/knoetson/Desktop/PSE/Airport_Simulation/gtest/include"/>
+					<Add directory="/home/knoetson/Desktop/PSE/Vliegveld/gtest/include"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -55,20 +55,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld_debug"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld_debug"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Vliegveld_debug/fast">
-				<Option output="/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Vliegveld_debug" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug"/>
+				<Option output="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Vliegveld_debug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/knoetson/Desktop/PSE/Airport_Simulation/gtest/include"/>
+					<Add directory="/home/knoetson/Desktop/PSE/Vliegveld/gtest/include"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -79,20 +79,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld_debug/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld_debug/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Vliegveld">
-				<Option output="/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Vliegveld" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug"/>
+				<Option output="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Vliegveld" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/knoetson/Desktop/PSE/Airport_Simulation/gtest/include"/>
+					<Add directory="/home/knoetson/Desktop/PSE/Vliegveld/gtest/include"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -103,20 +103,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Vliegveld/fast">
-				<Option output="/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Vliegveld" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug"/>
+				<Option output="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Vliegveld" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/knoetson/Desktop/PSE/Airport_Simulation/gtest/include"/>
+					<Add directory="/home/knoetson/Desktop/PSE/Vliegveld/gtest/include"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -127,84 +127,92 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/Airplane.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Airplane.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/Airplane.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Airplane.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/Airport.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Airport.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/Airport.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Airport.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/Gate.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Gate.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/Gate.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Gate.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/Runway.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Runway.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/Runway.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Runway.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/Simulation.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Simulation.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/Simulation.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Simulation.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/main.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/main.cpp">
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/mainTest.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/mainTest.cpp">
 			<Option target="Vliegveld_debug"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/tinystr.cpp">
-			<Option target="Vliegveld_debug"/>
-			<Option target="Vliegveld"/>
-		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/tinystr.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/parser.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/tinyxml.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/parser.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/tinyxml.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/tinystr.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/tinyxmlerror.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/tinystr.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/tinyxmlparser.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/tinyxml.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Airport_Simulation/CMakeLists.txt">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/tinyxml.h">
+			<Option target="Vliegveld_debug"/>
+			<Option target="Vliegveld"/>
+		</Unit>
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/tinyxmlerror.cpp">
+			<Option target="Vliegveld_debug"/>
+			<Option target="Vliegveld"/>
+		</Unit>
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/tinyxmlparser.cpp">
+			<Option target="Vliegveld_debug"/>
+			<Option target="Vliegveld"/>
+		</Unit>
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

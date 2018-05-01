@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ded71/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ded71.dir/build.make CMakeFiles/cmTC_ded71.dir/build
-make[1]: Entering directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ded71.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_ded71.dir/testCCompiler.c.o   -c /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_ded71
-/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ded71.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_ded71.dir/testCCompiler.c.o  -o cmTC_ded71 
-make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_578d8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_578d8.dir/build.make CMakeFiles/cmTC_578d8.dir/build
+make[1]: Entering directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_578d8.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_578d8.dir/testCCompiler.c.o   -c /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_578d8
+/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_578d8.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_578d8.dir/testCCompiler.c.o  -o cmTC_578d8 
+make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_61a55/fast"
-/usr/bin/make -f CMakeFiles/cmTC_61a55.dir/build.make CMakeFiles/cmTC_61a55.dir/build
-make[1]: Entering directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_61a55.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_61a55.dir/CMakeCCompilerABI.c.o   -c /opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_61a55
-/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61a55.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTC_61a55.dir/CMakeCCompilerABI.c.o  -o cmTC_61a55 
+Run Build Command:"/usr/bin/make" "cmTC_0e786/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0e786.dir/build.make CMakeFiles/cmTC_0e786.dir/build
+make[1]: Entering directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0e786.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_0e786.dir/CMakeCCompilerABI.c.o   -c /opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_0e786
+/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e786.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTC_0e786.dir/CMakeCCompilerABI.c.o  -o cmTC_0e786 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -59,23 +59,23 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_61a55' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccEx8y7g.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_61a55 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_61a55.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0e786' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cctEBk8S.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_0e786 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_0e786.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_61a55/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_61a55.dir/build.make CMakeFiles/cmTC_61a55.dir/build]
-  ignore line: [make[1]: Entering directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_61a55.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_61a55.dir/CMakeCCompilerABI.c.o   -c /opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_61a55]
-  ignore line: [/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61a55.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_61a55.dir/CMakeCCompilerABI.c.o  -o cmTC_61a55 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_0e786/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_0e786.dir/build.make CMakeFiles/cmTC_0e786.dir/build]
+  ignore line: [make[1]: Entering directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_0e786.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_0e786.dir/CMakeCCompilerABI.c.o   -c /opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_0e786]
+  ignore line: [/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e786.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_0e786.dir/CMakeCCompilerABI.c.o  -o cmTC_0e786 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -85,13 +85,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_61a55' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccEx8y7g.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_61a55 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_61a55.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0e786' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cctEBk8S.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_0e786 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_0e786.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccEx8y7g.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cctEBk8S.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -108,7 +108,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_61a55] ==> ignore
+    arg [cmTC_0e786] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -120,7 +120,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_61a55.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_0e786.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -152,17 +152,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_10b38/fast"
-/usr/bin/make -f CMakeFiles/cmTC_10b38.dir/build.make CMakeFiles/cmTC_10b38.dir/build
-make[1]: Entering directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_10b38.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_10b38.dir/feature_tests.c.o   -c /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_10b38
-/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10b38.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_10b38.dir/feature_tests.c.o  -o cmTC_10b38 
-make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_545f8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_545f8.dir/build.make CMakeFiles/cmTC_545f8.dir/build
+make[1]: Entering directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_545f8.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_545f8.dir/feature_tests.c.o   -c /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_545f8
+/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_545f8.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_545f8.dir/feature_tests.c.o  -o cmTC_545f8 
+make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -172,17 +172,17 @@ make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1237e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1237e.dir/build.make CMakeFiles/cmTC_1237e.dir/build
-make[1]: Entering directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1237e.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_1237e.dir/feature_tests.c.o   -c /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_1237e
-/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1237e.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_1237e.dir/feature_tests.c.o  -o cmTC_1237e 
-make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_6195f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6195f.dir/build.make CMakeFiles/cmTC_6195f.dir/build
+make[1]: Entering directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6195f.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_6195f.dir/feature_tests.c.o   -c /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_6195f
+/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6195f.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_6195f.dir/feature_tests.c.o  -o cmTC_6195f 
+make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -192,17 +192,17 @@ make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3de08/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3de08.dir/build.make CMakeFiles/cmTC_3de08.dir/build
-make[1]: Entering directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3de08.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_3de08.dir/feature_tests.c.o   -c /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_3de08
-/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3de08.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_3de08.dir/feature_tests.c.o  -o cmTC_3de08 
-make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_74e6b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_74e6b.dir/build.make CMakeFiles/cmTC_74e6b.dir/build
+make[1]: Entering directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_74e6b.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_74e6b.dir/feature_tests.c.o   -c /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_74e6b
+/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74e6b.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_74e6b.dir/feature_tests.c.o  -o cmTC_74e6b 
+make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -210,30 +210,30 @@ make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e2460/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e2460.dir/build.make CMakeFiles/cmTC_e2460.dir/build
-make[1]: Entering directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_e2460.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_e2460.dir/testCXXCompiler.cxx.o -c /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_e2460
-/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e2460.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_e2460.dir/testCXXCompiler.cxx.o  -o cmTC_e2460 
-make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_fb219/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fb219.dir/build.make CMakeFiles/cmTC_fb219.dir/build
+make[1]: Entering directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_fb219.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_fb219.dir/testCXXCompiler.cxx.o -c /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_fb219
+/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb219.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_fb219.dir/testCXXCompiler.cxx.o  -o cmTC_fb219 
+make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3e64a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3e64a.dir/build.make CMakeFiles/cmTC_3e64a.dir/build
-make[1]: Entering directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3e64a.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_3e64a.dir/CMakeCXXCompilerABI.cpp.o -c /opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_3e64a
-/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e64a.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTC_3e64a.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3e64a 
+Run Build Command:"/usr/bin/make" "cmTC_8f61a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8f61a.dir/build.make CMakeFiles/cmTC_8f61a.dir/build
+make[1]: Entering directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8f61a.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_8f61a.dir/CMakeCXXCompilerABI.cpp.o -c /opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_8f61a
+/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f61a.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTC_8f61a.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_8f61a 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -243,23 +243,23 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3e64a' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cceAQahX.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_3e64a /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_3e64a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8f61a' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccXbdqAe.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_8f61a /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_8f61a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_3e64a/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_3e64a.dir/build.make CMakeFiles/cmTC_3e64a.dir/build]
-  ignore line: [make[1]: Entering directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_3e64a.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_3e64a.dir/CMakeCXXCompilerABI.cpp.o -c /opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_3e64a]
-  ignore line: [/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e64a.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_3e64a.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3e64a ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_8f61a/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_8f61a.dir/build.make CMakeFiles/cmTC_8f61a.dir/build]
+  ignore line: [make[1]: Entering directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_8f61a.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_8f61a.dir/CMakeCXXCompilerABI.cpp.o -c /opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_8f61a]
+  ignore line: [/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f61a.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_8f61a.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_8f61a ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -269,13 +269,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3e64a' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cceAQahX.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_3e64a /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_3e64a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8f61a' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccXbdqAe.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_8f61a /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_8f61a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cceAQahX.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccXbdqAe.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -292,7 +292,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_3e64a] ==> ignore
+    arg [cmTC_8f61a] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -304,7 +304,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_3e64a.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_8f61a.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -334,17 +334,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8a2fd/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8a2fd.dir/build.make CMakeFiles/cmTC_8a2fd.dir/build
-make[1]: Entering directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_8a2fd.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_8a2fd.dir/feature_tests.cxx.o -c /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_8a2fd
-/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a2fd.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_8a2fd.dir/feature_tests.cxx.o  -o cmTC_8a2fd 
-make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_f8d70/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f8d70.dir/build.make CMakeFiles/cmTC_f8d70.dir/build
+make[1]: Entering directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f8d70.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_f8d70.dir/feature_tests.cxx.o -c /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_f8d70
+/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8d70.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_f8d70.dir/feature_tests.cxx.o  -o cmTC_f8d70 
+make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -407,17 +407,17 @@ make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_44b7b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_44b7b.dir/build.make CMakeFiles/cmTC_44b7b.dir/build
-make[1]: Entering directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_44b7b.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_44b7b.dir/feature_tests.cxx.o -c /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_44b7b
-/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44b7b.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_44b7b.dir/feature_tests.cxx.o  -o cmTC_44b7b 
-make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_8ad8c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8ad8c.dir/build.make CMakeFiles/cmTC_8ad8c.dir/build
+make[1]: Entering directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8ad8c.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_8ad8c.dir/feature_tests.cxx.o -c /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_8ad8c
+/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ad8c.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_8ad8c.dir/feature_tests.cxx.o  -o cmTC_8ad8c 
+make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -480,17 +480,17 @@ make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7682c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7682c.dir/build.make CMakeFiles/cmTC_7682c.dir/build
-make[1]: Entering directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_7682c.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_7682c.dir/feature_tests.cxx.o -c /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_7682c
-/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7682c.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_7682c.dir/feature_tests.cxx.o  -o cmTC_7682c 
-make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_921da/fast"
+/usr/bin/make -f CMakeFiles/cmTC_921da.dir/build.make CMakeFiles/cmTC_921da.dir/build
+make[1]: Entering directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_921da.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_921da.dir/feature_tests.cxx.o -c /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_921da
+/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_921da.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_921da.dir/feature_tests.cxx.o  -o cmTC_921da 
+make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -553,17 +553,17 @@ make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_361f5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_361f5.dir/build.make CMakeFiles/cmTC_361f5.dir/build
-make[1]: Entering directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_361f5.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_361f5.dir/feature_tests.cxx.o -c /home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_361f5
-/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_361f5.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_361f5.dir/feature_tests.cxx.o  -o cmTC_361f5 
-make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Airport_Simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_c2a82/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c2a82.dir/build.make CMakeFiles/cmTC_c2a82.dir/build
+make[1]: Entering directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c2a82.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_c2a82.dir/feature_tests.cxx.o -c /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_c2a82
+/opt/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2a82.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_c2a82.dir/feature_tests.cxx.o  -o cmTC_c2a82 
+make[1]: Leaving directory '/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

@@ -2,6 +2,7 @@
 // Created by nightnarumi on 22/03/18.
 //
 #include "Simulation.h"
+#include "parser.h"
 #include <gtest/gtest.h>
 
 class VliegveldTest: public  ::testing::Test {
@@ -28,10 +29,8 @@ TEST_F(VliegveldTest, DefaultConstructor) {
 
 TEST_F(VliegveldTest, Parsing) {
 
-    simulation.parser(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
+    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
-    simulation.addRunway(simulation.getAirports(), simulation.getRunways());
-
     EXPECT_EQ("Antwerp International Airport", simulation.getAirports()[0].getName());
     EXPECT_EQ(1, simulation.getAirports()[0].getNumberOfRunways());
     EXPECT_EQ(10, simulation.getAirports()[0].getNumberOfGates());
@@ -51,7 +50,7 @@ TEST_F(VliegveldTest, Parsing) {
 
 TEST_F(VliegveldTest, Parsing_Test){ // Deze test test alle attributen van de parser m.b.v. een test xml-bestand
 
-    simulation.parser(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "test.xml");
+    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "test.xml");
     EXPECT_EQ("Test airport", simulation.getAirports()[0].getName());
     EXPECT_EQ("BEL", simulation.getAirports()[0].getIata());
     EXPECT_EQ("Merksplas tower", simulation.getAirports()[0].getCallsign());
@@ -73,27 +72,23 @@ TEST_F(VliegveldTest, Parsing_Test){ // Deze test test alle attributen van de pa
 }
 
 TEST_F(VliegveldTest, Descending) {
-    simulation.parser(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
+    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
-    simulation.addRunway(simulation.getAirports(), simulation.getRunways());
     simulation.descending(simulation.getAirplanes()[0],simulation.getAirports()[0]);
     EXPECT_EQ("Standing at gate", simulation.getAirplanes()[0].getStatus());
 }
 
 TEST_F(VliegveldTest, ExpectedErrors) {
-    simulation.parser(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
+    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
-    simulation.addRunway(simulation.getAirports(), simulation.getRunways());
     Airplane airplanetest;
     EXPECT_DEATH(simulation.descending(airplanetest, simulation.getAirports()[0]), "Airplane is not approaching");
-    EXPECT_DEATH(simulation.parser(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "Simulatie.xml"), "Airplanes must be empty");
+    EXPECT_DEATH(parser::parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "Simulatie.xml"), "Airplanes must be empty");
 }
 
 TEST_F(VliegveldTest, ascending){
-    simulation.parser(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
+    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
-    simulation.addRunway(simulation.getAirports(), simulation.getRunways());
-
     EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "Standing at gate");
     simulation.ascending(simulation.getAirplanes()[1], simulation.getAirports()[0]);
     EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "Departed");

@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Vliegveld_debug.dir/Gate.cpp.o"
   "CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.o"
   "CMakeFiles/Vliegveld_debug.dir/Simulation.cpp.o"
+  "CMakeFiles/Vliegveld_debug.dir/parser.cpp.o"
   "Vliegveld_debug.pdb"
   "Vliegveld_debug"
 )
