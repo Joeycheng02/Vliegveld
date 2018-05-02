@@ -27,12 +27,19 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
     for (TiXmlElement *elem = root->FirstChildElement(); elem != NULL;
          elem = elem->NextSiblingElement()) {
         std::string elemName = elem->Value();
-
+        if (elemName != "AIRPORT" and elemName != "RUNWAY" and elemName != "AIRPLANE"){
+            cout << elemName << " staat niet in de parser en wordt dus genegeerd." << endl;
+            continue;
+        }
         if (elemName == "AIRPORT") {
             Airport airport;
             for (TiXmlElement *elem2 = elem->FirstChildElement(); elem2 != NULL;
                  elem2 = elem2->NextSiblingElement()) {
                 string elem2Name = elem2->Value();
+
+                if (elem2Name != "name" and elem2Name != "iata" and elem2Name != "callsign" and elem2Name != "gates"){
+                    cout << elem2Name << " is geen variabele van Airport." << endl;
+                }
 
                 if (elem2Name == "name") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
@@ -82,6 +89,10 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                  elem2 = elem2->NextSiblingElement()) {
                 string elem2Name = elem2->Value();
 
+                if (elem2Name != "name" and elem2Name != "airport" and elem2Name != "type" and elem2Name != "length"){
+                    cout << elem2Name << " is geen variabele van Runway." << endl;
+                }
+
                 if (elem2Name == "name") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
@@ -128,6 +139,11 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
             for (TiXmlElement *elem2 = elem->FirstChildElement(); elem2 != NULL;
                  elem2 = elem2->NextSiblingElement()) {
                 string elem2Name = elem2->Value();
+
+                if (elem2Name != "model" and elem2Name != "number" and elem2Name != "callsign" and elem2Name != "type" and elem2Name != "engine" and elem2Name != "size" and
+                    elem2Name != "status" and elem2Name != "capacity"){
+                    cout << elem2Name << " is geen variabele van Airplane." << endl;
+                }
 
                 if (elem2Name == "number") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {

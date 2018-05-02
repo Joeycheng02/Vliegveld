@@ -12,7 +12,7 @@
 class output {
 public:
     //REQUIRE airports and airplanes cant be empty.
-    int outputfile (vector <Airport> &airports, vector <Airplane> &airplanes);
+    static int outputfile (vector <Airport> &airports, vector <Airplane> &airplanes);
 };
 
 
