@@ -17,8 +17,21 @@
 
 class parser {
 public:
+/**
+\n REQUIRE(airplanes.empty(), "Airplanes must be empty");
+\n REQUIRE(airports.empty(), "Airports must be empty");
+\n REQUIRE(runways.empty(), "Runways must be empty");
+\n ENSURE(!airplanes.empty(), "Airplanes can't be empty");
+\n ENSURE(!airports.empty(), "Airports can't be empty");
+\n ENSURE(!runways.empty(), "Runways can't be empty");
+*/
     static int parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vector<Runway> &runways, const char* path);
 
+/**
+\n REQUIRE(!runways.empty(), "There are no runways available");
+\n REQUIRE(!airports.empty(), "There are no airports available");
+\n ENSURE(!airports[k].getRunways().empty(), "Airport has no runway");
+*/
     static void addRunway(vector <Airport> &airports, vector <Runway> &runways);
 
     static void full_parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vector<Runway> &runways, const char* path);

@@ -11,7 +11,10 @@
 
 class output {
 public:
-    //REQUIRE airports and airplanes cant be empty.
+/**
+\n REQUIRE(airplanes.size() != 0, "There are no airplanes available");
+\n REQUIRE(airports.size() != 0, "There are no airports available");
+*/
     static int outputfile (vector <Airport> &airports, vector <Airplane> &airplanes);
 };
 

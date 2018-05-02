@@ -72,18 +72,26 @@ public:
     const string &getStatus() const;
 
     void setStatus(const string &status);
-
-    //REQUIRE airplane must have the status "Approaching"
+/**
+\n REQUIRE (getStatus() == "Approaching", "Airplane is not approaching");
+\n ENSURE(getStatus() == "Standing at gate", "Airplane is not standing at a gate");
+\n ENSURE(getAirport() == airport.getName(), "Airplane is not standing at the right airport");
+*/
     int descending(Airport &airport);
-    //ENSURE airplane must stand at a gate of the given airport
 
-    //REQUIRE airplane
+/**
+\n REQUIRE (getStatus() == "Standing at gate", "Airplane is not standing at a gate");
+\n REQUIRE (getAirport() == airport.getName(), "This airplane does not belong to the given aiport.");
+\n ENSURE(airport.getRunways()[runwayNumber].isVacant(), "Runway is still occupied");
+\n ENSURE(getGateNumber() == -1, "Airplane is still at a gate");
+*/
     int ascending (Airport &airport);
-    //ENSURE the runway and gate are vacant
 
-    //REQUIRE airplane is in the air and not approaching
+/**
+\n REQUIRE(getStatus() == "Departed", "Airplane is not in the air or is already approaching");
+\n ENSURE(getStatus() == "Approaching", "Airplane is not approaching");
+*/
     int approaching ();
-    //ENSURE airplane is approaching
 };
 
 
