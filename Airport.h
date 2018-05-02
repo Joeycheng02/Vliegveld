@@ -26,7 +26,21 @@ private:
     int numberOfGates;
     vector <Gate> gates;
     vector <Runway> runways;
+    bool heightCheck3000;
 public:
+    bool isHeightCheck3000() const;
+
+    void setHeightCheck3000(bool heightCheck3000);
+
+    bool isHeightCheck5000() const;
+
+    void setHeightCheck5000(bool heightCheck5000);
+
+private:
+    bool heightCheck5000;
+public:
+    Airport();
+
     void addRunways(Runway runway);
 
     int getNumberOfRunways() const;
@@ -46,6 +60,10 @@ public:
     const string &getCallsign() const;
 
     void setCallsign(const string &callsign);
+
+    bool permissionToDescend (int height);
+
+    bool permissionToAscend (int number);
 };
 
 

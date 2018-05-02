@@ -124,7 +124,6 @@ int Airplane::descending(Airport &airport) {
         }
 
         if (airport.getRunways()[i].isVacant()) {
-            airport.getRunways()[i].setVacant(false);
             runwayNumber = i;
             break;
         }
@@ -136,10 +135,16 @@ int Airplane::descending(Airport &airport) {
     }
     cout << getCallsign() << " is approaching " << airport.getName() << " at 10.000ft." << endl;
     while (getHeight() > 1000) {
+        if(getHeight() == 10000 or getHeight() == 5000 or getHeight() == 3000) {
+            if (!airport.permissionToDescend(getHeight())) {
+                return -1;
+            }
+        }
         setHeight(getHeight() - 1000);
         cout << getCallsign() << " descended to " << getHeight() << " ft." << endl;
     }
     setHeight(getHeight() - 1000);
+    airport.getRunways()[runwayNumber].setVacant(false);
     cout << getCallsign() << " is landing at "<< airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
     cout << getCallsign() << " has landed at "<< airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
     cout << getCallsign() << " is taxiing to Gate " << gate.getName() << endl;
@@ -173,7 +178,6 @@ int Airplane::ascending (Airport &airport) {
         }
 
         if (airport.getRunways()[i].isVacant()) {
-            airport.getRunways()[i].setVacant(false);
             runwayNumber = i;
             break;
         }
@@ -185,7 +189,12 @@ int Airplane::ascending (Airport &airport) {
     airport.getGates()[getGateNumber()-1].setVacant(true);
     setGateNumber(-1);
 
+    airport.permissionToAscend(-1);
     cout << getCallsign() << " is taxiing to runway " << airport.getRunways()[runwayNumber].getName() << "." << endl;
+    if (!airport.permissionToAscend(runwayNumber)) {
+        return -1;
+    }
+    airport.getRunways()[runwayNumber].setVacant(false);
     cout << getCallsign() << " is taking off at " << airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
 
     while (getHeight() < 5000) {
