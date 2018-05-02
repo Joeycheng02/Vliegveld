@@ -75,6 +75,14 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                             continue;
                         std::string t = text->Value();
                         int i;
+                        for(unsigned int k = 0; k<t.size(); k++) {
+                            if (t[k] != '0' and t[k] != '1' and t[k] != '2' and t[k] != '3' and t[k] != '4' and
+                                t[k] != '5'
+                                and t[k] != '6' and t[k] != '7' and t[k] != '8' and t[k] != '9') {
+                                cout << "De " << elem2Name << " moet een integer zijn.";
+                                return -1;
+                            }
+                        }
                         sscanf(t.c_str(), "%d", &i);
                         airport.setNumberOfGates(i);
                     }
@@ -127,6 +135,14 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                             continue;
                         std::string t = text->Value();
                         int i;
+                        for(unsigned int k = 0; k<t.size(); k++) {
+                            if (t[k] != '0' and t[k] != '1' and t[k] != '2' and t[k] != '3' and t[k] != '4' and
+                                t[k] != '5'
+                                and t[k] != '6' and t[k] != '7' and t[k] != '8' and t[k] != '9') {
+                                cout << "De " << elem2Name << " moet een integer zijn.";
+                                return -1;
+                            }
+                        }
                         sscanf(t.c_str(), "%d", &i);
                         runway.setLength(i);
                     }
@@ -213,8 +229,15 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         TiXmlText *text = e->ToText();
                         if (text == NULL)
                             continue;
-                        std::string t = text->Value();
+                        const std::string t = text->Value();
                         int i;
+                        for(unsigned int k = 0; k<t.size(); k++){
+                            if(t[k]!='0' and t[k]!='1' and t[k]!='2' and t[k]!='3' and t[k]!='4' and t[k]!='5'
+                               and t[k]!='6' and t[k]!='7' and t[k]!='8' and t[k]!='9'){
+                                cout << "De " << elem2Name << " moet een integer zijn.";
+                                return -1;
+                            }
+                        }
                         sscanf(t.c_str(), "%d", &i);
                         airplane.setCapacity(i);
                     }

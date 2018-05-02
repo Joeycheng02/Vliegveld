@@ -4,6 +4,7 @@
 CMakeFiles/Vliegveld_debug.dir/Airplane.cpp.o: ../Airplane.cpp
 CMakeFiles/Vliegveld_debug.dir/Airplane.cpp.o: ../Airplane.h
 CMakeFiles/Vliegveld_debug.dir/Airplane.cpp.o: ../Airport.h
+CMakeFiles/Vliegveld_debug.dir/Airplane.cpp.o: ../DesignByContract.h
 CMakeFiles/Vliegveld_debug.dir/Airplane.cpp.o: ../Gate.h
 CMakeFiles/Vliegveld_debug.dir/Airplane.cpp.o: ../Runway.h
 
@@ -56,6 +57,14 @@ CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.o: ../mainTest.cpp
 CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.o: ../parser.h
 CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.o: ../tinystr.h
 CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.o: ../tinyxml.h
+
+CMakeFiles/Vliegveld_debug.dir/output.cpp.o: ../Airplane.h
+CMakeFiles/Vliegveld_debug.dir/output.cpp.o: ../Airport.h
+CMakeFiles/Vliegveld_debug.dir/output.cpp.o: ../DesignByContract.h
+CMakeFiles/Vliegveld_debug.dir/output.cpp.o: ../Gate.h
+CMakeFiles/Vliegveld_debug.dir/output.cpp.o: ../Runway.h
+CMakeFiles/Vliegveld_debug.dir/output.cpp.o: ../output.cpp
+CMakeFiles/Vliegveld_debug.dir/output.cpp.o: ../output.h
 
 CMakeFiles/Vliegveld_debug.dir/parser.cpp.o: ../Airplane.h
 CMakeFiles/Vliegveld_debug.dir/parser.cpp.o: ../Airport.h

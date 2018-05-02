@@ -8,43 +8,43 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Vliegveld_debug">
-				<Option output="/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Vliegveld_debug" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug"/>
+				<Option output="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Vliegveld_debug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/nightnarumi/CLionProjects/Vliegveld/gtest/include"/>
+					<Add directory="/home/knoetson/Desktop/PSE/Vliegveld/gtest/include"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -55,20 +55,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld_debug"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld_debug"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Vliegveld_debug/fast">
-				<Option output="/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Vliegveld_debug" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug"/>
+				<Option output="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Vliegveld_debug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/nightnarumi/CLionProjects/Vliegveld/gtest/include"/>
+					<Add directory="/home/knoetson/Desktop/PSE/Vliegveld/gtest/include"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -79,20 +79,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld_debug/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld_debug/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Vliegveld">
-				<Option output="/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Vliegveld" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug"/>
+				<Option output="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Vliegveld" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/nightnarumi/CLionProjects/Vliegveld/gtest/include"/>
+					<Add directory="/home/knoetson/Desktop/PSE/Vliegveld/gtest/include"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -103,20 +103,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Vliegveld/fast">
-				<Option output="/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Vliegveld" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug"/>
+				<Option output="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Vliegveld" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/nightnarumi/CLionProjects/Vliegveld/gtest/include"/>
+					<Add directory="/home/knoetson/Desktop/PSE/Vliegveld/gtest/include"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -127,100 +127,100 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 Vliegveld/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/Airplane.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Airplane.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/Airplane.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Airplane.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/Airport.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Airport.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/Airport.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Airport.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/Gate.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Gate.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/Gate.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Gate.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/Runway.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Runway.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/Runway.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Runway.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/Simulation.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Simulation.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/Simulation.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Simulation.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/main.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/main.cpp">
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/mainTest.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/mainTest.cpp">
 			<Option target="Vliegveld_debug"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/output.cpp">
-			<Option target="Vliegveld_debug"/>
-			<Option target="Vliegveld"/>
-		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/output.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/output.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/parser.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/output.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/parser.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/parser.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/tinystr.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/parser.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/tinystr.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/tinystr.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/tinyxml.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/tinystr.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/tinyxml.h">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/tinyxml.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/tinyxmlerror.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/tinyxml.h">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/tinyxmlparser.cpp">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/tinyxmlerror.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/CMakeLists.txt">
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/tinyxmlparser.cpp">
+			<Option target="Vliegveld_debug"/>
+			<Option target="Vliegveld"/>
+		</Unit>
+		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
