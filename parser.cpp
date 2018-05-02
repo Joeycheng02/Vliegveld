@@ -39,6 +39,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
 
                 if (elem2Name != "name" and elem2Name != "iata" and elem2Name != "callsign" and elem2Name != "gates"){
                     cout << elem2Name << " is geen variabele van Airport." << endl;
+                    continue;
                 }
 
                 if (elem2Name == "name") {
@@ -97,8 +98,10 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                  elem2 = elem2->NextSiblingElement()) {
                 string elem2Name = elem2->Value();
 
-                if (elem2Name != "name" and elem2Name != "airport" and elem2Name != "type" and elem2Name != "length"){
+                if (elem2Name != "name" and elem2Name != "airport" and elem2Name != "type" and elem2Name != "length"
+                        and elem2Name != "TAXIROUTE"){
                     cout << elem2Name << " is geen variabele van Runway." << endl;
+                    continue;
                 }
 
                 if (elem2Name == "name") {
@@ -147,6 +150,36 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         runway.setLength(i);
                     }
                 }
+                if (elem2Name == "TAXIROUTE"){
+                    for(TiXmlElement* elem3 = elem2->FirstChildElement(); elem3 != NULL;
+                        elem3 = elem3->NextSiblingElement()){
+                        string elem3Name = elem3->Value();
+
+                        if (elem3Name != "taxipoint" and elem3Name != "crossing") {
+                            cout << elem3Name << " is geen variabele van Runway." << endl;
+                            continue;
+                        }
+
+                        if (elem3Name == "taxipoint"){
+                            for (TiXmlNode *e = elem3->FirstChild(); e != NULL; e = e->NextSibling()) {
+                                TiXmlText *text = e->ToText();
+                                if (text == NULL)
+                                    continue;
+                                std::string t = text->Value();
+                                runway.add_Taxipoint(t);
+                            }
+                        }
+                        if (elem3Name == "crossing"){
+                            for (TiXmlNode *e = elem3->FirstChild(); e != NULL; e = e->NextSibling()) {
+                                TiXmlText *text = e->ToText();
+                                if (text == NULL)
+                                    continue;
+                                std::string t = text->Value();
+                                runway.add_Crossing(t);
+                            }
+                        }
+                    }
+                }
             }
             runways.push_back(runway);
         }
@@ -159,6 +192,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                 if (elem2Name != "model" and elem2Name != "number" and elem2Name != "callsign" and elem2Name != "type" and elem2Name != "engine" and elem2Name != "size" and
                     elem2Name != "status" and elem2Name != "capacity"){
                     cout << elem2Name << " is geen variabele van Airplane." << endl;
+                    continue;
                 }
 
                 if (elem2Name == "number") {

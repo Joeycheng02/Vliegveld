@@ -47,3 +47,19 @@ const int &Runway::getLength() const {
 void Runway::setLength(const int &length) {
     Runway::length = length;
 }
+
+void Runway::add_Taxipoint(string taxipoint) {
+    taxipoints.push_back(taxipoint);
+}
+
+vector<string> Runway::get_Taxipoint() {
+    return taxipoints;
+}
+
+void Runway::add_Crossing(string crossing) {
+    taxipoints.push_back(crossing);
+}
+
+vector<string> Runway::get_Crossing() {
+    return crossings;
+}
