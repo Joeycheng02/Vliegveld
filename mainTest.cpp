@@ -2,6 +2,9 @@
 // Created by nightnarumi on 22/03/18.
 //
 #include "Simulation.h"
+#include "Airport.h"
+#include "Airplane.h"
+#include "Runway.h"
 #include "parser.h"
 #include <gtest/gtest.h>
 
@@ -14,6 +17,8 @@ protected:
     }
 
     Simulation simulation;
+    Airplane airplane;
+    Airport airport;
     Runway runway;
     Gate gate;
 };
@@ -68,13 +73,13 @@ TEST_F(VliegveldTest, Parsing_Test){ // Deze test test alle attributen van de pa
     EXPECT_EQ("jet", simulation.getAirplanes()[0].getEngine());
     EXPECT_EQ("small", simulation.getAirplanes()[0].getSize());
     EXPECT_EQ("Approaching", simulation.getAirplanes()[0].getStatus());
-    EXPECT_EQ(1, simulation.getAirplanes()[0].getPassengers());
+    EXPECT_EQ(1, simulation.getAirplanes()[0].getCapacity());
 }
 
 TEST_F(VliegveldTest, Descending) {
     parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
-    simulation.descending(simulation.getAirplanes()[0],simulation.getAirports()[0]);
+    simulation.getAirplanes()[0].descending(simulation.getAirports()[0]);
     EXPECT_EQ("Standing at gate", simulation.getAirplanes()[0].getStatus());
 }
 
@@ -82,7 +87,7 @@ TEST_F(VliegveldTest, ExpectedErrors) {
     parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
     Airplane airplanetest;
-    EXPECT_DEATH(simulation.descending(airplanetest, simulation.getAirports()[0]), "Airplane is not approaching");
+    EXPECT_DEATH(airplanetest.descending(simulation.getAirports()[0]), "Airplane is not approaching");
     EXPECT_DEATH(parser::parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "Simulatie.xml"), "Airplanes must be empty");
 }
 
@@ -90,7 +95,7 @@ TEST_F(VliegveldTest, ascending){
     parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
     EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "Standing at gate");
-    simulation.ascending(simulation.getAirplanes()[1], simulation.getAirports()[0]);
+    simulation.getAirplanes()[1].ascending(simulation.getAirports()[0]);
     EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "Departed");
 }
 

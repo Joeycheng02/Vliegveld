@@ -47,7 +47,9 @@ set(DEBUG_SOURCE_FILES Airplane.cpp
         Simulation.cpp
         Simulation.h
         parser.cpp
-        parser.h)
+        parser.h
+        output.cpp
+        output.h)
 
 add_executable(Vliegveld ${RELEASE_SOURCE_FILES})
 add_executable(Vliegveld_debug ${DEBUG_SOURCE_FILES})
