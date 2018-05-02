@@ -9,6 +9,8 @@
 /home/nightnarumi/CLionProjects/Vliegveld/Airplane.cpp
 Airplane.h
 /home/nightnarumi/CLionProjects/Vliegveld/Airplane.h
+DesignByContract.h
+/home/nightnarumi/CLionProjects/Vliegveld/DesignByContract.h
 
 /home/nightnarumi/CLionProjects/Vliegveld/Airplane.h
 iostream
@@ -67,8 +69,6 @@ DesignByContract.h
 /home/nightnarumi/CLionProjects/Vliegveld/Simulation.h
 iostream
 -
-string
--
 Runway.h
 /home/nightnarumi/CLionProjects/Vliegveld/Runway.h
 Airport.h
@@ -77,8 +77,6 @@ Airplane.h
 /home/nightnarumi/CLionProjects/Vliegveld/Airplane.h
 tinyxml.h
 /home/nightnarumi/CLionProjects/Vliegveld/tinyxml.h
-fstream
--
 vector
 -
 
@@ -87,6 +85,28 @@ Simulation.h
 /home/nightnarumi/CLionProjects/Vliegveld/Simulation.h
 parser.h
 /home/nightnarumi/CLionProjects/Vliegveld/parser.h
+output.h
+/home/nightnarumi/CLionProjects/Vliegveld/output.h
+Airplane.h
+/home/nightnarumi/CLionProjects/Vliegveld/Airplane.h
+Airport.h
+/home/nightnarumi/CLionProjects/Vliegveld/Airport.h
+Runway.h
+/home/nightnarumi/CLionProjects/Vliegveld/Runway.h
+
+/home/nightnarumi/CLionProjects/Vliegveld/output.cpp
+fstream
+-
+output.h
+/home/nightnarumi/CLionProjects/Vliegveld/output.h
+DesignByContract.h
+/home/nightnarumi/CLionProjects/Vliegveld/DesignByContract.h
+
+/home/nightnarumi/CLionProjects/Vliegveld/output.h
+Airport.h
+/home/nightnarumi/CLionProjects/Vliegveld/Airport.h
+Airplane.h
+/home/nightnarumi/CLionProjects/Vliegveld/Airplane.h
 
 /home/nightnarumi/CLionProjects/Vliegveld/parser.cpp
 parser.h

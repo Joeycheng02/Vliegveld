@@ -181,9 +181,11 @@
 			<Option target="Vliegveld_debug"/>
 		</Unit>
 		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/output.cpp">
+			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
 		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/output.h">
+			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
 		<Unit filename="/home/nightnarumi/CLionProjects/Vliegveld/parser.cpp">

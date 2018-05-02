@@ -23,6 +23,8 @@ public:
     vector<Airplane> &getAirplanes();
 
     vector<Runway> &getRunways();
+
+    void start();
 };
 
 

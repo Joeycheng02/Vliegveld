@@ -346,6 +346,7 @@ output.o: output.cpp.o
 
 # target to build an object file
 output.cpp.o:
+	$(MAKE) -f CMakeFiles/Vliegveld_debug.dir/build.make CMakeFiles/Vliegveld_debug.dir/output.cpp.o
 	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/output.cpp.o
 .PHONY : output.cpp.o
 
@@ -355,6 +356,7 @@ output.i: output.cpp.i
 
 # target to preprocess a source file
 output.cpp.i:
+	$(MAKE) -f CMakeFiles/Vliegveld_debug.dir/build.make CMakeFiles/Vliegveld_debug.dir/output.cpp.i
 	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/output.cpp.i
 .PHONY : output.cpp.i
 
@@ -364,6 +366,7 @@ output.s: output.cpp.s
 
 # target to generate assembly for a file
 output.cpp.s:
+	$(MAKE) -f CMakeFiles/Vliegveld_debug.dir/build.make CMakeFiles/Vliegveld_debug.dir/output.cpp.s
 	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/output.cpp.s
 .PHONY : output.cpp.s
 

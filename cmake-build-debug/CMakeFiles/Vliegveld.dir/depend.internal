@@ -5,6 +5,7 @@ CMakeFiles/Vliegveld.dir/Airplane.cpp.o
  /home/nightnarumi/CLionProjects/Vliegveld/Airplane.cpp
  /home/nightnarumi/CLionProjects/Vliegveld/Airplane.h
  /home/nightnarumi/CLionProjects/Vliegveld/Airport.h
+ /home/nightnarumi/CLionProjects/Vliegveld/DesignByContract.h
  /home/nightnarumi/CLionProjects/Vliegveld/Gate.h
  /home/nightnarumi/CLionProjects/Vliegveld/Runway.h
 CMakeFiles/Vliegveld.dir/Airport.cpp.o
@@ -35,9 +36,18 @@ CMakeFiles/Vliegveld.dir/main.cpp.o
  /home/nightnarumi/CLionProjects/Vliegveld/Runway.h
  /home/nightnarumi/CLionProjects/Vliegveld/Simulation.h
  /home/nightnarumi/CLionProjects/Vliegveld/main.cpp
+ /home/nightnarumi/CLionProjects/Vliegveld/output.h
  /home/nightnarumi/CLionProjects/Vliegveld/parser.h
  /home/nightnarumi/CLionProjects/Vliegveld/tinystr.h
  /home/nightnarumi/CLionProjects/Vliegveld/tinyxml.h
+CMakeFiles/Vliegveld.dir/output.cpp.o
+ /home/nightnarumi/CLionProjects/Vliegveld/Airplane.h
+ /home/nightnarumi/CLionProjects/Vliegveld/Airport.h
+ /home/nightnarumi/CLionProjects/Vliegveld/DesignByContract.h
+ /home/nightnarumi/CLionProjects/Vliegveld/Gate.h
+ /home/nightnarumi/CLionProjects/Vliegveld/Runway.h
+ /home/nightnarumi/CLionProjects/Vliegveld/output.cpp
+ /home/nightnarumi/CLionProjects/Vliegveld/output.h
 CMakeFiles/Vliegveld.dir/parser.cpp.o
  /home/nightnarumi/CLionProjects/Vliegveld/Airplane.h
  /home/nightnarumi/CLionProjects/Vliegveld/Airport.h
