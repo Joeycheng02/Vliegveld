@@ -21,7 +21,7 @@ private:
     string size;
     string status;
     string airport;
-    int passengers;
+    int capacity;
     int gateNumber;
     int height;
     
@@ -35,9 +35,9 @@ public:
     
     int getHeight() const;
 
-    int getPassengers() const;
+    int getCapacity() const;
 
-    void setPassengers(int passengers);
+    void setCapacity(int passengers);
 
     void setHeight(int height);
 
@@ -72,6 +72,18 @@ public:
     const string &getStatus() const;
 
     void setStatus(const string &status);
+
+    //REQUIRE airplane must have the status "Approaching"
+    int descending(Airport &airport);
+    //ENSURE airplane must stand at a gate of the given airport
+
+    //REQUIRE airplane
+    int ascending (Airport &airport);
+    //ENSURE the runway and gate are vacant
+
+    //REQUIRE airplane is in the air and not approaching
+    int approaching ();
+    //ENSURE airplane is approaching
 };
 
 

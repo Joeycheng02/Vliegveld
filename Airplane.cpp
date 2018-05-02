@@ -3,6 +3,7 @@
 //
 
 #include "Airplane.h"
+#include "DesignByContract.h"
 
 const string &Airplane::getNumber() const {
     return number;
@@ -60,12 +61,12 @@ void Airplane::setGateNumber(int gateNumber) {
     Airplane::gateNumber = gateNumber;
 }
 
-int Airplane::getPassengers() const {
-    return passengers;
+int Airplane::getCapacity() const {
+    return capacity;
 }
 
-void Airplane::setPassengers(int passengers) {
-    Airplane::passengers = passengers;
+void Airplane::setCapacity(int capacity) {
+    Airplane::capacity = capacity;
 }
 
 Airplane::Airplane() {
@@ -95,4 +96,116 @@ const string &Airplane::getSize() const {
 
 void Airplane::setSize(const string &size) {
     Airplane::size = size;
+}
+
+int Airplane::descending(Airport &airport) {
+
+    REQUIRE (getStatus() == "Approaching", "Airplane is not approaching");
+
+    Gate gate;
+
+    for (int i = 0; i <= airport.getNumberOfGates(); ++i) {
+        if (i == airport.getNumberOfGates()) {
+            cout << "Instructing " << getCallsign() << " to take a holding pattern untill a clearance is made to land." << endl;
+            return -1;
+        }
+        if (airport.getGates()[i].isVacant()) {
+            airport.getGates()[i].setVacant(false);
+            gate = airport.getGates()[i];
+            break;
+        }
+    }
+
+    int runwayNumber;
+    for (int i = 0; i <= airport.getNumberOfRunways(); ++i) {
+        if (i == airport.getNumberOfRunways()) {
+            cout << "Instructing " << getCallsign() << " to wait untill there is a free runway." << endl;
+            return -1;
+        }
+
+        if (airport.getRunways()[i].isVacant()) {
+            airport.getRunways()[i].setVacant(false);
+            runwayNumber = i;
+            break;
+        }
+    }
+
+    if (getHeight() != 10000) {
+        cout << "Instructing " << getCallsign() << " to get an height of 10.000ft." << endl;
+        setHeight(10000);
+    }
+    cout << getCallsign() << " is approaching " << airport.getName() << " at 10.000ft." << endl;
+    while (getHeight() > 1000) {
+        setHeight(getHeight() - 1000);
+        cout << getCallsign() << " descended to " << getHeight() << " ft." << endl;
+    }
+    setHeight(getHeight() - 1000);
+    cout << getCallsign() << " is landing at "<< airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
+    cout << getCallsign() << " has landed at "<< airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
+    cout << getCallsign() << " is taxiing to Gate " << gate.getName() << endl;
+    cout << getCallsign() << " is standing at Gate " << gate.getName() << endl;
+    airport.getRunways()[runwayNumber].setVacant(true);
+    setAirport(airport.getName());
+    setGateNumber(gate.getName());
+    setStatus("Standing at gate");
+    cout << getCapacity() << " passengers exited " << getCallsign() << " at gate " << gate.getName() << " of " << airport.getName() << endl;
+    cout << getCallsign() << " has been checked for technical malfunctions" << endl << endl;
+
+    ENSURE(getStatus() == "Standing at gate", "Airplane is not standing at a gate");
+    ENSURE(getAirport() == airport.getName(), "Airplane is not standing at the right airport");
+
+    return 0;
+}
+
+
+int Airplane::ascending (Airport &airport) {
+
+    REQUIRE (getStatus() == "Standing at gate", "Airplane is not standing at a gate");
+
+    REQUIRE (getAirport() == airport.getName(), "This airplane does not belong to the given aiport.");
+
+    int runwayNumber;
+
+    for (int i = 0; i <= airport.getNumberOfRunways(); ++i) {
+        if (i == airport.getNumberOfRunways()) {
+            cout << "Instructing " << getCallsign() << " to wait untill there is a free runway." << endl;
+            return -1;
+        }
+
+        if (airport.getRunways()[i].isVacant()) {
+            airport.getRunways()[i].setVacant(false);
+            runwayNumber = i;
+            break;
+        }
+    }
+
+    cout << getCallsign() << " has been refueled" << endl;
+    cout << getCapacity() << " passengers boarded " << getCallsign() << " at gate " << airport.getGates()[getGateNumber()-1].getName() << " of " << airport.getName() << endl;
+
+    airport.getGates()[getGateNumber()-1].setVacant(true);
+    setGateNumber(-1);
+
+    cout << getCallsign() << " is taxiing to runway " << airport.getRunways()[runwayNumber].getName() << "." << endl;
+    cout << getCallsign() << " is taking off at " << airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
+
+    while (getHeight() < 5000) {
+        setHeight(getHeight() + 1000);
+        cout << getCallsign() << " has ascended to " << getHeight() << " ft." << endl;
+    }
+    cout << getCallsign() << " has left " << airport.getName() << endl << endl;
+    airport.getRunways()[runwayNumber].setVacant(true);
+    setAirport("No airport assigned");
+    setStatus("Departed");
+    return 0;
+
+    ENSURE(airport.getRunways()[runwayNumber].isVacant(), "Runway is still occupied");
+    ENSURE(getGateNumber() == -1, "Airplane is still at a gate");
+}
+
+int Airplane::approaching() {
+    REQUIRE(getStatus() == "Departed", "Airplane is not in the air or is already approaching");
+    setStatus("Approaching");
+    cout << getCallsign() << " is approaching" << endl << endl;
+    ENSURE(getStatus() == "Approaching", "Airplane is not approaching");
+    return 0;
 }

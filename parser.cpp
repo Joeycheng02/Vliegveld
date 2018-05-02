@@ -200,7 +200,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         std::string t = text->Value();
                         int i;
                         sscanf(t.c_str(), "%d", &i);
-                        airplane.setPassengers(i);
+                        airplane.setCapacity(i);
                     }
                 }
             }

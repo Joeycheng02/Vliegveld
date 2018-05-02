@@ -27,7 +27,7 @@ set(RELEASE_SOURCE_FILES Airplane.cpp
         Simulation.cpp
         Simulation.h
         parser.cpp
-        parser.h)
+        parser.h output.cpp output.h)
 
 set(DEBUG_SOURCE_FILES Airplane.cpp
         Airplane.h

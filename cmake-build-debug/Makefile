@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2017.2.3/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/nightnarumi/clion-2017.2.3/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
+RM = /home/nightnarumi/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/knoetson/Desktop/PSE/Vliegveld
+CMAKE_SOURCE_DIR = /home/nightnarumi/CLionProjects/Vliegveld
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug
+CMAKE_BINARY_DIR = /home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/clion-2017.2.3/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/nightnarumi/clion-2017.2.3/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/clion-2017.2.3/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/nightnarumi/clion-2017.2.3/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/CMakeFiles /home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nightnarumi/CLionProjects/Vliegveld/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -340,6 +340,33 @@ mainTest.cpp.s:
 	$(MAKE) -f CMakeFiles/Vliegveld_debug.dir/build.make CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.s
 .PHONY : mainTest.cpp.s
 
+output.o: output.cpp.o
+
+.PHONY : output.o
+
+# target to build an object file
+output.cpp.o:
+	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/output.cpp.o
+.PHONY : output.cpp.o
+
+output.i: output.cpp.i
+
+.PHONY : output.i
+
+# target to preprocess a source file
+output.cpp.i:
+	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/output.cpp.i
+.PHONY : output.cpp.i
+
+output.s: output.cpp.s
+
+.PHONY : output.s
+
+# target to generate assembly for a file
+output.cpp.s:
+	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/output.cpp.s
+.PHONY : output.cpp.s
+
 parser.o: parser.cpp.o
 
 .PHONY : parser.o
@@ -521,6 +548,9 @@ help:
 	@echo "... mainTest.o"
 	@echo "... mainTest.i"
 	@echo "... mainTest.s"
+	@echo "... output.o"
+	@echo "... output.i"
+	@echo "... output.s"
 	@echo "... parser.o"
 	@echo "... parser.i"
 	@echo "... parser.s"
