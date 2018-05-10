@@ -28,7 +28,6 @@ void Simulation::start() {
             for (int j = 0; j < int(airports.size()); ++j) {
                 if (airplanes[i].getAirport() == airports[j].getName()) {
                     airplanes[i].ascending(airports[j]);
-                    airplanes[i].approaching();
                     break;
                 }
             }
