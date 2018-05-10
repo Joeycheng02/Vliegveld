@@ -54,3 +54,35 @@ int output::outputfile(vector<Airport> &airports, vector<Airplane> &airplanes) {
     file.close();
     return 0;
 }
+
+int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int check) {
+    ofstream file;
+    file.open("output.txt", ios_base::app);
+    if (!file) {
+        cout << "Couldn't open the file." << endl;
+        return -1;
+    }
+
+    if(check == 1){
+        file << "[1][AIR]" << endl
+             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", arriving at " << airport.getName() << "." << endl
+             << "[2][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", radar contact, descend and maintain five thousand feet, squawk " << "squawk code"<< endl
+             << "[3][AIR]" << endl
+             << "$ Descend and maintain five thousand feet, sqauwking " << "squawk code" << ", " << airplane.getCallsign() << endl;
+    }
+
+    if(check == 2){
+        file << "[1][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", hold south on the one eighty radial, expect further clearence at " << "time" << "." <<  endl
+             << "[2][AIR]" << endl
+             << "$ Holding south on the one eighty radial, " << airplane.getCallsign() << "." << endl;
+    }
+
+
+
+
+
+    file.close();
+    return 0;
+}

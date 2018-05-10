@@ -1,0 +1,22 @@
+Airport: Antwerp International Airport (ANR)
+ --> gates: 10
+ --> runways: 1
+
+Airport: Brussel International Airport (BNR)
+ --> gates: 5
+ --> runways: 1
+
+
+
+Airplane: Cessna 842 (N11842)
+ --> model: Cessna 340
+
+Airplane: Cessna 841 (N12125)
+ --> model: Cessna 341
+
+[1][AIR]
+$ Antwerp Tower, Cessna 842, arriving at Antwerp International Airport.
+[2][ATC]
+$ Cessna 842, radar contact, descend and maintain five thousand feet, squawk squawk code
+[3][AIR]
+$ Descend and maintain five thousand feet, sqauwking squawk code, Cessna 842
