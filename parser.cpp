@@ -32,64 +32,69 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
             continue;
         }
         if (elemName == "AIRPORT") {
-            Airport airport;
-            for (TiXmlElement *elem2 = elem->FirstChildElement(); elem2 != NULL;
-                 elem2 = elem2->NextSiblingElement()) {
-                string elem2Name = elem2->Value();
+            bool one_airport = false;
+            if(!one_airport) {
+                Airport airport;
+                for (TiXmlElement *elem2 = elem->FirstChildElement(); elem2 != NULL;
+                     elem2 = elem2->NextSiblingElement()) {
+                    string elem2Name = elem2->Value();
 
-                if (elem2Name != "name" and elem2Name != "iata" and elem2Name != "callsign" and elem2Name != "gates"){
-                    cout << elem2Name << " is geen variabele van Airport." << endl;
-                    continue;
-                }
+                    if (elem2Name != "name" and elem2Name != "iata" and elem2Name != "callsign" and
+                        elem2Name != "gates") {
+                        cout << elem2Name << " is geen variabele van Airport." << endl;
+                        continue;
+                    }
 
-                if (elem2Name == "name") {
-                    for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
-                        TiXmlText *text = e->ToText();
-                        if (text == NULL)
-                            continue;
-                        std::string t = text->Value();
-                        airport.setName(t);
-                    }
-                }
-                if (elem2Name == "iata") {
-                    for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
-                        TiXmlText *text = e->ToText();
-                        if (text == NULL)
-                            continue;
-                        std::string t = text->Value();
-                        airport.setIata(t);
-                    }
-                }
-                if (elem2Name == "callsign") {
-                    for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
-                        TiXmlText *text = e->ToText();
-                        if (text == NULL)
-                            continue;
-                        std::string t = text->Value();
-                        airport.setCallsign(t);
-                    }
-                }
-                if (elem2Name == "gates") {
-                    for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
-                        TiXmlText *text = e->ToText();
-                        if (text == NULL)
-                            continue;
-                        std::string t = text->Value();
-                        int i;
-                        for(unsigned int k = 0; k<t.size(); k++) {
-                            if (t[k] != '0' and t[k] != '1' and t[k] != '2' and t[k] != '3' and t[k] != '4' and
-                                t[k] != '5'
-                                and t[k] != '6' and t[k] != '7' and t[k] != '8' and t[k] != '9') {
-                                cout << "De " << elem2Name << " moet een integer zijn.";
-                                return -1;
-                            }
+                    if (elem2Name == "name") {
+                        for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
+                            TiXmlText *text = e->ToText();
+                            if (text == NULL)
+                                continue;
+                            std::string t = text->Value();
+                            airport.setName(t);
                         }
-                        sscanf(t.c_str(), "%d", &i);
-                        airport.setNumberOfGates(i);
+                    }
+                    if (elem2Name == "iata") {
+                        for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
+                            TiXmlText *text = e->ToText();
+                            if (text == NULL)
+                                continue;
+                            std::string t = text->Value();
+                            airport.setIata(t);
+                        }
+                    }
+                    if (elem2Name == "callsign") {
+                        for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
+                            TiXmlText *text = e->ToText();
+                            if (text == NULL)
+                                continue;
+                            std::string t = text->Value();
+                            airport.setCallsign(t);
+                        }
+                    }
+                    if (elem2Name == "gates") {
+                        for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
+                            TiXmlText *text = e->ToText();
+                            if (text == NULL)
+                                continue;
+                            std::string t = text->Value();
+                            int i;
+                            for (unsigned int k = 0; k < t.size(); k++) {
+                                if (t[k] != '0' and t[k] != '1' and t[k] != '2' and t[k] != '3' and t[k] != '4' and
+                                    t[k] != '5'
+                                    and t[k] != '6' and t[k] != '7' and t[k] != '8' and t[k] != '9') {
+                                    cout << "De " << elem2Name << " moet een integer zijn.";
+                                    return -1;
+                                }
+                            }
+                            sscanf(t.c_str(), "%d", &i);
+                            airport.setNumberOfGates(i);
+                        }
                     }
                 }
+                airports.push_back(airport);
+                one_airport = true;
             }
-            airports.push_back(airport);
         }
 
         if (elemName == "RUNWAY") {

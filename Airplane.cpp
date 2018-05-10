@@ -4,6 +4,7 @@
 
 #include "Airplane.h"
 #include "DesignByContract.h"
+#include "output.h"
 
 const string &Airplane::getNumber() const {
     return number;
@@ -132,6 +133,7 @@ int Airplane::descending(Airport &airport) {
     for (int i = 0; i <= airport.getNumberOfGates(); ++i) {
         if (i == airport.getNumberOfGates()) {
             cout << "Instructing " << getCallsign() << " to take a holding pattern untill a clearance is made to land." << endl;
+            output::landing(*this, airport, airport.getRunways()[0], 2);
             return -1;
         }
         if (airport.getGates()[i].isVacant()) {
@@ -145,6 +147,7 @@ int Airplane::descending(Airport &airport) {
     for (int i = 0; i <= airport.getNumberOfRunways(); ++i) {
         if (i == airport.getNumberOfRunways()) {
             cout << "Instructing " << getCallsign() << " to wait untill there is a free runway." << endl;
+            output::landing(*this, airport, airport.getRunways()[0], 2);
             return -1;
         }
 
@@ -159,6 +162,7 @@ int Airplane::descending(Airport &airport) {
         setHeight(10000);
     }
     cout << getCallsign() << " is approaching " << airport.getName() << " at 10.000ft." << endl;
+    output::landing(*this, airport, airport.getRunways()[runwayNumber], 1);
     while (getHeight() > 1000) {
         if(getHeight() == 10000 or getHeight() == 5000 or getHeight() == 3000) {
             if (!airport.permissionToDescend(getHeight())) {
@@ -234,12 +238,4 @@ int Airplane::ascending (Airport &airport) {
 
     ENSURE(airport.getRunways()[runwayNumber].isVacant(), "Runway is still occupied");
     ENSURE(getGateNumber() == -1, "Airplane is still at a gate");
-}
-
-int Airplane::approaching() {
-    REQUIRE(getStatus() == "Departed", "Airplane is not in the air or is already approaching");
-    setStatus("Approaching");
-    cout << getCallsign() << " is approaching" << endl << endl;
-    ENSURE(getStatus() == "Approaching", "Airplane is not approaching");
-    return 0;
 }
