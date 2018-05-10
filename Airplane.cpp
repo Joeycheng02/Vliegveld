@@ -10,7 +10,9 @@ const string &Airplane::getNumber() const {
 }
 
 void Airplane::setNumber(const string &number) {
+    REQUIRE(Airplane::number != number, "The variable already has this value");
     Airplane::number = number;
+    ENSURE(getNumber() == number, "The variable is not set correctly");
 }
 
 const string &Airplane::getCallsign() const {
@@ -18,7 +20,9 @@ const string &Airplane::getCallsign() const {
 }
 
 void Airplane::setCallsign(const string &callsign) {
+    REQUIRE(Airplane::callsign != callsign, "The variable already has this value");
     Airplane::callsign = callsign;
+    ENSURE(getCallsign() == callsign, "The variable is not set correctly");
 }
 
 const string &Airplane::getModel() const {
@@ -26,7 +30,9 @@ const string &Airplane::getModel() const {
 }
 
 void Airplane::setModel(const string &model) {
+    REQUIRE(Airplane::model != model, "The variable already has this value");
     Airplane::model = model;
+    ENSURE(getModel() == model, "The variable is not set correctly");
 }
 
 const string &Airplane::getStatus() const {
@@ -34,7 +40,9 @@ const string &Airplane::getStatus() const {
 }
 
 void Airplane::setStatus(const string &status) {
+    REQUIRE(Airplane::status != status, "The variable already has this value");
     Airplane::status = status;
+    ENSURE(getStatus() == status, "The variable is not set correctly");
 }
 
 int Airplane::getHeight() const {
@@ -42,7 +50,10 @@ int Airplane::getHeight() const {
 }
 
 void Airplane::setHeight(int height) {
+    REQUIRE(Airplane::height >= 0, "The variable is not properly initialized");
     Airplane::height = height;
+    ENSURE(getHeight() == height, "The variable is not set correctly");
+    ENSURE(getHeight() >= 0, "The variable can't be a negative number");
 }
 
 const string &Airplane::getAirport() const {
@@ -50,7 +61,9 @@ const string &Airplane::getAirport() const {
 }
 
 void Airplane::setAirport(const string &airport) {
+    REQUIRE(Airplane::airport != airport, "The variable already has this value");
     Airplane::airport = airport;
+    ENSURE(getAirport() == airport, "The variable is not set correctly");
 }
 
 int Airplane::getGateNumber() const {
@@ -58,7 +71,10 @@ int Airplane::getGateNumber() const {
 }
 
 void Airplane::setGateNumber(int gateNumber) {
+    REQUIRE(Airplane::gateNumber >= -1, "The variable is not properly initialized");
     Airplane::gateNumber = gateNumber;
+    ENSURE(getGateNumber() == gateNumber, "The variable is not set correctly");
+    ENSURE(getGateNumber() >= -1, "The variable can't be less than -1");
 }
 
 int Airplane::getCapacity() const {
@@ -66,12 +82,10 @@ int Airplane::getCapacity() const {
 }
 
 void Airplane::setCapacity(int capacity) {
+    REQUIRE(Airplane::capacity >=0, "The variable is not properly initialized");
     Airplane::capacity = capacity;
-}
-
-Airplane::Airplane() {
-    gateNumber = -1;
-
+    ENSURE(getCapacity() == capacity, "The variable is not set correctly");
+    ENSURE(getCapacity() >= 0, "The variable can't be a negative number");
 }
 
 const string &Airplane::getType() const {
@@ -79,7 +93,9 @@ const string &Airplane::getType() const {
 }
 
 void Airplane::setType(const string &type) {
+    REQUIRE(Airplane::type !=type , "The variable already has this value");
     Airplane::type = type;
+    ENSURE(getType() == type, "The variable is not set correctly");
 }
 
 const string &Airplane::getEngine() const {
@@ -87,7 +103,9 @@ const string &Airplane::getEngine() const {
 }
 
 void Airplane::setEngine(const string &engine) {
+    REQUIRE(Airplane::engine != engine, "The variable already has this value");
     Airplane::engine = engine;
+    ENSURE(getEngine() == engine, "The variable is not set correctly");
 }
 
 const string &Airplane::getSize() const {
@@ -95,7 +113,15 @@ const string &Airplane::getSize() const {
 }
 
 void Airplane::setSize(const string &size) {
+    REQUIRE(Airplane::size != size, "The variable already has this value");
     Airplane::size = size;
+    ENSURE(getSize() == size, "The variable is not set correctly");
+}
+
+Airplane::Airplane() {
+    gateNumber = -1;
+    height = 0;
+    capacity = 0;
 }
 
 int Airplane::descending(Airport &airport) {
@@ -103,7 +129,6 @@ int Airplane::descending(Airport &airport) {
     REQUIRE (getStatus() == "Approaching", "Airplane is not approaching");
 
     Gate gate;
-
     for (int i = 0; i <= airport.getNumberOfGates(); ++i) {
         if (i == airport.getNumberOfGates()) {
             cout << "Instructing " << getCallsign() << " to take a holding pattern untill a clearance is made to land." << endl;
