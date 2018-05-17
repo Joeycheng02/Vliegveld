@@ -11,7 +11,6 @@ CMakeFiles/Vliegveld.dir/Airplane.cpp.o: ../output.h
 
 CMakeFiles/Vliegveld.dir/Airport.cpp.o: ../Airport.cpp
 CMakeFiles/Vliegveld.dir/Airport.cpp.o: ../Airport.h
-CMakeFiles/Vliegveld.dir/Airport.cpp.o: ../DesignByContract.h
 CMakeFiles/Vliegveld.dir/Airport.cpp.o: ../Gate.h
 CMakeFiles/Vliegveld.dir/Airport.cpp.o: ../Runway.h
 
