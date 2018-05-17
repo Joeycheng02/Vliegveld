@@ -67,22 +67,39 @@ int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int ch
         file << "[1][AIR]" << endl
              << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", arriving at " << airport.getName() << "." << endl
              << "[2][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", radar contact, descend and maintain five thousand feet, squawk " << "squawk code"<< endl
+             << "$ " << airplane.getCallsign() << ", radar contact, descend and maintain five thousand feet, squawk " << "squawk code."<< endl
              << "[3][AIR]" << endl
-             << "$ Descend and maintain five thousand feet, sqauwking " << "squawk code" << ", " << airplane.getCallsign() << endl;
+             << "$ Descend and maintain five thousand feet, sqauwking " << "squawk code" << ", " << airplane.getCallsign() << "." << endl << endl;
     }
 
     if(check == 2){
         file << "[1][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", hold south on the one eighty radial, expect further clearence at " << "time" << "." <<  endl
              << "[2][AIR]" << endl
-             << "$ Holding south on the one eighty radial, " << airplane.getCallsign() << "." << endl;
+             << "$ Holding south on the one eighty radial, " << airplane.getCallsign() << "." << endl << endl;
     }
 
+    if(check == 3){
+        file << "[1][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", descend and maintain three thousand feet." << endl
+             << "[1][AIR]" << endl
+             << "$ Descend and maintain three thousand feet, " << airplane.getCallsign() << "." << endl << endl;
+    }
 
+    if(check == 4){
+        file << "[1][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", cleared ILS approach runway" << runway.getName() << "." << endl
+             << "[1][AIR]" << endl
+             << "$ Cleared ILS approach runway " << runway.getName() << ", " << airplane.getCallsign() << "." << endl << endl;
+    }
 
-
-
+    if(check == 5) {
+        file << "[1][AIR]" << endl
+             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", runway" << runway.getName()
+             << " vacated." << endl
+             << "[2][ATC]" << endl
+             << "$ taxi-instructions" << endl << endl;
+    }
     file.close();
     return 0;
 }

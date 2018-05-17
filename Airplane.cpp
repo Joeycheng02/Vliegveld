@@ -162,11 +162,19 @@ int Airplane::descending(Airport &airport) {
         setHeight(10000);
     }
     cout << getCallsign() << " is approaching " << airport.getName() << " at 10.000ft." << endl;
-    output::landing(*this, airport, airport.getRunways()[runwayNumber], 1);
     while (getHeight() > 1000) {
         if(getHeight() == 10000 or getHeight() == 5000 or getHeight() == 3000) {
             if (!airport.permissionToDescend(getHeight())) {
                 return -1;
+            }
+            if(getHeight() == 10000){
+                output::landing(*this, airport, airport.getRunways()[runwayNumber], 1);
+            }
+            if(getHeight() == 5000){
+                output::landing(*this, airport, airport.getRunways()[runwayNumber], 3);
+            }
+            if(getHeight() == 3000){
+                output::landing(*this, airport, airport.getRunways()[runwayNumber], 4);
             }
         }
         setHeight(getHeight() - 1000);
@@ -177,6 +185,7 @@ int Airplane::descending(Airport &airport) {
     cout << getCallsign() << " is landing at "<< airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
     cout << getCallsign() << " has landed at "<< airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
     cout << getCallsign() << " is taxiing to Gate " << gate.getName() << endl;
+    output::landing(*this, airport, airport.getRunways()[runwayNumber], 5);
     cout << getCallsign() << " is standing at Gate " << gate.getName() << endl;
     airport.getRunways()[runwayNumber].setVacant(true);
     setAirport(airport.getName());

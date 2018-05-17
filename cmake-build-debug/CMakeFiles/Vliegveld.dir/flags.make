@@ -6,5 +6,5 @@ CXX_FLAGS = -Wall -Werror -g   -std=gnu++98
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/nightnarumi/CLionProjects/Vliegveld/gtest/include 
+CXX_INCLUDES = -I/home/knoetson/Desktop/PSE/Vliegveld/gtest/include 
 
