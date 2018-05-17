@@ -18,6 +18,8 @@ public:
     static int outputfile (vector <Airport> &airports, vector <Airplane> &airplanes);
 
     static int landing(Airplane &airplane, Airport &airport, Runway &runway, int check);
+
+    static int ascending(Airplane &airplane, Airport &airport, Runway &runway, int check);
 };
 
 #endif //VLIEGVELD_OUTPUT_H

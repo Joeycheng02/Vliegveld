@@ -224,15 +224,23 @@ int Airplane::ascending (Airport &airport) {
     cout << getCallsign() << " has been refueled" << endl;
     cout << getCapacity() << " passengers boarded " << getCallsign() << " at gate " << airport.getGates()[getGateNumber()-1].getName() << " of " << airport.getName() << endl;
 
+    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 1);
+    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 2);
+
     airport.getGates()[getGateNumber()-1].setVacant(true);
     setGateNumber(-1);
 
     airport.permissionToAscend(-1);
+    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 3);
+    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 4);
     cout << getCallsign() << " is taxiing to runway " << airport.getRunways()[runwayNumber].getName() << "." << endl;
+    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 5);
     if (!airport.permissionToAscend(runwayNumber)) {
         return -1;
     }
+    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 6);
     airport.getRunways()[runwayNumber].setVacant(false);
+    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 7);
     cout << getCallsign() << " is taking off at " << airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
 
     while (getHeight() < 5000) {
