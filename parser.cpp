@@ -288,25 +288,23 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
     doc.Clear();
     for (int j = 0; j < int(airplanes.size()); ++j) {
         if (airplanes[j].getStatus() == "Standing at gate") {
-            for (int i = 0; i < int(airports.size()+1); ++i) {
-                if (i == int(airports.size())) {
-                    cout << "No gates available anymore." << endl;
-                    return -1;
-                }
-                if (airplanes[j].getGateNumber() == -1) {
-                    for (int k = 0; k < airports[i].getNumberOfGates(); ++k) {
-                        if (airports[i].getGates()[k].isVacant()) {
-                            airplanes[j].setAirport(airports[i].getName());
-                            airplanes[j].setHeight(0);
-                            airplanes[j].setGateNumber(k+1);
-                            airports[i].getGates()[k].setVacant(false);
-                            break;
-                        }
+            if (0 == int(airports.size())) {
+                cout << "No gates available anymore." << endl;
+                return -1;
+            }
+            if (airplanes[j].getGateNumber() == -1) {
+                for (int k = 0; k < airports[0].getNumberOfGates(); ++k) {
+                    if (airports[0].getGates()[k].isVacant()) {
+                        airplanes[j].setAirport(airports[0].getName());
+                        airplanes[j].setHeight(0);
+                        airplanes[j].setGateNumber(k+1);
+                        airports[0].getGates()[k].setVacant(false);
+                        break;
                     }
                 }
-                else {
-                    break;
-                }
+            }
+            else {
+                break;
             }
         }
     }
