@@ -43,14 +43,6 @@ TEST_F(VliegveldTest, Parsing) {
     EXPECT_EQ("Antwerp Tower", simulation.getAirports()[0].getCallsign());
     EXPECT_EQ("11R", simulation.getAirports()[0].getRunways()[0].getName());
     EXPECT_EQ("ANR", simulation.getAirports()[0].getRunways()[0].getAirport());
-
-    EXPECT_EQ("Brussel International Airport", simulation.getAirports()[1].getName());
-    EXPECT_EQ(1, simulation.getAirports()[1].getNumberOfRunways());
-    EXPECT_EQ(5, simulation.getAirports()[1].getNumberOfGates());
-    EXPECT_EQ("BNR", simulation.getAirports()[1].getIata());
-    EXPECT_EQ("Brussel Tower", simulation.getAirports()[1].getCallsign());
-    EXPECT_EQ("12G", simulation.getAirports()[1].getRunways()[0].getName());
-    EXPECT_EQ("BNR", simulation.getAirports()[1].getRunways()[0].getAirport());
 }
 
 TEST_F(VliegveldTest, Parsing_Test){ // Deze test test alle attributen van de parser m.b.v. een test xml-bestand
