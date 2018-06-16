@@ -24,12 +24,14 @@ protected:
 };
 
 TEST_F(VliegveldTest, DefaultConstructor) {
+
     EXPECT_EQ(0, int(simulation.getAirports().size()));
     EXPECT_EQ(0, int(simulation.getAirplanes().size()));
     EXPECT_EQ(0, int(simulation.getRunways().size()));
     EXPECT_EQ(0, gate.getName());
     EXPECT_TRUE(runway.isVacant());
     EXPECT_TRUE(gate.isVacant());
+
 }
 
 TEST_F(VliegveldTest, Parsing) {
@@ -43,6 +45,7 @@ TEST_F(VliegveldTest, Parsing) {
     EXPECT_EQ("Antwerp Tower", simulation.getAirports()[0].getCallsign());
     EXPECT_EQ("11R", simulation.getAirports()[0].getRunways()[0].getName());
     EXPECT_EQ("ANR", simulation.getAirports()[0].getRunways()[0].getAirport());
+
 }
 
 TEST_F(VliegveldTest, Parsing_Test){ // Deze test test alle attributen van de parser m.b.v. een test xml-bestand
@@ -66,29 +69,37 @@ TEST_F(VliegveldTest, Parsing_Test){ // Deze test test alle attributen van de pa
     EXPECT_EQ("small", simulation.getAirplanes()[0].getSize());
     EXPECT_EQ("Approaching", simulation.getAirplanes()[0].getStatus());
     EXPECT_EQ(1, simulation.getAirplanes()[0].getCapacity());
+
 }
 
 TEST_F(VliegveldTest, Descending) {
+
     parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
     simulation.getAirplanes()[0].descending(simulation.getAirports()[0]);
     EXPECT_EQ("Standing at gate", simulation.getAirplanes()[0].getStatus());
+
 }
 
 TEST_F(VliegveldTest, ExpectedErrors) {
+
     parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
     Airplane airplanetest;
     EXPECT_DEATH(airplanetest.descending(simulation.getAirports()[0]), "Airplane is not approaching");
     EXPECT_DEATH(parser::parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "Simulatie.xml"), "Airplanes must be empty");
+
 }
 
 TEST_F(VliegveldTest, ascending){
+
     parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
     EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "Standing at gate");
     simulation.getAirplanes()[1].ascending(simulation.getAirports()[0]);
     EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "Departed");
+
+    remove ("console_output.txt");
 }
 
 int main(int argc, char **argv) {

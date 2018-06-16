@@ -13,4 +13,11 @@ int main() {
                         "Simulatie.xml");
     output::outputfile(simulation.getAirports(), simulation.getAirplanes());
     simulation.start();
+
+    //console output
+    ifstream file ("console_output.txt");
+    if (file.is_open()) {
+        cout << file.rdbuf();
+    }
+    remove("console_output.txt");
 }
