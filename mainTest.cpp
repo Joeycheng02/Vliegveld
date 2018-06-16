@@ -20,7 +20,6 @@ protected:
     Airplane airplane;
     Airport airport;
     Runway runway;
-    Gate gate;
 };
 
 TEST_F(VliegveldTest, DefaultConstructor) {
@@ -28,9 +27,7 @@ TEST_F(VliegveldTest, DefaultConstructor) {
     EXPECT_EQ(0, int(simulation.getAirports().size()));
     EXPECT_EQ(0, int(simulation.getAirplanes().size()));
     EXPECT_EQ(0, int(simulation.getRunways().size()));
-    EXPECT_EQ(0, gate.getName());
     EXPECT_TRUE(runway.isVacant());
-    EXPECT_TRUE(gate.isVacant());
 
 }
 

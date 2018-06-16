@@ -11,7 +11,7 @@ Airport::Airport() {
     numberOfGates = 0;
 }
 
-vector<Gate> &Airport::getGates() {
+vector<bool> &Airport::getGates() {
     return gates;
 }
 
@@ -37,11 +37,7 @@ void Airport::setNumberOfGates(int numberOfGates) {
     REQUIRE(Airport::numberOfGates >= 0, "The variable is not properly initialized");
     Airport::numberOfGates = numberOfGates;
     for (int i = 0; i < numberOfGates; ++i) {
-        Gate gate;
-        gates.push_back(gate);
-        gates[i].setVacant(true);
-        gates[i].setName(i+1);
-        gates[i].setAirport(this->getName());
+        gates.push_back(true);
     }
     ENSURE(getNumberOfGates() == numberOfGates, "The variable is not set correctly");
     ENSURE(getNumberOfGates() >= 0, "The variable can't be a negative number");

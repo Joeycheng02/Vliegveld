@@ -136,16 +136,16 @@ int Airplane::descending(Airport &airport) {
         return -1;
     }
 
-    Gate gate;
     for (int i = 0; i <= airport.getNumberOfGates(); ++i) {
         if (i == airport.getNumberOfGates()) {
             console << "Instructing " << getCallsign() << " to take a holding pattern untill a clearance is made to land." << endl;
             output::landing(*this, airport, airport.getRunways()[0], 2);
             return -1;
         }
-        if (airport.getGates()[i].isVacant()) {
-            airport.getGates()[i].setVacant(false);
-            gate = airport.getGates()[i];
+
+        if (airport.getGates()[i]) {
+            airport.getGates()[i] = false;
+            setGateNumber(i+1);
             break;
         }
     }
@@ -191,14 +191,13 @@ int Airplane::descending(Airport &airport) {
     airport.getRunways()[runwayNumber].setVacant(false);
     console << getCallsign() << " is landing at "<< airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
     console << getCallsign() << " has landed at "<< airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
-    console << getCallsign() << " is taxiing to Gate " << gate.getName() << endl;
+    console << getCallsign() << " is taxiing to Gate " << getGateNumber() << endl;
     output::landing(*this, airport, airport.getRunways()[runwayNumber], 5);
-    console << getCallsign() << " is standing at Gate " << gate.getName() << endl;
+    console << getCallsign() << " is standing at Gate " << getGateNumber() << endl;
     airport.getRunways()[runwayNumber].setVacant(true);
     setAirport(airport.getName());
-    setGateNumber(gate.getName());
     setStatus("Standing at gate");
-    console << getCapacity() << " passengers exited " << getCallsign() << " at gate " << gate.getName() << " of " << airport.getName() << endl;
+    console << getCapacity() << " passengers exited " << getCallsign() << " at gate " << getGateNumber() << " of " << airport.getName() << endl;
     console << getCallsign() << " has been checked for technical malfunctions" << endl << endl;
 
     ENSURE(getStatus() == "Standing at gate", "Airplane is not standing at a gate");
@@ -236,12 +235,12 @@ int Airplane::ascending (Airport &airport) {
     }
 
     console << getCallsign() << " has been refueled" << endl;
-    console << getCapacity() << " passengers boarded " << getCallsign() << " at gate " << airport.getGates()[getGateNumber()-1].getName() << " of " << airport.getName() << endl;
+    console << getCapacity() << " passengers boarded " << getCallsign() << " at gate " << getGateNumber() << " of " << airport.getName() << endl;
 
     output::ascending(*this, airport, airport.getRunways()[runwayNumber], 1);
     output::ascending(*this, airport, airport.getRunways()[runwayNumber], 2);
 
-    airport.getGates()[getGateNumber()-1].setVacant(true);
+    airport.getGates()[getGateNumber()-1] = true;
     setGateNumber(-1);
 
     airport.permissionToAscend(-1);

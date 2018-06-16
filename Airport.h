@@ -8,7 +8,6 @@
 #include <iostream>
 #include <string>
 #include "Runway.h"
-#include "Gate.h"
 #include <vector>
 
 using namespace std;
@@ -20,7 +19,7 @@ private:
     string iata;
     string callsign;
     int numberOfGates;
-    vector <Gate> gates;
+    vector <bool> gates;
     vector <Runway> runways;
     bool heightCheck3000;
     bool heightCheck5000;
@@ -28,7 +27,7 @@ public:
 
     Airport();
 
-    vector<Gate> &getGates();
+    vector<bool> &getGates();
 
     vector<Runway> &getRunways();
 

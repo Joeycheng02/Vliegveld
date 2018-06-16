@@ -122,3 +122,70 @@ $ Cessna 841, runway 11R cleared for take-off.
 [1][AIR]
 $ Runway 11R cleared for take-off, Cessna 841.
 
+[1][AIR]
+$ Antwerp Tower, Cessna 842, arriving at Antwerp International Airport.
+[2][ATC]
+$ Cessna 842, radar contact, descend and maintain five thousand feet, squawk squawk code.
+[3][AIR]
+$ Descend and maintain five thousand feet, sqauwking squawk code, Cessna 842.
+
+[1][ATC]
+$ Cessna 842, descend and maintain three thousand feet.
+[1][AIR]
+$ Descend and maintain three thousand feet, Cessna 842.
+
+[1][ATC]
+$ Cessna 842, cleared ILS approach runway11R.
+[1][AIR]
+$ Cleared ILS approach runway 11R, Cessna 842.
+
+[1][AIR]
+$ Antwerp Tower, Cessna 842, runway11R vacated.
+[2][ATC]
+$ taxi-instructions
+
+[1][AIR]
+$ Antwerp Tower, Cessna 841, requesting IFR clearancy to <destination>
+[2][ATC]
+$ Cessna 841, Antwerp Tower, cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk <squawk-code>, Cessna 841.
+[3][AIR]
+$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking <squawk-code>, Cessna 841.
+
+[1][AIR]
+$ Antwerp Tower, Cessna 841 at gate 1, requesting pushback.
+[2][ATC]
+$ Cessna 841, Antwerp Tower, pushback approved.
+[3][AIR]
+$ Pushback approved, Cessna 841.
+
+[1][AIR]
+$ Cessna 841 is ready to taxi.
+[2][ATC]
+$ taxi-instructions
+
+[1][AIR]
+$ Antwerp Tower, Cessna 841, holding short at 11R
+[2][ATC]
+$ Cessna 841, hold position.
+[3][AIR]
+$ Holding position, Cessna 841.
+
+[1][AIR]
+$ Antwerp Tower, Cessna 841, holding short at 11R
+[2][ATC]
+$ Cessna 841, line-up runway 11R and wait.
+[3][AIR]
+$ Lining up runway 11R and wait, Cessna 841.
+
+[1][AIR]
+$ Antwerp Tower, Cessna 841, holding short at 11R
+[2][ATC]
+$ Cessna 841, runway 11R cleared for take-off.
+[3][AIR]
+$ Runway 11R cleared for take-off, Cessna 841.
+
+[1][ATC]
+$ Cessna 841, runway 11R cleared for take-off.
+[1][AIR]
+$ Runway 11R cleared for take-off, Cessna 841.
+

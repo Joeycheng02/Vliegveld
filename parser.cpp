@@ -294,11 +294,11 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
             }
             if (airplanes[j].getGateNumber() == -1) {
                 for (int k = 0; k < airports[0].getNumberOfGates(); ++k) {
-                    if (airports[0].getGates()[k].isVacant()) {
+                    if (airports[0].getGates()[k]) {
                         airplanes[j].setAirport(airports[0].getName());
                         airplanes[j].setHeight(0);
                         airplanes[j].setGateNumber(k+1);
-                        airports[0].getGates()[k].setVacant(false);
+                        airports[0].getGates()[k] = false;
                         break;
                     }
                 }

@@ -22,8 +22,6 @@ set(RELEASE_SOURCE_FILES Airplane.cpp
         tinyxml.h
         tinyxmlerror.cpp
         tinyxmlparser.cpp
-        Gate.cpp
-        Gate.h
         Simulation.cpp
         Simulation.h
         parser.cpp
@@ -43,8 +41,6 @@ set(DEBUG_SOURCE_FILES Airplane.cpp
         tinyxml.h
         tinyxmlerror.cpp
         tinyxmlparser.cpp
-        Gate.cpp
-        Gate.h
         mainTest.cpp
         Simulation.cpp
         Simulation.h

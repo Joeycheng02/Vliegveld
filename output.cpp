@@ -12,6 +12,14 @@ int output::outputfile(vector<Airport> &airports, vector<Airplane> &airplanes) {
     REQUIRE(airports.size() != 0, "There are no airports available");
 
     //Open the file + exception.
+    ofstream console("console_output.txt");
+    if (!console) {
+        cout << "Couldn't open the file." << endl;
+        return -1;
+    }
+
+
+    //Open the file + exception.
     ofstream file("output.txt");
     if (!file) {
         cout << "Couldn't open the file." << endl;
@@ -19,7 +27,7 @@ int output::outputfile(vector<Airport> &airports, vector<Airplane> &airplanes) {
     }
 
     //For test purposes
-    cout << "Writing..." << endl << endl;
+    console << "Writing..." << endl << endl;
 
 
     //Writes the information of all the airports in the output.txt file.
@@ -33,7 +41,7 @@ int output::outputfile(vector<Airport> &airports, vector<Airplane> &airplanes) {
     }
 
     //For test purposes
-    cout << "Airports completed!" << endl << endl;
+    console << "Airports completed!" << endl << endl;
 
     //Triple Whiteline
     file << endl << endl;
@@ -48,10 +56,11 @@ int output::outputfile(vector<Airport> &airports, vector<Airplane> &airplanes) {
     }
 
     //For test purposes
-    cout << "Airplanes completed!" << endl << endl;
+    console << "Airplanes completed!" << endl << endl;
 
     //Close the file and return.
     file.close();
+    console.close();
     return 0;
 }
 
