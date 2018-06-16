@@ -2,9 +2,6 @@
 // Created by nightnarumi on 22/03/18.
 //
 #include "Simulation.h"
-#include "Airport.h"
-#include "Airplane.h"
-#include "Runway.h"
 #include "parser.h"
 #include <gtest/gtest.h>
 
@@ -37,7 +34,7 @@ TEST_F(VliegveldTest, Parsing) {
                       "Simulatie.xml");
     EXPECT_EQ("Antwerp International Airport", simulation.getAirports()[0].getName());
     EXPECT_EQ(1, simulation.getAirports()[0].getNumberOfRunways());
-    EXPECT_EQ(10, simulation.getAirports()[0].getNumberOfGates());
+    EXPECT_EQ(unsigned (10), simulation.getAirports()[0].getNumberOfGates());
     EXPECT_EQ("ANR", simulation.getAirports()[0].getIata());
     EXPECT_EQ("Antwerp Tower", simulation.getAirports()[0].getCallsign());
     EXPECT_EQ("11R", simulation.getAirports()[0].getRunways()[0].getName());
@@ -51,12 +48,12 @@ TEST_F(VliegveldTest, Parsing_Test){ // Deze test test alle attributen van de pa
     EXPECT_EQ("Test airport", simulation.getAirports()[0].getName());
     EXPECT_EQ("BEL", simulation.getAirports()[0].getIata());
     EXPECT_EQ("Merksplas tower", simulation.getAirports()[0].getCallsign());
-    EXPECT_EQ(12, simulation.getAirports()[0].getNumberOfGates());
+    EXPECT_EQ(unsigned (12), simulation.getAirports()[0].getNumberOfGates());
 
     EXPECT_EQ("12M", simulation.getRunways()[0].getName());
     EXPECT_EQ("BEL", simulation.getRunways()[0].getAirport());
     EXPECT_EQ("wood", simulation.getRunways()[0].getType());
-    EXPECT_EQ(1212, simulation.getRunways()[0].getLength());
+    EXPECT_EQ(unsigned (1212), simulation.getRunways()[0].getLength());
 
     EXPECT_EQ("M48674", simulation.getAirplanes()[0].getNumber());
     EXPECT_EQ("Nighthawk", simulation.getAirplanes()[0].getCallsign());
@@ -65,7 +62,7 @@ TEST_F(VliegveldTest, Parsing_Test){ // Deze test test alle attributen van de pa
     EXPECT_EQ("jet", simulation.getAirplanes()[0].getEngine());
     EXPECT_EQ("small", simulation.getAirplanes()[0].getSize());
     EXPECT_EQ("Approaching", simulation.getAirplanes()[0].getStatus());
-    EXPECT_EQ(1, simulation.getAirplanes()[0].getCapacity());
+    EXPECT_EQ(unsigned (1), simulation.getAirplanes()[0].getCapacity());
 
 }
 

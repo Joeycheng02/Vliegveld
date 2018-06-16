@@ -8,8 +8,8 @@
 
 int output::outputfile(vector<Airport> &airports, vector<Airplane> &airplanes) {
 
-    REQUIRE(airplanes.size() != 0, "There are no airplanes available");
-    REQUIRE(airports.size() != 0, "There are no airports available");
+    REQUIRE(!airplanes.empty(), "There are no airplanes available");
+    REQUIRE(!airports.empty(), "There are no airports available");
 
     //Open the file + exception.
     ofstream console("console_output.txt");

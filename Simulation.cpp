@@ -3,7 +3,6 @@
 //
 
 #include "Simulation.h"
-#include "DesignByContract.h"
 using namespace std;
 
 vector<Airport> &Simulation::getAirports() {

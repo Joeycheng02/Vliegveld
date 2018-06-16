@@ -21,9 +21,9 @@ private:
     string size;
     string status;
     string airport;
-    int capacity;
+    unsigned int capacity;
     int gateNumber;
-    int height;
+    unsigned int height;
 
 public:
     Airplane();
@@ -60,14 +60,14 @@ public:
 */
     void setStatus(const string &status);
 
-    int getHeight() const;
+    unsigned int getHeight() const;
 
 /**
 \n REQUIRE(Airplane::height >= 0, "The variable is not properly initialized");
 \n ENSURE(getHeight() == height, "The variable is not set correctly");
 \n ENSURE(getHeight() >= 0, "The variable can't be a negative number");
 */
-    void setHeight(int height);
+    void setHeight(unsigned int height);
 
 
     const string &getAirport() const;
@@ -87,14 +87,14 @@ public:
 */
     void setGateNumber(int gateNumber);
 
-    int getCapacity() const;
+    unsigned int getCapacity() const;
 
 /**
 \n REQUIRE(Airplane::capacity >=0, "The variable is not properly initialized");
 \n ENSURE(getCapacity() == capacity, "The variable is not set correctly");
 \n ENSURE(getCapacity() >= 0, "The variable can't be a negative number");
 */
-    void setCapacity(int passengers);
+    void setCapacity(unsigned int passengers);
 
     const string &getType() const;
 

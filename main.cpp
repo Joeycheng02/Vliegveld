@@ -1,9 +1,6 @@
 #include "Simulation.h"
 #include "parser.h"
 #include "output.h"
-#include "Airplane.h"
-#include "Airport.h"
-#include "Runway.h"
 
 using namespace std;
 

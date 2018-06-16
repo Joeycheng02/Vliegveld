@@ -47,11 +47,11 @@ void Airplane::setStatus(const string &status) {
     ENSURE(getStatus() == status, "The variable is not set correctly");
 }
 
-int Airplane::getHeight() const {
+unsigned int Airplane::getHeight() const {
     return height;
 }
 
-void Airplane::setHeight(int height) {
+void Airplane::setHeight(unsigned height) {
     REQUIRE(Airplane::height >= 0, "The variable is not properly initialized");
     Airplane::height = height;
     ENSURE(getHeight() == height, "The variable is not set correctly");
@@ -79,11 +79,11 @@ void Airplane::setGateNumber(int gateNumber) {
     ENSURE(getGateNumber() >= -1, "The variable can't be less than -1");
 }
 
-int Airplane::getCapacity() const {
+unsigned int Airplane::getCapacity() const {
     return capacity;
 }
 
-void Airplane::setCapacity(int capacity) {
+void Airplane::setCapacity(unsigned int capacity) {
     REQUIRE(Airplane::capacity >=0, "The variable is not properly initialized");
     Airplane::capacity = capacity;
     ENSURE(getCapacity() == capacity, "The variable is not set correctly");
@@ -136,7 +136,7 @@ int Airplane::descending(Airport &airport) {
         return -1;
     }
 
-    for (int i = 0; i <= airport.getNumberOfGates(); ++i) {
+    for (unsigned int i = 0; i <= airport.getNumberOfGates(); ++i) {
         if (i == airport.getNumberOfGates()) {
             console << "Instructing " << getCallsign() << " to take a holding pattern untill a clearance is made to land." << endl;
             output::landing(*this, airport, airport.getRunways()[0], 2);
