@@ -196,36 +196,6 @@ Airport.cpp.s:
 	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/Airport.cpp.s
 .PHONY : Airport.cpp.s
 
-Gate.o: Gate.cpp.o
-
-.PHONY : Gate.o
-
-# target to build an object file
-Gate.cpp.o:
-	$(MAKE) -f CMakeFiles/Vliegveld_debug.dir/build.make CMakeFiles/Vliegveld_debug.dir/Gate.cpp.o
-	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/Gate.cpp.o
-.PHONY : Gate.cpp.o
-
-Gate.i: Gate.cpp.i
-
-.PHONY : Gate.i
-
-# target to preprocess a source file
-Gate.cpp.i:
-	$(MAKE) -f CMakeFiles/Vliegveld_debug.dir/build.make CMakeFiles/Vliegveld_debug.dir/Gate.cpp.i
-	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/Gate.cpp.i
-.PHONY : Gate.cpp.i
-
-Gate.s: Gate.cpp.s
-
-.PHONY : Gate.s
-
-# target to generate assembly for a file
-Gate.cpp.s:
-	$(MAKE) -f CMakeFiles/Vliegveld_debug.dir/build.make CMakeFiles/Vliegveld_debug.dir/Gate.cpp.s
-	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/Gate.cpp.s
-.PHONY : Gate.cpp.s
-
 Runway.o: Runway.cpp.o
 
 .PHONY : Runway.o
@@ -536,9 +506,6 @@ help:
 	@echo "... Airport.o"
 	@echo "... Airport.i"
 	@echo "... Airport.s"
-	@echo "... Gate.o"
-	@echo "... Gate.i"
-	@echo "... Gate.s"
 	@echo "... Runway.o"
 	@echo "... Runway.i"
 	@echo "... Runway.s"

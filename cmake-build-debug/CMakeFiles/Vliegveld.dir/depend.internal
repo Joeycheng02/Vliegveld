@@ -6,25 +6,19 @@ CMakeFiles/Vliegveld.dir/Airplane.cpp.o
  /home/knoetson/Desktop/PSE/Vliegveld/Airplane.h
  /home/knoetson/Desktop/PSE/Vliegveld/Airport.h
  /home/knoetson/Desktop/PSE/Vliegveld/DesignByContract.h
- /home/knoetson/Desktop/PSE/Vliegveld/Gate.h
  /home/knoetson/Desktop/PSE/Vliegveld/Runway.h
  /home/knoetson/Desktop/PSE/Vliegveld/output.h
 CMakeFiles/Vliegveld.dir/Airport.cpp.o
  /home/knoetson/Desktop/PSE/Vliegveld/Airport.cpp
  /home/knoetson/Desktop/PSE/Vliegveld/Airport.h
- /home/knoetson/Desktop/PSE/Vliegveld/Gate.h
+ /home/knoetson/Desktop/PSE/Vliegveld/DesignByContract.h
  /home/knoetson/Desktop/PSE/Vliegveld/Runway.h
-CMakeFiles/Vliegveld.dir/Gate.cpp.o
- /home/knoetson/Desktop/PSE/Vliegveld/Gate.cpp
- /home/knoetson/Desktop/PSE/Vliegveld/Gate.h
 CMakeFiles/Vliegveld.dir/Runway.cpp.o
  /home/knoetson/Desktop/PSE/Vliegveld/Runway.cpp
  /home/knoetson/Desktop/PSE/Vliegveld/Runway.h
 CMakeFiles/Vliegveld.dir/Simulation.cpp.o
  /home/knoetson/Desktop/PSE/Vliegveld/Airplane.h
  /home/knoetson/Desktop/PSE/Vliegveld/Airport.h
- /home/knoetson/Desktop/PSE/Vliegveld/DesignByContract.h
- /home/knoetson/Desktop/PSE/Vliegveld/Gate.h
  /home/knoetson/Desktop/PSE/Vliegveld/Runway.h
  /home/knoetson/Desktop/PSE/Vliegveld/Simulation.cpp
  /home/knoetson/Desktop/PSE/Vliegveld/Simulation.h
@@ -33,7 +27,6 @@ CMakeFiles/Vliegveld.dir/Simulation.cpp.o
 CMakeFiles/Vliegveld.dir/main.cpp.o
  /home/knoetson/Desktop/PSE/Vliegveld/Airplane.h
  /home/knoetson/Desktop/PSE/Vliegveld/Airport.h
- /home/knoetson/Desktop/PSE/Vliegveld/Gate.h
  /home/knoetson/Desktop/PSE/Vliegveld/Runway.h
  /home/knoetson/Desktop/PSE/Vliegveld/Simulation.h
  /home/knoetson/Desktop/PSE/Vliegveld/main.cpp
@@ -45,7 +38,6 @@ CMakeFiles/Vliegveld.dir/output.cpp.o
  /home/knoetson/Desktop/PSE/Vliegveld/Airplane.h
  /home/knoetson/Desktop/PSE/Vliegveld/Airport.h
  /home/knoetson/Desktop/PSE/Vliegveld/DesignByContract.h
- /home/knoetson/Desktop/PSE/Vliegveld/Gate.h
  /home/knoetson/Desktop/PSE/Vliegveld/Runway.h
  /home/knoetson/Desktop/PSE/Vliegveld/output.cpp
  /home/knoetson/Desktop/PSE/Vliegveld/output.h
@@ -53,7 +45,6 @@ CMakeFiles/Vliegveld.dir/parser.cpp.o
  /home/knoetson/Desktop/PSE/Vliegveld/Airplane.h
  /home/knoetson/Desktop/PSE/Vliegveld/Airport.h
  /home/knoetson/Desktop/PSE/Vliegveld/DesignByContract.h
- /home/knoetson/Desktop/PSE/Vliegveld/Gate.h
  /home/knoetson/Desktop/PSE/Vliegveld/Runway.h
  /home/knoetson/Desktop/PSE/Vliegveld/Simulation.h
  /home/knoetson/Desktop/PSE/Vliegveld/parser.cpp

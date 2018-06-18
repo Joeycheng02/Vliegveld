@@ -6,7 +6,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Vliegveld_debug.dir/tinyxml.cpp.o"
   "CMakeFiles/Vliegveld_debug.dir/tinyxmlerror.cpp.o"
   "CMakeFiles/Vliegveld_debug.dir/tinyxmlparser.cpp.o"
-  "CMakeFiles/Vliegveld_debug.dir/Gate.cpp.o"
   "CMakeFiles/Vliegveld_debug.dir/mainTest.cpp.o"
   "CMakeFiles/Vliegveld_debug.dir/Simulation.cpp.o"
   "CMakeFiles/Vliegveld_debug.dir/parser.cpp.o"

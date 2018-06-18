@@ -73,7 +73,7 @@ TEST_F(VliegveldTest, Descending) {
     parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
     simulation.getAirplanes()[0].descending(simulation.getAirports()[0]);
-    EXPECT_EQ("Standing at gate", simulation.getAirplanes()[0].getStatus());
+    EXPECT_EQ("standing at gate", simulation.getAirplanes()[0].getStatus());
 
 }
 
@@ -91,7 +91,7 @@ TEST_F(VliegveldTest, ascending){
 
     parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
-    EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "Standing at gate");
+    EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "standing at gate");
     simulation.getAirplanes()[1].ascending(simulation.getAirports()[0]);
     EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "Departed");
 

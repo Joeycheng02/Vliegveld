@@ -5,25 +5,19 @@ CMakeFiles/Vliegveld.dir/Airplane.cpp.o: ../Airplane.cpp
 CMakeFiles/Vliegveld.dir/Airplane.cpp.o: ../Airplane.h
 CMakeFiles/Vliegveld.dir/Airplane.cpp.o: ../Airport.h
 CMakeFiles/Vliegveld.dir/Airplane.cpp.o: ../DesignByContract.h
-CMakeFiles/Vliegveld.dir/Airplane.cpp.o: ../Gate.h
 CMakeFiles/Vliegveld.dir/Airplane.cpp.o: ../Runway.h
 CMakeFiles/Vliegveld.dir/Airplane.cpp.o: ../output.h
 
 CMakeFiles/Vliegveld.dir/Airport.cpp.o: ../Airport.cpp
 CMakeFiles/Vliegveld.dir/Airport.cpp.o: ../Airport.h
-CMakeFiles/Vliegveld.dir/Airport.cpp.o: ../Gate.h
+CMakeFiles/Vliegveld.dir/Airport.cpp.o: ../DesignByContract.h
 CMakeFiles/Vliegveld.dir/Airport.cpp.o: ../Runway.h
-
-CMakeFiles/Vliegveld.dir/Gate.cpp.o: ../Gate.cpp
-CMakeFiles/Vliegveld.dir/Gate.cpp.o: ../Gate.h
 
 CMakeFiles/Vliegveld.dir/Runway.cpp.o: ../Runway.cpp
 CMakeFiles/Vliegveld.dir/Runway.cpp.o: ../Runway.h
 
 CMakeFiles/Vliegveld.dir/Simulation.cpp.o: ../Airplane.h
 CMakeFiles/Vliegveld.dir/Simulation.cpp.o: ../Airport.h
-CMakeFiles/Vliegveld.dir/Simulation.cpp.o: ../DesignByContract.h
-CMakeFiles/Vliegveld.dir/Simulation.cpp.o: ../Gate.h
 CMakeFiles/Vliegveld.dir/Simulation.cpp.o: ../Runway.h
 CMakeFiles/Vliegveld.dir/Simulation.cpp.o: ../Simulation.cpp
 CMakeFiles/Vliegveld.dir/Simulation.cpp.o: ../Simulation.h
@@ -32,7 +26,6 @@ CMakeFiles/Vliegveld.dir/Simulation.cpp.o: ../tinyxml.h
 
 CMakeFiles/Vliegveld.dir/main.cpp.o: ../Airplane.h
 CMakeFiles/Vliegveld.dir/main.cpp.o: ../Airport.h
-CMakeFiles/Vliegveld.dir/main.cpp.o: ../Gate.h
 CMakeFiles/Vliegveld.dir/main.cpp.o: ../Runway.h
 CMakeFiles/Vliegveld.dir/main.cpp.o: ../Simulation.h
 CMakeFiles/Vliegveld.dir/main.cpp.o: ../main.cpp
@@ -44,7 +37,6 @@ CMakeFiles/Vliegveld.dir/main.cpp.o: ../tinyxml.h
 CMakeFiles/Vliegveld.dir/output.cpp.o: ../Airplane.h
 CMakeFiles/Vliegveld.dir/output.cpp.o: ../Airport.h
 CMakeFiles/Vliegveld.dir/output.cpp.o: ../DesignByContract.h
-CMakeFiles/Vliegveld.dir/output.cpp.o: ../Gate.h
 CMakeFiles/Vliegveld.dir/output.cpp.o: ../Runway.h
 CMakeFiles/Vliegveld.dir/output.cpp.o: ../output.cpp
 CMakeFiles/Vliegveld.dir/output.cpp.o: ../output.h
@@ -52,7 +44,6 @@ CMakeFiles/Vliegveld.dir/output.cpp.o: ../output.h
 CMakeFiles/Vliegveld.dir/parser.cpp.o: ../Airplane.h
 CMakeFiles/Vliegveld.dir/parser.cpp.o: ../Airport.h
 CMakeFiles/Vliegveld.dir/parser.cpp.o: ../DesignByContract.h
-CMakeFiles/Vliegveld.dir/parser.cpp.o: ../Gate.h
 CMakeFiles/Vliegveld.dir/parser.cpp.o: ../Runway.h
 CMakeFiles/Vliegveld.dir/parser.cpp.o: ../Simulation.h
 CMakeFiles/Vliegveld.dir/parser.cpp.o: ../parser.cpp

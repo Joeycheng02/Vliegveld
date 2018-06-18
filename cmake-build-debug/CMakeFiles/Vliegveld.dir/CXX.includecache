@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/knoetson/Desktop/PSE/Vliegveld/Airplane.cpp
+fstream
+-
 Airplane.h
 /home/knoetson/Desktop/PSE/Vliegveld/Airplane.h
 DesignByContract.h
@@ -25,6 +27,8 @@ Airport.h
 /home/knoetson/Desktop/PSE/Vliegveld/Airport.cpp
 Airport.h
 /home/knoetson/Desktop/PSE/Vliegveld/Airport.h
+DesignByContract.h
+/home/knoetson/Desktop/PSE/Vliegveld/DesignByContract.h
 
 /home/knoetson/Desktop/PSE/Vliegveld/Airport.h
 iostream
@@ -33,23 +37,11 @@ string
 -
 Runway.h
 /home/knoetson/Desktop/PSE/Vliegveld/Runway.h
-Gate.h
-/home/knoetson/Desktop/PSE/Vliegveld/Gate.h
 vector
 -
 
 /home/knoetson/Desktop/PSE/Vliegveld/DesignByContract.h
 assert.h
--
-
-/home/knoetson/Desktop/PSE/Vliegveld/Gate.cpp
-Gate.h
-/home/knoetson/Desktop/PSE/Vliegveld/Gate.h
-
-/home/knoetson/Desktop/PSE/Vliegveld/Gate.h
-iostream
--
-string
 -
 
 /home/knoetson/Desktop/PSE/Vliegveld/Runway.cpp
@@ -67,8 +59,6 @@ vector
 /home/knoetson/Desktop/PSE/Vliegveld/Simulation.cpp
 Simulation.h
 /home/knoetson/Desktop/PSE/Vliegveld/Simulation.h
-DesignByContract.h
-/home/knoetson/Desktop/PSE/Vliegveld/DesignByContract.h
 
 /home/knoetson/Desktop/PSE/Vliegveld/Simulation.h
 iostream
@@ -91,12 +81,6 @@ parser.h
 /home/knoetson/Desktop/PSE/Vliegveld/parser.h
 output.h
 /home/knoetson/Desktop/PSE/Vliegveld/output.h
-Airplane.h
-/home/knoetson/Desktop/PSE/Vliegveld/Airplane.h
-Airport.h
-/home/knoetson/Desktop/PSE/Vliegveld/Airport.h
-Runway.h
-/home/knoetson/Desktop/PSE/Vliegveld/Runway.h
 
 /home/knoetson/Desktop/PSE/Vliegveld/output.cpp
 fstream

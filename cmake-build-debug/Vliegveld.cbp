@@ -150,14 +150,6 @@
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>
 		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Gate.cpp">
-			<Option target="Vliegveld_debug"/>
-			<Option target="Vliegveld"/>
-		</Unit>
-		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Gate.h">
-			<Option target="Vliegveld_debug"/>
-			<Option target="Vliegveld"/>
-		</Unit>
 		<Unit filename="/home/knoetson/Desktop/PSE/Vliegveld/Runway.cpp">
 			<Option target="Vliegveld_debug"/>
 			<Option target="Vliegveld"/>

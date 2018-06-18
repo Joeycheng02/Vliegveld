@@ -249,33 +249,9 @@ CMakeFiles/Vliegveld.dir/tinyxmlparser.cpp.o.provides: CMakeFiles/Vliegveld.dir/
 CMakeFiles/Vliegveld.dir/tinyxmlparser.cpp.o.provides.build: CMakeFiles/Vliegveld.dir/tinyxmlparser.cpp.o
 
 
-CMakeFiles/Vliegveld.dir/Gate.cpp.o: CMakeFiles/Vliegveld.dir/flags.make
-CMakeFiles/Vliegveld.dir/Gate.cpp.o: ../Gate.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Vliegveld.dir/Gate.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Vliegveld.dir/Gate.cpp.o -c /home/knoetson/Desktop/PSE/Vliegveld/Gate.cpp
-
-CMakeFiles/Vliegveld.dir/Gate.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Vliegveld.dir/Gate.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/knoetson/Desktop/PSE/Vliegveld/Gate.cpp > CMakeFiles/Vliegveld.dir/Gate.cpp.i
-
-CMakeFiles/Vliegveld.dir/Gate.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Vliegveld.dir/Gate.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/knoetson/Desktop/PSE/Vliegveld/Gate.cpp -o CMakeFiles/Vliegveld.dir/Gate.cpp.s
-
-CMakeFiles/Vliegveld.dir/Gate.cpp.o.requires:
-
-.PHONY : CMakeFiles/Vliegveld.dir/Gate.cpp.o.requires
-
-CMakeFiles/Vliegveld.dir/Gate.cpp.o.provides: CMakeFiles/Vliegveld.dir/Gate.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Vliegveld.dir/build.make CMakeFiles/Vliegveld.dir/Gate.cpp.o.provides.build
-.PHONY : CMakeFiles/Vliegveld.dir/Gate.cpp.o.provides
-
-CMakeFiles/Vliegveld.dir/Gate.cpp.o.provides.build: CMakeFiles/Vliegveld.dir/Gate.cpp.o
-
-
 CMakeFiles/Vliegveld.dir/Simulation.cpp.o: CMakeFiles/Vliegveld.dir/flags.make
 CMakeFiles/Vliegveld.dir/Simulation.cpp.o: ../Simulation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Vliegveld.dir/Simulation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Vliegveld.dir/Simulation.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Vliegveld.dir/Simulation.cpp.o -c /home/knoetson/Desktop/PSE/Vliegveld/Simulation.cpp
 
 CMakeFiles/Vliegveld.dir/Simulation.cpp.i: cmake_force
@@ -299,7 +275,7 @@ CMakeFiles/Vliegveld.dir/Simulation.cpp.o.provides.build: CMakeFiles/Vliegveld.d
 
 CMakeFiles/Vliegveld.dir/parser.cpp.o: CMakeFiles/Vliegveld.dir/flags.make
 CMakeFiles/Vliegveld.dir/parser.cpp.o: ../parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Vliegveld.dir/parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Vliegveld.dir/parser.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Vliegveld.dir/parser.cpp.o -c /home/knoetson/Desktop/PSE/Vliegveld/parser.cpp
 
 CMakeFiles/Vliegveld.dir/parser.cpp.i: cmake_force
@@ -323,7 +299,7 @@ CMakeFiles/Vliegveld.dir/parser.cpp.o.provides.build: CMakeFiles/Vliegveld.dir/p
 
 CMakeFiles/Vliegveld.dir/output.cpp.o: CMakeFiles/Vliegveld.dir/flags.make
 CMakeFiles/Vliegveld.dir/output.cpp.o: ../output.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Vliegveld.dir/output.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Vliegveld.dir/output.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Vliegveld.dir/output.cpp.o -c /home/knoetson/Desktop/PSE/Vliegveld/output.cpp
 
 CMakeFiles/Vliegveld.dir/output.cpp.i: cmake_force
@@ -355,7 +331,6 @@ Vliegveld_OBJECTS = \
 "CMakeFiles/Vliegveld.dir/tinyxml.cpp.o" \
 "CMakeFiles/Vliegveld.dir/tinyxmlerror.cpp.o" \
 "CMakeFiles/Vliegveld.dir/tinyxmlparser.cpp.o" \
-"CMakeFiles/Vliegveld.dir/Gate.cpp.o" \
 "CMakeFiles/Vliegveld.dir/Simulation.cpp.o" \
 "CMakeFiles/Vliegveld.dir/parser.cpp.o" \
 "CMakeFiles/Vliegveld.dir/output.cpp.o"
@@ -371,13 +346,12 @@ Vliegveld: CMakeFiles/Vliegveld.dir/tinystr.cpp.o
 Vliegveld: CMakeFiles/Vliegveld.dir/tinyxml.cpp.o
 Vliegveld: CMakeFiles/Vliegveld.dir/tinyxmlerror.cpp.o
 Vliegveld: CMakeFiles/Vliegveld.dir/tinyxmlparser.cpp.o
-Vliegveld: CMakeFiles/Vliegveld.dir/Gate.cpp.o
 Vliegveld: CMakeFiles/Vliegveld.dir/Simulation.cpp.o
 Vliegveld: CMakeFiles/Vliegveld.dir/parser.cpp.o
 Vliegveld: CMakeFiles/Vliegveld.dir/output.cpp.o
 Vliegveld: CMakeFiles/Vliegveld.dir/build.make
 Vliegveld: CMakeFiles/Vliegveld.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable Vliegveld"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/knoetson/Desktop/PSE/Vliegveld/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Vliegveld"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Vliegveld.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -393,7 +367,6 @@ CMakeFiles/Vliegveld.dir/requires: CMakeFiles/Vliegveld.dir/tinystr.cpp.o.requir
 CMakeFiles/Vliegveld.dir/requires: CMakeFiles/Vliegveld.dir/tinyxml.cpp.o.requires
 CMakeFiles/Vliegveld.dir/requires: CMakeFiles/Vliegveld.dir/tinyxmlerror.cpp.o.requires
 CMakeFiles/Vliegveld.dir/requires: CMakeFiles/Vliegveld.dir/tinyxmlparser.cpp.o.requires
-CMakeFiles/Vliegveld.dir/requires: CMakeFiles/Vliegveld.dir/Gate.cpp.o.requires
 CMakeFiles/Vliegveld.dir/requires: CMakeFiles/Vliegveld.dir/Simulation.cpp.o.requires
 CMakeFiles/Vliegveld.dir/requires: CMakeFiles/Vliegveld.dir/parser.cpp.o.requires
 CMakeFiles/Vliegveld.dir/requires: CMakeFiles/Vliegveld.dir/output.cpp.o.requires
