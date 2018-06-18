@@ -276,7 +276,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         if (text == NULL)
                             continue;
                         std::string t = text->Value();
-                        if (t != "approaching" and t != "standing at gate"){
+                        if (t != "approaching" and t != "standing at gate" and t != "departing"){
                             cout << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
                             fout = true;
                             continue;
@@ -301,6 +301,24 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         sscanf(t.c_str(), "%d", &i);
                         airplane.setCapacity(i);
                     }
+                }
+                if(airplane.getSize() == "small" and airplane.getEngine() == "propeller"){
+                    airplane.setFuel_cost(10);
+                }
+                else if(airplane.getSize() == "small" and airplane.getEngine() == "jet"){
+                    airplane.setFuel_cost(25);
+                }
+                else if(airplane.getSize() == "medium" and airplane.getEngine() == "propeller"){
+                    airplane.setFuel_cost(50);
+                }
+                else if(airplane.getSize() == "medium" and airplane.getEngine() == "jet"){
+                    airplane.setFuel_cost(175);
+                }
+                else if(airplane.getSize() == "large" and airplane.getEngine() == "propeller"){
+                    airplane.setFuel_cost(100);
+                }
+                else if(airplane.getSize() == "large" and airplane.getEngine() == "jet"){
+                    airplane.setFuel_cost(250);
                 }
             }
             airplanes.push_back(airplane);
