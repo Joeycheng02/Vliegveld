@@ -270,3 +270,11 @@ int Airplane::ascending (Airport &airport) {
     console.close();
     return 0;
 }
+
+int Airplane::getfuel_cost() const {
+    return fuel_cost;
+}
+
+void Airplane::setFuel_cost(int fuel_cost) {
+    Airplane::fuel_cost = fuel_cost;
+}

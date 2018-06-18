@@ -25,6 +25,8 @@ private:
     int gateNumber;
     unsigned int height;
 
+    int fuel_cost;
+
 public:
     Airplane();
 
@@ -134,6 +136,10 @@ public:
 \n ENSURE(getGateNumber() == -1, "Airplane is still at a gate");
 */
     int ascending(Airport &airport);
+
+    int getfuel_cost() const;
+
+    void setFuel_cost(int fuel_cost);
 };
 
 
