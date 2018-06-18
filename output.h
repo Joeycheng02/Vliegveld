@@ -20,6 +20,8 @@ public:
     static int landing(Airplane &airplane, Airport &airport, Runway &runway, int check);
 
     static int ascending(Airplane &airplane, Airport &airport, Runway &runway, int check);
+
+    static bool compare_file(string file1, string file2);
 };
 
 #endif //VLIEGVELD_OUTPUT_H

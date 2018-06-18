@@ -3,7 +3,9 @@
 //
 #include "Simulation.h"
 #include "parser.h"
+#include "output.h"
 #include <gtest/gtest.h>
+#include <iostream>
 
 class VliegveldTest: public  ::testing::Test {
 protected:
@@ -94,6 +96,20 @@ TEST_F(VliegveldTest, ascending){
     EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "Departed");
 
     remove ("console_output.txt");
+}
+
+TEST_F(VliegveldTest, output){
+    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "Simulatie.xml");
+    output::outputfile(simulation.getAirports(), simulation.getAirplanes());
+    simulation.start();
+    EXPECT_TRUE(output::compare_file("output.txt", "output_test.txt"));
+}
+
+TEST_F(VliegveldTest, output_test){
+    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "test.xml");
+    output::outputfile(simulation.getAirports(), simulation.getAirplanes());
+    simulation.start();
+    EXPECT_TRUE(output::compare_file("output.txt", "output_test2.txt"));
 }
 
 int main(int argc, char **argv) {

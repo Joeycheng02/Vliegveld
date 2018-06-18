@@ -182,3 +182,38 @@ int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int 
     file.close();
     return 0;
 }
+
+bool output::compare_file(string file1, string file2) {
+    ifstream file_1;
+    ifstream file_2;
+
+    string word_file1;
+    file_1 >> word_file1;
+    string word_file2;
+    file_2 >> word_file2;
+
+    file_1.open(file1.c_str());
+    if(!file_1){
+        cout << "There is no file named " << file1 << endl;
+        return false;
+    }
+    file_2.open(file2.c_str());
+    if(!file_2){
+        cout << "There is no file named " << file2 << endl;
+        return false;
+    }
+
+    while(file_1.good()){
+        if(word_file1 != word_file2){
+            return false;
+        }
+        file_1 >> word_file1;
+        file_2 >> word_file2;
+    }
+
+
+    file_1.close();
+    file_2.close();
+
+    return true;
+}

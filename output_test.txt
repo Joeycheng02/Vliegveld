@@ -121,4 +121,3 @@ $ Runway 11R cleared for take-off, Cessna 841.
 $ Cessna 841, runway 11R cleared for take-off.
 [1][AIR]
 $ Runway 11R cleared for take-off, Cessna 841.
-
