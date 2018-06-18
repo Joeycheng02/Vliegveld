@@ -12,7 +12,7 @@ Time::Time() {
 unsigned int Time::getTime() {
     unsigned int hours = t / 60;
     unsigned int minutes = t - hours * 60;
-    return hours * 10000 + minutes * 100;
+    return hours * 100 + minutes;
 }
 
 void Time::addTime(unsigned int minute) {
