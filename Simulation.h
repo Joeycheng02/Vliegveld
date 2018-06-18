@@ -9,6 +9,7 @@
 #include "Airport.h"
 #include "Airplane.h"
 #include "tinyxml.h"
+#include "Time.h"
 #include <vector>
 
 
@@ -17,6 +18,7 @@ private:
     vector <Airport> airports;
     vector <Airplane> airplanes;
     vector <Runway> runways;
+    Time time;
 public:
     vector<Airport> &getAirports();
 

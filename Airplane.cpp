@@ -6,6 +6,8 @@
 #include "Airplane.h"
 #include "DesignByContract.h"
 #include "output.h"
+#include "Simulation.h"
+#include "Time.h"
 
 const string &Airplane::getNumber() const {
     return number;
@@ -138,7 +140,7 @@ int Airplane::descending(Airport &airport) {
 
     for (unsigned int i = 0; i <= airport.getNumberOfGates(); ++i) {
         if (i == airport.getNumberOfGates()) {
-            console << "Instructing " << getCallsign() << " to take a holding pattern untill a clearance is made to land." << endl;
+            console << "[" << Time::time << "] " << "Instructing " << getCallsign() << " to take a holding pattern untill a clearance is made to land." << endl;
             output::landing(*this, airport, airport.getRunways()[0], 2);
             return -1;
         }
