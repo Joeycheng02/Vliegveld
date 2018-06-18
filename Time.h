@@ -5,6 +5,10 @@
 #ifndef VLIEGVELD_TIME_H
 #define VLIEGVELD_TIME_H
 
+#include <string>
+#include <sstream>
+using namespace std;
+
 class Time {
 private:
     unsigned int t;
@@ -19,6 +23,8 @@ public:
 \n ENSURE(Simulation::getTime() >= 0, "The variable can't be a negative number");
 */
     void addTime(unsigned int time);
+
+    string print_time();
 
 };
 

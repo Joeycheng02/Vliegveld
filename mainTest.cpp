@@ -55,7 +55,7 @@ TEST_F(VliegveldTest, Parsing_Test){ // Deze test test alle attributen van de pa
 
     EXPECT_EQ("12M", simulation.getRunways()[0].getName());
     EXPECT_EQ("BEL", simulation.getRunways()[0].getAirport());
-    EXPECT_EQ("wood", simulation.getRunways()[0].getType());
+    EXPECT_EQ("grass", simulation.getRunways()[0].getType());
     EXPECT_EQ(unsigned (1212), simulation.getRunways()[0].getLength());
 
     EXPECT_EQ("M48674", simulation.getAirplanes()[0].getNumber());
@@ -94,7 +94,7 @@ TEST_F(VliegveldTest, ascending){
                       "Simulatie.xml");
     EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "standing at gate");
     simulation.getAirplanes()[1].ascending(simulation.getAirports()[0], time);
-    EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "Departed");
+    EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "departed");
 
     remove ("console_output.txt");
 }
