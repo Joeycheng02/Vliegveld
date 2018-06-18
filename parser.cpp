@@ -134,6 +134,11 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         if (text == NULL)
                             continue;
                         std::string t = text->Value();
+                        if (t != "grass" and t != "asphalt"){
+                            cout << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
+                            fout = true;
+                            continue;
+                        }
                         runway.setType(t);
                     }
                 }

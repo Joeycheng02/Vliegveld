@@ -26,6 +26,7 @@ private:
     int gateNumber;
     unsigned int height;
 
+    int fuel;
     int fuel_cost;
 
 public:
@@ -141,6 +142,10 @@ public:
     int getfuel_cost() const;
 
     void setFuel_cost(int fuel_cost);
+
+    int getFuel() const;
+
+    void setFuel(int fuel);
 };
 
 

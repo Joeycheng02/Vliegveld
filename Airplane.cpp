@@ -311,3 +311,11 @@ int Airplane::getfuel_cost() const {
 void Airplane::setFuel_cost(int fuel_cost) {
     Airplane::fuel_cost = fuel_cost;
 }
+
+int Airplane::getFuel() const {
+    return fuel;
+}
+
+void Airplane::setFuel(int fuel) {
+    Airplane::fuel = fuel;
+}
