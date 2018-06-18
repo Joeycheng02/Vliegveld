@@ -19,6 +19,7 @@ protected:
     Airplane airplane;
     Airport airport;
     Runway runway;
+    Time time;
 };
 
 TEST_F(VliegveldTest, DefaultConstructor) {
@@ -72,7 +73,7 @@ TEST_F(VliegveldTest, Descending) {
 
     parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
-    simulation.getAirplanes()[0].descending(simulation.getAirports()[0]);
+    simulation.getAirplanes()[0].descending(simulation.getAirports()[0], time);
     EXPECT_EQ("standing at gate", simulation.getAirplanes()[0].getStatus());
 
 }
@@ -82,7 +83,7 @@ TEST_F(VliegveldTest, ExpectedErrors) {
     parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
     Airplane airplanetest;
-    EXPECT_DEATH(airplanetest.descending(simulation.getAirports()[0]), "Airplane is not approaching");
+    EXPECT_DEATH(airplanetest.descending(simulation.getAirports()[0], time), "Airplane is not approaching");
     EXPECT_DEATH(parser::parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "Simulatie.xml"), "Airplanes must be empty");
 
 }
@@ -92,7 +93,7 @@ TEST_F(VliegveldTest, ascending){
     parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
     EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "standing at gate");
-    simulation.getAirplanes()[1].ascending(simulation.getAirports()[0]);
+    simulation.getAirplanes()[1].ascending(simulation.getAirports()[0], time);
     EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "Departed");
 
     remove ("console_output.txt");
