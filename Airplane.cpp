@@ -128,7 +128,7 @@ Airplane::Airplane() {
 
 int Airplane::descending(Airport &airport) {
 
-    REQUIRE (getStatus() == "Approaching", "Airplane is not approaching");
+    REQUIRE (getStatus() == "approaching", "Airplane is not approaching");
 
     ofstream console ("console_output.txt", fstream::app);
     if (!console) {
@@ -196,11 +196,11 @@ int Airplane::descending(Airport &airport) {
     console << getCallsign() << " is standing at Gate " << getGateNumber() << endl;
     airport.getRunways()[runwayNumber].setVacant(true);
     setAirport(airport.getName());
-    setStatus("Standing at gate");
+    setStatus("standing at gate");
     console << getCapacity() << " passengers exited " << getCallsign() << " at gate " << getGateNumber() << " of " << airport.getName() << endl;
     console << getCallsign() << " has been checked for technical malfunctions" << endl << endl;
 
-    ENSURE(getStatus() == "Standing at gate", "Airplane is not standing at a gate");
+    ENSURE(getStatus() == "standing at gate", "Airplane is not standing at a gate");
     ENSURE(getAirport() == airport.getName(), "Airplane is not standing at the right airport");
 
     console.close();
@@ -210,7 +210,7 @@ int Airplane::descending(Airport &airport) {
 
 int Airplane::ascending (Airport &airport) {
 
-    REQUIRE (getStatus() == "Standing at gate", "Airplane is not standing at a gate");
+    REQUIRE (getStatus() == "standing at gate", "Airplane is not standing at a gate");
 
     REQUIRE (getAirport() == airport.getName(), "This airplane does not belong to the given aiport.");
 

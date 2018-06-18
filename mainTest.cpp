@@ -63,7 +63,7 @@ TEST_F(VliegveldTest, Parsing_Test){ // Deze test test alle attributen van de pa
     EXPECT_EQ("private", simulation.getAirplanes()[0].getType());
     EXPECT_EQ("jet", simulation.getAirplanes()[0].getEngine());
     EXPECT_EQ("small", simulation.getAirplanes()[0].getSize());
-    EXPECT_EQ("Approaching", simulation.getAirplanes()[0].getStatus());
+    EXPECT_EQ("approaching", simulation.getAirplanes()[0].getStatus());
     EXPECT_EQ(unsigned (1), simulation.getAirplanes()[0].getCapacity());
 
 }

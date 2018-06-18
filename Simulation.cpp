@@ -19,11 +19,11 @@ vector<Runway> &Simulation::getRunways() {
 
 void Simulation::start() {
     for (int i = 0; i < int(airplanes.size()); ++i) {
-        if (airplanes[i].getStatus() == "Approaching") {
+        if (airplanes[i].getStatus() == "approaching") {
             airplanes[i].descending(airports[0]);
             airplanes[i].ascending(airports[0]);
         }
-        if (airplanes[i].getStatus() == "Standing at gate") {
+        if (airplanes[i].getStatus() == "standing at gate") {
             for (int j = 0; j < int(airports.size()); ++j) {
                 if (airplanes[i].getAirport() == airports[j].getName()) {
                     airplanes[i].ascending(airports[j]);

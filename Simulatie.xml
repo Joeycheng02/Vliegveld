@@ -25,7 +25,7 @@
         <type>private</type>
         <engine>propeller</engine>
         <size>small</size>
-        <status>Approaching</status>
+        <status>approaching</status>
         <capacity>6</capacity>
     </AIRPLANE>
 
@@ -36,7 +36,7 @@
         <type>airline</type>
         <engine>jet</engine>
         <size>large</size>
-        <status>Standing at gate</status>
+        <status>standing at gate</status>
         <capacity>4</capacity>
     </AIRPLANE>
 </SIMULATIE>

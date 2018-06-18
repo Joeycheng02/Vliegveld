@@ -10,6 +10,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
     REQUIRE(airplanes.empty(), "Airplanes must be empty");
     REQUIRE(airports.empty(), "Airports must be empty");
     REQUIRE(runways.empty(), "Runways must be empty");
+    bool fout = false;
 
     TiXmlDocument doc;
     if (!doc.LoadFile(path)) {
@@ -233,6 +234,11 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         if (text == NULL)
                             continue;
                         std::string t = text->Value();
+                        if (t != "private" and t != "airline" and t != "military" and t != "emergency"){
+                            cout << t << " is geen geldig " << elem2Name << " voor een Airplane." << endl;
+                            fout = true;
+                            continue;
+                        }
                         airplane.setType(t);
                     }
                 }
@@ -242,6 +248,11 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         if (text == NULL)
                             continue;
                         std::string t = text->Value();
+                        if (t != "jet" and t != "propeller"){
+                            cout << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
+                            fout = true;
+                            continue;
+                        }
                         airplane.setEngine(t);
                     }
                 }
@@ -251,6 +262,11 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         if (text == NULL)
                             continue;
                         std::string t = text->Value();
+                        if (t != "small" and t != "medium" and t != "large"){
+                            cout << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
+                            fout = true;
+                            continue;
+                        }
                         airplane.setSize(t);
                     }
                 }
@@ -260,6 +276,11 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         if (text == NULL)
                             continue;
                         std::string t = text->Value();
+                        if (t != "approaching" and t != "standing at gate"){
+                            cout << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
+                            fout = true;
+                            continue;
+                        }
                         airplane.setStatus(t);
                     }
                 }
@@ -287,7 +308,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
     }
     doc.Clear();
     for (int j = 0; j < int(airplanes.size()); ++j) {
-        if (airplanes[j].getStatus() == "Standing at gate") {
+        if (airplanes[j].getStatus() == "standing at gate") {
             if (0 == int(airports.size())) {
                 cout << "No gates available anymore." << endl;
                 return -1;
@@ -307,6 +328,10 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                 break;
             }
         }
+    }
+
+    if(fout){
+        return 1;
     }
 
     ENSURE(!airplanes.empty(), "Airplanes can't be empty");
@@ -335,6 +360,8 @@ void parser::addRunway(vector <Airport> &airports, vector <Runway> &runways) {
 
 void parser::full_parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vector<Runway> &runways,
                           const char *path) {
-    parsing(airports, airplanes, runways, path);
+    if(parsing(airports, airplanes, runways, path) == 1){
+        return;
+    };
     addRunway(airports, runways);
 }
