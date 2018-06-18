@@ -7,7 +7,7 @@
 
 class Time {
 private:
-    unsigned int time;
+    unsigned int t;
 public:
     Time();
     unsigned int getTime();
