@@ -25,8 +25,8 @@ void Airport::addRunways(Runway runway) {
     ENSURE(getRunways()[getRunways().size() - 1].isVacant() == runway.isVacant(), "The variable is not set correctly");
 }
 
-int Airport::getNumberOfRunways() const {
-    return int(runways.size());
+unsigned int Airport::getNumberOfRunways() const {
+    return unsigned (runways.size());
 }
 
 unsigned int Airport::getNumberOfGates() const {

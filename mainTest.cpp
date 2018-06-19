@@ -22,7 +22,7 @@ protected:
     Time time;
 };
 
-TEST_F(VliegveldTest, DefaultConstructor) {
+TEST_F(VliegveldTest, DefConSimulation) {
 
     EXPECT_EQ(0, int(simulation.getAirports().size()));
     EXPECT_EQ(0, int(simulation.getAirplanes().size()));
@@ -31,12 +31,42 @@ TEST_F(VliegveldTest, DefaultConstructor) {
 
 }
 
+TEST_F(VliegveldTest, DefConAirplane) {
+
+    EXPECT_EQ("", airplane.getNumber());
+    EXPECT_EQ("", airplane.getCallsign());
+    EXPECT_EQ("", airplane.getModel());
+    EXPECT_EQ("", airplane.getStatus());
+    EXPECT_EQ(unsigned (0), airplane.getHeight());
+    EXPECT_EQ("", airplane.getAirport());
+    EXPECT_EQ(-1, airplane.getGateNumber());
+    EXPECT_EQ(unsigned (0), airplane.getCapacity());
+    EXPECT_EQ("", airplane.getType());
+    EXPECT_EQ("", airplane.getEngine());
+    EXPECT_EQ("", airplane.getSize());
+    EXPECT_EQ(unsigned (0), airplane.getFuelCost());
+    EXPECT_EQ(unsigned (0), airplane.getFuel());
+
+}
+
+TEST_F(VliegveldTest, DefConAirport) {
+
+    EXPECT_EQ(unsigned (0), airport.getGates().size());
+    EXPECT_EQ(unsigned (0), airport.getRunways().size());
+    EXPECT_EQ(unsigned (0), airport.getNumberOfGates());
+    EXPECT_EQ(unsigned (0), airport.getNumberOfRunways());
+    EXPECT_EQ("", airport.getName());
+    EXPECT_EQ("", airport.getIata());
+    EXPECT_EQ("", airport.getCallsign());
+
+}
+
 TEST_F(VliegveldTest, Parsing) {
 
     parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
                       "Simulatie.xml");
     EXPECT_EQ("Antwerp International Airport", simulation.getAirports()[0].getName());
-    EXPECT_EQ(1, simulation.getAirports()[0].getNumberOfRunways());
+    EXPECT_EQ(unsigned (1), simulation.getAirports()[0].getNumberOfRunways());
     EXPECT_EQ(unsigned (10), simulation.getAirports()[0].getNumberOfGates());
     EXPECT_EQ("ANR", simulation.getAirports()[0].getIata());
     EXPECT_EQ("Antwerp Tower", simulation.getAirports()[0].getCallsign());

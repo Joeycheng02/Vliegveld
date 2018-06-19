@@ -25,9 +25,8 @@ private:
     unsigned int capacity;
     int gateNumber;
     unsigned int height;
-
-    int fuel;
-    int fuel_cost;
+    unsigned int fuel;
+    unsigned int fuel_cost;
 
 public:
     Airplane();
@@ -139,13 +138,13 @@ public:
 */
     int ascending(Airport &airport, Time &time);
 
-    int getfuel_cost() const;
+    unsigned int getFuelCost() const;
 
-    void setFuel_cost(int fuel_cost);
+    void setFuelCost(unsigned int fuel_cost);
 
-    int getFuel() const;
+    unsigned int getFuel() const;
 
-    void setFuel(int fuel);
+    void setFuel(unsigned int fuel);
 };
 
 

@@ -308,22 +308,22 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                     }
                 }
                 if(airplane.getSize() == "small" and airplane.getEngine() == "propeller"){
-                    airplane.setFuel_cost(10);
+                    airplane.setFuelCost(10);
                 }
                 else if(airplane.getSize() == "small" and airplane.getEngine() == "jet"){
-                    airplane.setFuel_cost(25);
+                    airplane.setFuelCost(25);
                 }
                 else if(airplane.getSize() == "medium" and airplane.getEngine() == "propeller"){
-                    airplane.setFuel_cost(50);
+                    airplane.setFuelCost(50);
                 }
                 else if(airplane.getSize() == "medium" and airplane.getEngine() == "jet"){
-                    airplane.setFuel_cost(175);
+                    airplane.setFuelCost(175);
                 }
                 else if(airplane.getSize() == "large" and airplane.getEngine() == "propeller"){
-                    airplane.setFuel_cost(100);
+                    airplane.setFuelCost(100);
                 }
                 else if(airplane.getSize() == "large" and airplane.getEngine() == "jet"){
-                    airplane.setFuel_cost(250);
+                    airplane.setFuelCost(250);
                 }
             }
             airplanes.push_back(airplane);

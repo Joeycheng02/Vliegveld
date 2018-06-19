@@ -18,7 +18,7 @@ public:
 */
     static int outputfile (vector <Airport> &airports, vector <Airplane> &airplanes);
 
-    static int landing(Airplane &airplane, Airport &airport, Runway &runway, int check, Time time);
+    static int landing(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time);
 
     static int ascending(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time);
 

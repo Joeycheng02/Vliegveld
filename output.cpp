@@ -64,7 +64,7 @@ int output::outputfile(vector<Airport> &airports, vector<Airplane> &airplanes) {
     return 0;
 }
 
-int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int check, Time time) {
+int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time) {
     ofstream file;
     file.open("output.txt", ios_base::app);
     if (!file) {

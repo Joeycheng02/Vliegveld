@@ -36,7 +36,7 @@ public:
 */
     void addRunways(Runway runway);
 
-    int getNumberOfRunways() const;
+    unsigned int getNumberOfRunways() const;
 
     unsigned int getNumberOfGates() const;
 

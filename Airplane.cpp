@@ -7,7 +7,6 @@
 #include "DesignByContract.h"
 #include "output.h"
 #include "Simulation.h"
-#include "Time.h"
 
 const string &Airplane::getNumber() const {
     return number;
@@ -126,6 +125,8 @@ Airplane::Airplane() {
     gateNumber = -1;
     height = 0;
     capacity = 0;
+    fuel = 0;
+    fuel_cost = 0;
 }
 
 int Airplane::descending(Airport &airport, Time &time) {
@@ -153,9 +154,9 @@ int Airplane::descending(Airport &airport, Time &time) {
     }
 
     int runwayNumber = -1;
-    for (int i = 0; i <= airport.getNumberOfRunways(); ++i) {
+    for (unsigned int i = 0; i <= airport.getNumberOfRunways(); ++i) {
         if (i == airport.getNumberOfRunways()) {
-            console << "[" << time.getTime() << "] " << "Instructing " << getCallsign() << " to wait untill there is a free runway." << endl;
+            console << "[" << time.printTime() << "] " << "Instructing " << getCallsign() << " to wait untill there is a free runway." << endl;
             output::landing(*this, airport, airport.getRunways()[0], 2, time);
             return -1;
         }
@@ -241,7 +242,7 @@ int Airplane::ascending (Airport &airport, Time &time) {
 
     int runwayNumber = -1;
 
-    for (int i = 0; i <= airport.getNumberOfRunways(); ++i) {
+    for (unsigned int i = 0; i <= airport.getNumberOfRunways(); ++i) {
         if (i == airport.getNumberOfRunways()) {
             console << "[" << time.printTime() << "] " << "Instructing " << getCallsign() << " to wait untill there is a free runway." << endl;
             return -1;
@@ -304,18 +305,18 @@ int Airplane::ascending (Airport &airport, Time &time) {
     return 0;
 }
 
-int Airplane::getfuel_cost() const {
+unsigned int Airplane::getFuelCost() const {
     return fuel_cost;
 }
 
-void Airplane::setFuel_cost(int fuel_cost) {
+void Airplane::setFuelCost(unsigned int fuel_cost) {
     Airplane::fuel_cost = fuel_cost;
 }
 
-int Airplane::getFuel() const {
+unsigned int Airplane::getFuel() const {
     return fuel;
 }
 
-void Airplane::setFuel(int fuel) {
+void Airplane::setFuel(unsigned int fuel) {
     Airplane::fuel = fuel;
 }
