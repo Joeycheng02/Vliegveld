@@ -141,14 +141,26 @@ public:
 
     unsigned int getFuelCost() const;
 
+/**
+\n REQUIRE(Airplane::fuel_cost != fuel_cost, "The variable already has this value");
+\n ENSURE(getFuelCost() == fuel_cost, "The variable is not set correctly");
+*/
     void setFuelCost(unsigned int fuel_cost);
 
     unsigned int getFuel() const;
 
+/**
+\n REQUIRE(Airplane::fuel != fuel, "The variable already has this value");
+\n ENSURE(getFuel() == fuel, "The variable is not set correctly");
+*/
     void setFuel(unsigned int fuel);
 
     const string &getSquawk_code() const;
 
+/**
+\n REQUIRE(Airplane::squawk_code != squawk_code, "The variable already has this value");
+\n ENSURE(getSquawk_code() == squawk_code, "The variable is not set correctly");
+*/
     void setSquawk_code(const string &squawk_code);
 };
 

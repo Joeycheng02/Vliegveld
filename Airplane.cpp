@@ -317,7 +317,9 @@ unsigned int Airplane::getFuelCost() const {
 }
 
 void Airplane::setFuelCost(unsigned int fuel_cost) {
+    REQUIRE(Airplane::fuel_cost != fuel_cost, "The variable already has this value");
     Airplane::fuel_cost = fuel_cost;
+    ENSURE(getFuelCost() == fuel_cost, "The variable is not set correctly");
 }
 
 unsigned int Airplane::getFuel() const {
@@ -325,7 +327,9 @@ unsigned int Airplane::getFuel() const {
 }
 
 void Airplane::setFuel(unsigned int fuel) {
+    REQUIRE(Airplane::fuel != fuel, "The variable already has this value");
     Airplane::fuel = fuel;
+    ENSURE(getFuel() == fuel, "The variable is not set correctly");
 }
 
 const string &Airplane::getSquawk_code() const {
@@ -333,5 +337,6 @@ const string &Airplane::getSquawk_code() const {
 }
 
 void Airplane::setSquawk_code(const string &squawk_code) {
+    REQUIRE(Airplane::squawk_code != squawk_code, "The variable already has this value");
     Airplane::squawk_code = squawk_code;
-}
+    ENSURE(getSquawk_code() == squawk_code, "The variable is not set correctly");}

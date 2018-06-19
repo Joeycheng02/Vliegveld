@@ -196,6 +196,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
         }
         if (elemName == "AIRPLANE") {
             Airplane airplane;
+            bool fuel_cost = false;
             for (TiXmlElement *elem2 = elem->FirstChildElement(); elem2 != NULL;
                  elem2 = elem2->NextSiblingElement()) {
                 string elem2Name = elem2->Value();
@@ -325,49 +326,52 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         airplane.setFuel(i);
                     }
                 }
-                if(airplane.getSize() == "small" and airplane.getEngine() == "propeller"){
-                    airplane.setFuelCost(10);
-                    if(airplane.getType() == "private"){
-                        airplane.setSquawk_code("0001-0777");
-                    }
-                    if(airplane.getType() == "emergency"){
-                        airplane.setSquawk_code("6000-6777");
-                    }
-                }
-                else if(airplane.getSize() == "small" and airplane.getEngine() == "jet"){
-                    airplane.setFuelCost(25);
-                    if(airplane.getType() == "private"){
-                        airplane.setSquawk_code("0001-0777");
-                    }
-                    if(airplane.getType() == "military"){
-                        airplane.setSquawk_code("5000-5777");
-                    }
-                }
-                else if(airplane.getSize() == "medium" and airplane.getEngine() == "propeller"){
-                    airplane.setFuelCost(50);
-                    if(airplane.getType() == "airline"){
-                        airplane.setSquawk_code("2000-2777");
-                    }
-                }
-                else if(airplane.getSize() == "medium" and airplane.getEngine() == "jet"){
-                    airplane.setFuelCost(175);
-                    if(airplane.getType() == "private"){
-                        airplane.setSquawk_code("1000-1777");
-                    }
-                    if(airplane.getType() == "airline"){
-                        airplane.setSquawk_code("3000-3777");
-                    }
-                }
-                else if(airplane.getSize() == "large" and airplane.getEngine() == "propeller"){
-                    airplane.setFuelCost(100);
-                    if(airplane.getType() == "military"){
-                        airplane.setSquawk_code("5000-5777");
-                    }
-                }
-                else if(airplane.getSize() == "large" and airplane.getEngine() == "jet"){
-                    airplane.setFuelCost(250);
-                    if(airplane.getType() == "airline"){
-                        airplane.setSquawk_code("4000-5777");
+                if (!fuel_cost) {
+                    if (airplane.getSize() == "small" and airplane.getEngine() == "propeller") {
+                        airplane.setFuelCost(10);
+                        fuel_cost = true;
+                        if (airplane.getType() == "private") {
+                            airplane.setSquawk_code("0001-0777");
+                        }
+                        if (airplane.getType() == "emergency") {
+                            airplane.setSquawk_code("6000-6777");
+                        }
+                    } else if (airplane.getSize() == "small" and airplane.getEngine() == "jet") {
+                        airplane.setFuelCost(25);
+                        fuel_cost = true;
+                        if (airplane.getType() == "private") {
+                            airplane.setSquawk_code("0001-0777");
+                        }
+                        if (airplane.getType() == "military") {
+                            airplane.setSquawk_code("5000-5777");
+                        }
+                    } else if (airplane.getSize() == "medium" and airplane.getEngine() == "propeller") {
+                        airplane.setFuelCost(50);
+                        fuel_cost = true;
+                        if (airplane.getType() == "airline") {
+                            airplane.setSquawk_code("2000-2777");
+                        }
+                    } else if (airplane.getSize() == "medium" and airplane.getEngine() == "jet") {
+                        airplane.setFuelCost(175);
+                        fuel_cost = true;
+                        if (airplane.getType() == "private") {
+                            airplane.setSquawk_code("1000-1777");
+                        }
+                        if (airplane.getType() == "airline") {
+                            airplane.setSquawk_code("3000-3777");
+                        }
+                    } else if (airplane.getSize() == "large" and airplane.getEngine() == "propeller") {
+                        airplane.setFuelCost(100);
+                        fuel_cost = true;
+                        if (airplane.getType() == "military") {
+                            airplane.setSquawk_code("5000-5777");
+                        }
+                    } else if (airplane.getSize() == "large" and airplane.getEngine() == "jet") {
+                        airplane.setFuelCost(250);
+                        fuel_cost = true;
+                        if (airplane.getType() == "airline") {
+                            airplane.setSquawk_code("4000-5777");
+                        }
                     }
                 }
             }
