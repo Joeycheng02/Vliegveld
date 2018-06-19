@@ -38,7 +38,7 @@
         <engine>jet</engine>
         <size>large</size>
         <status>standing at gate</status>
-        <capacity>4</capacity>
+        <capacity>150</capacity>
         <fuel>50000</fuel>
     </AIRPLANE>
 </SIMULATIE>

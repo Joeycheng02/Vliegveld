@@ -65,6 +65,8 @@ int output::outputfile(vector<Airport> &airports, vector<Airplane> &airplanes) {
 }
 
 int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time) {
+    REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before requesting a landing");
+
     ofstream file;
     file.open("output.txt", ios_base::app);
     if (!file) {
@@ -120,10 +122,15 @@ int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int ch
         time.addTime(1);
     }
     file.close();
+
+    ENSURE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty after landing");
+
     return 0;
 }
 
 int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time) {
+    REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before requesting to ascend");
+
     ofstream file;
     file.open("output.txt", ios_base::app);
     if (!file) {
@@ -210,10 +217,14 @@ int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int 
     }
 
     file.close();
+
+    ENSURE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty after ascending");
+
     return 0;
 }
 
 bool output::compare_file(string file1, string file2) {
+
     ifstream file_1;
     ifstream file_2;
 
