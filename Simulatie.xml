@@ -27,6 +27,7 @@
         <size>small</size>
         <status>approaching</status>
         <capacity>6</capacity>
+        <fuel>5000</fuel>
     </AIRPLANE>
 
     <AIRPLANE>
@@ -38,5 +39,6 @@
         <size>large</size>
         <status>standing at gate</status>
         <capacity>4</capacity>
+        <fuel>50000</fuel>
     </AIRPLANE>
 </SIMULATIE>

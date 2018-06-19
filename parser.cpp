@@ -201,7 +201,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                 string elem2Name = elem2->Value();
 
                 if (elem2Name != "model" and elem2Name != "number" and elem2Name != "callsign" and elem2Name != "type" and elem2Name != "engine" and elem2Name != "size" and
-                    elem2Name != "status" and elem2Name != "capacity"){
+                    elem2Name != "status" and elem2Name != "capacity" and elem2Name != "fuel"){
                     cout << elem2Name << " is geen variabele van Airplane." << endl;
                     continue;
                 }
@@ -307,23 +307,68 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         airplane.setCapacity(i);
                     }
                 }
+                if (elem2Name == "fuel") {
+                    for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
+                        TiXmlText *text = e->ToText();
+                        if (text == NULL)
+                            continue;
+                        const std::string t = text->Value();
+                        int i;
+                        for(unsigned int k = 0; k<t.size(); k++){
+                            if(t[k]!='0' and t[k]!='1' and t[k]!='2' and t[k]!='3' and t[k]!='4' and t[k]!='5'
+                               and t[k]!='6' and t[k]!='7' and t[k]!='8' and t[k]!='9'){
+                                cout << "De " << elem2Name << " moet een integer zijn.";
+                                return -1;
+                            }
+                        }
+                        sscanf(t.c_str(), "%d", &i);
+                        airplane.setFuel(i);
+                    }
+                }
                 if(airplane.getSize() == "small" and airplane.getEngine() == "propeller"){
                     airplane.setFuelCost(10);
+                    if(airplane.getType() == "private"){
+                        airplane.setSquawk_code("0001-0777");
+                    }
+                    if(airplane.getType() == "emergency"){
+                        airplane.setSquawk_code("6000-6777");
+                    }
                 }
                 else if(airplane.getSize() == "small" and airplane.getEngine() == "jet"){
                     airplane.setFuelCost(25);
+                    if(airplane.getType() == "private"){
+                        airplane.setSquawk_code("0001-0777");
+                    }
+                    if(airplane.getType() == "military"){
+                        airplane.setSquawk_code("5000-5777");
+                    }
                 }
                 else if(airplane.getSize() == "medium" and airplane.getEngine() == "propeller"){
                     airplane.setFuelCost(50);
+                    if(airplane.getType() == "airline"){
+                        airplane.setSquawk_code("2000-2777");
+                    }
                 }
                 else if(airplane.getSize() == "medium" and airplane.getEngine() == "jet"){
                     airplane.setFuelCost(175);
+                    if(airplane.getType() == "private"){
+                        airplane.setSquawk_code("1000-1777");
+                    }
+                    if(airplane.getType() == "airline"){
+                        airplane.setSquawk_code("3000-3777");
+                    }
                 }
                 else if(airplane.getSize() == "large" and airplane.getEngine() == "propeller"){
                     airplane.setFuelCost(100);
+                    if(airplane.getType() == "military"){
+                        airplane.setSquawk_code("5000-5777");
+                    }
                 }
                 else if(airplane.getSize() == "large" and airplane.getEngine() == "jet"){
                     airplane.setFuelCost(250);
+                    if(airplane.getType() == "airline"){
+                        airplane.setSquawk_code("4000-5777");
+                    }
                 }
             }
             airplanes.push_back(airplane);

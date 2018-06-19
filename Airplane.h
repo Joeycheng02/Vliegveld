@@ -27,6 +27,7 @@ private:
     unsigned int height;
     unsigned int fuel;
     unsigned int fuel_cost;
+    string squawk_code;
 
 public:
     Airplane();
@@ -145,6 +146,10 @@ public:
     unsigned int getFuel() const;
 
     void setFuel(unsigned int fuel);
+
+    const string &getSquawk_code() const;
+
+    void setSquawk_code(const string &squawk_code);
 };
 
 

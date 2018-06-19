@@ -320,3 +320,11 @@ unsigned int Airplane::getFuel() const {
 void Airplane::setFuel(unsigned int fuel) {
     Airplane::fuel = fuel;
 }
+
+const string &Airplane::getSquawk_code() const {
+    return squawk_code;
+}
+
+void Airplane::setSquawk_code(const string &squawk_code) {
+    Airplane::squawk_code = squawk_code;
+}

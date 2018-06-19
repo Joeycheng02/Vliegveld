@@ -22,5 +22,6 @@
         <size>small</size>
         <status>approaching</status>
         <capacity>1</capacity>
+        <fuel>10000</fuel>
     </AIRPLANE>
 </SIMULATIE>
