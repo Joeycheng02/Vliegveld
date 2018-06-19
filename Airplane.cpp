@@ -190,9 +190,11 @@ int Airplane::descending(Airport &airport, Time &time) {
         setHeight(getHeight() - 1000);
         if (getEngine() == "propeller") {
             time.addTime(2);
+            setFuel(getFuel() - getFuelCost() * 2);
         }
         else {
             time.addTime(1);
+            setFuel(getFuel() - getFuelCost());
         }
         console << "[" << time.printTime() << "] " << getCallsign() << " descended to " << getHeight() << " ft." << endl;
     }
@@ -200,6 +202,7 @@ int Airplane::descending(Airport &airport, Time &time) {
     airport.getRunways()[runwayNumber].setVacant(false);
     console << "[" << time.printTime() << "] " << getCallsign() << " is landing at "<< airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
     time.addTime(2);
+    setFuel(getFuel() - getFuelCost() * 2);
     console << "[" << time.printTime() << "] " << getCallsign() << " has landed at "<< airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
     console << "[" << time.printTime() << "] " << getCallsign() << " is taxiing to Gate " << getGateNumber() << endl;
     output::landing(*this, airport, airport.getRunways()[runwayNumber], 5, time);
@@ -253,7 +256,7 @@ int Airplane::ascending (Airport &airport, Time &time) {
             break;
         }
     }
-
+    time.addTime(getFuel()/10000);
     console << "[" << time.printTime() << "] " << getCallsign() << " has been refueled" << endl;
     time.addTime(getCapacity()/2);
     console << "[" << time.printTime() << "] " << getCapacity() << " passengers boarded " << getCallsign() << " at gate " << getGateNumber() << " of " << airport.getName() << endl;
@@ -278,9 +281,11 @@ int Airplane::ascending (Airport &airport, Time &time) {
     console << "[" << time.printTime() << "] " << getCallsign() << " is taking off at " << airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
     if (getEngine() == "propeller") {
         time.addTime(3);
+        setFuel(getFuel() - getFuelCost() * 3);
     }
     else {
         time.addTime(2);
+        setFuel(getFuel() - getFuelCost() * 2);
     }
     console << "[" << time.printTime() << "] " << getCallsign() << " has departed" << endl;
     setStatus("departed");
@@ -288,9 +293,11 @@ int Airplane::ascending (Airport &airport, Time &time) {
         setHeight(getHeight() + 1000);
         if (getEngine() == "propeller") {
             time.addTime(2);
+            setFuel(getFuel() - getFuelCost() * 2);
         }
         else {
             time.addTime(1);
+            setFuel(getFuel() - getFuelCost());
         }
         console << "[" << time.printTime() << "] " << getCallsign() << " has ascended to " << getHeight() << " ft." << endl;
 
