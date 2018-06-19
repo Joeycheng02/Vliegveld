@@ -7,70 +7,69 @@ Airport: Test airport (BEL)
 Airplane: Nighthawk (M48674)
  --> model: Nighthawk 340
 
-[1][AIR]
+[12:00][AIR]
 $ Merksplas tower, Nighthawk, arriving at Test airport.
-[2][ATC]
+[12:01][ATC]
 $ Nighthawk, radar contact, descend and maintain five thousand feet, squawk squawk code.
-[3][AIR]
+[12:02][AIR]
 $ Descend and maintain five thousand feet, sqauwking squawk code, Nighthawk.
 
-[1][ATC]
+[12:05][ATC]
 $ Nighthawk, descend and maintain three thousand feet.
-[1][AIR]
+[12:06][AIR]
 $ Descend and maintain three thousand feet, Nighthawk.
 
-[1][ATC]
+[12:07][ATC]
 $ Nighthawk, cleared ILS approach runway12M.
-[1][AIR]
+[12:08][AIR]
 $ Cleared ILS approach runway 12M, Nighthawk.
 
-[1][AIR]
+[12:11][AIR]
 $ Merksplas tower, Nighthawk, runway12M vacated.
-[2][ATC]
+[12:12][ATC]
 $ taxi-instructions
 
-[1][AIR]
+[12:12] [AIR]
 $ Merksplas tower, Nighthawk, requesting IFR clearancy to <destination>
-[2][ATC]
+[12:13][ATC]
 $ Nighthawk, Merksplas tower, cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk <squawk-code>, Nighthawk.
-[3][AIR]
+[12:14][AIR]
 $ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking <squawk-code>, Nighthawk.
 
-[1][AIR]
+[12:15][AIR]
 $ Merksplas tower, Nighthawk at gate 1, requesting pushback.
-[2][ATC]
+[12:16][ATC]
 $ Nighthawk, Merksplas tower, pushback approved.
-[3][AIR]
+[12:17][AIR]
 $ Pushback approved, Nighthawk.
 
-[1][AIR]
+[12:18][AIR]
 $ Nighthawk is ready to taxi.
-[2][ATC]
+[12:19][ATC]
 $ taxi-instructions
 
-[1][AIR]
+[12:20][AIR]
 $ Merksplas tower, Nighthawk, holding short at 12M
-[2][ATC]
+[12:21][ATC]
 $ Nighthawk, hold position.
-[3][AIR]
+[12:22][AIR]
 $ Holding position, Nighthawk.
 
-[1][AIR]
+[12:23][AIR]
 $ Merksplas tower, Nighthawk, holding short at 12M
-[2][ATC]
+[12:24][ATC]
 $ Nighthawk, line-up runway 12M and wait.
-[3][AIR]
+[12:25][AIR]
 $ Lining up runway 12M and wait, Nighthawk.
 
-[1][AIR]
+[12:26][AIR]
 $ Merksplas tower, Nighthawk, holding short at 12M
-[2][ATC]
+[12:27][ATC]
 $ Nighthawk, runway 12M cleared for take-off.
-[3][AIR]
+[12:28][AIR]
 $ Runway 12M cleared for take-off, Nighthawk.
 
-[1][ATC]
+[12:29][ATC]
 $ Nighthawk, runway 12M cleared for take-off.
-[1][AIR]
+[12:30][AIR]
 $ Runway 12M cleared for take-off, Nighthawk.
-

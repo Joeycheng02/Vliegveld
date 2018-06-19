@@ -24,7 +24,7 @@ void Time::addTime(unsigned int minute) {
     ENSURE(Time::getTime() >= 0, "The variable can't be a negative number");
 }
 
-string Time::print_time() {
+string Time::printTime() {
     unsigned  int hours = t / 60;
     stringstream h;
     h << hours;
@@ -32,5 +32,14 @@ string Time::print_time() {
     stringstream m;
     m << t - hours * 60;
     string string_minutes = m.str();
+    if(string_hours.size() == 1 and string_minutes.size() == 1){
+        return "0" + string_hours + ":0" + string_minutes;
+    }
+    else if(string_minutes.size() == 1){
+        return string_hours + ":0" + string_minutes;
+    }
+    else if (string_hours.size() == 1){
+        return "0" + string_hours + ":" + string_minutes;
+    }
     return string_hours + ":" + string_minutes;
 }

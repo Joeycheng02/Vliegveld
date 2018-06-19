@@ -64,7 +64,7 @@ int output::outputfile(vector<Airport> &airports, vector<Airplane> &airplanes) {
     return 0;
 }
 
-int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int check) {
+int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int check, Time time) {
     ofstream file;
     file.open("output.txt", ios_base::app);
     if (!file) {
@@ -73,46 +73,57 @@ int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int ch
     }
 
     if(check == 1){
-        file << "[1][AIR]" << endl
-             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", arriving at " << airport.getName() << "." << endl
-             << "[2][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", radar contact, descend and maintain five thousand feet, squawk " << "squawk code."<< endl
-             << "[3][AIR]" << endl
+        file << "[" << time.printTime() << "][AIR]" << endl
+             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", arriving at " << airport.getName() << "." << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", radar contact, descend and maintain five thousand feet, squawk " << "squawk code."<< endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
              << "$ Descend and maintain five thousand feet, sqauwking " << "squawk code" << ", " << airplane.getCallsign() << "." << endl << endl;
+        time.addTime(1);
     }
 
     if(check == 2){
-        file << "[1][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", hold south on the one eighty radial, expect further clearence at " << "time" << "." <<  endl
-             << "[2][AIR]" << endl
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", hold south on the one eighty radial, expect further clearence at " << "time" << "." <<  endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
              << "$ Holding south on the one eighty radial, " << airplane.getCallsign() << "." << endl << endl;
+        time.addTime(1);
     }
 
     if(check == 3){
-        file << "[1][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", descend and maintain three thousand feet." << endl
-             << "[1][AIR]" << endl
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", descend and maintain three thousand feet." << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
              << "$ Descend and maintain three thousand feet, " << airplane.getCallsign() << "." << endl << endl;
+        time.addTime(1);
     }
 
     if(check == 4){
-        file << "[1][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", cleared ILS approach runway" << runway.getName() << "." << endl
-             << "[1][AIR]" << endl
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", cleared ILS approach runway" << runway.getName() << "." << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
              << "$ Cleared ILS approach runway " << runway.getName() << ", " << airplane.getCallsign() << "." << endl << endl;
+        time.addTime(1);
     }
 
     if(check == 5) {
-        file << "[1][AIR]" << endl
-             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", runway" << runway.getName() << " vacated." << endl
-             << "[2][ATC]" << endl
+        file << "[" << time.printTime() << "][AIR]" << endl
+             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", runway" << runway.getName() << " vacated." << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][ATC]" << endl
              << "$ taxi-instructions" << endl << endl;
+        time.addTime(1);
     }
     file.close();
     return 0;
 }
 
-int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int check) {
+int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time) {
     ofstream file;
     file.open("output.txt", ios_base::app);
     if (!file) {
@@ -121,62 +132,81 @@ int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int 
     }
 
     if(check == 1){
-        file << "[1][AIR]" << endl
-             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", requesting IFR clearancy to <destination>" << endl
-             << "[2][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", "  << airport.getCallsign() << ", cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk <squawk-code>, " << airplane.getCallsign() << "." << endl
-             << "[3][AIR]" << endl
+        file << "[" << time.printTime() << "] [AIR]" << endl
+             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", requesting IFR clearancy to <destination>" << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", "  << airport.getCallsign() << ", cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk <squawk-code>, " << airplane.getCallsign() << "." << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
              << "$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking <squawk-code>, " << airplane.getCallsign() << "." << endl << endl;
+        time.addTime(1);
     }
 
     if(check == 2){
-        file << "[1][AIR]" << endl
-             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << " at gate " << airplane.getGateNumber() << ", requesting pushback." << endl
-             << "[2][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", "  << airport.getCallsign() << ", pushback approved."<< endl
-             << "[3][AIR]" << endl
+        file << "[" << time.printTime() << "][AIR]" << endl
+             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << " at gate " << airplane.getGateNumber() << ", requesting pushback." << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", "  << airport.getCallsign() << ", pushback approved."<< endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
              << "$ Pushback approved, " << airplane.getCallsign() << "." << endl << endl;
+        time.addTime(1);
     }
 
     if(check == 3) {
-        file << "[1][AIR]" << endl
-             << "$ " << airplane.getCallsign() << " is ready to taxi." << endl
-             << "[2][ATC]" << endl
+        file << "[" << time.printTime() << "][AIR]" << endl
+             << "$ " << airplane.getCallsign() << " is ready to taxi." << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][ATC]" << endl
              << "$ taxi-instructions" << endl << endl;
+        time.addTime(1);
     }
 
     if(check == 4){
-        file << "[1][AIR]" << endl
-             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", holding short at " << runway.getName() << endl
-             << "[2][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", hold position." << endl
-             << "[3][AIR]" << endl
+        file << "[" << time.printTime() << "][AIR]" << endl
+             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", holding short at " << runway.getName() << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", hold position." << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
              << "$ Holding position, " << airplane.getCallsign() << "." << endl << endl;
+        time.addTime(1);
     }
 
     if(check == 5){
-        file << "[1][AIR]" << endl
-             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", holding short at " << runway.getName() << endl
-             << "[2][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", line-up runway " << runway.getName() << " and wait." << endl
-             << "[3][AIR]" << endl
+        file << "[" << time.printTime() << "][AIR]" << endl
+             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", holding short at " << runway.getName() << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", line-up runway " << runway.getName() << " and wait." << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
              << "$ Lining up runway " << runway.getName() << " and wait, " << airplane.getCallsign() << "." << endl << endl;
+        time.addTime(1);
     }
 
     if(check == 6){
-        file << "[1][AIR]" << endl
-             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", holding short at " << runway.getName() << endl
-             << "[2][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", runway " << runway.getName() << " cleared for take-off." << endl
-             << "[3][AIR]" << endl
+        file << "[" << time.printTime() << "][AIR]" << endl
+             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", holding short at " << runway.getName() << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", runway " << runway.getName() << " cleared for take-off." << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
              << "$ Runway " << runway.getName() << " cleared for take-off, " << airplane.getCallsign() << "." << endl << endl;
+        time.addTime(1);
     }
 
     if(check == 7){
-        file << "[1][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", runway " << runway.getName() << " cleared for take-off." << endl
-             << "[1][AIR]" << endl
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", runway " << runway.getName() << " cleared for take-off." << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
              << "$ Runway " << runway.getName() << " cleared for take-off, " << airplane.getCallsign() << "." << endl << endl;
+        time.addTime(1);
     }
 
     file.close();

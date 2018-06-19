@@ -8,6 +8,7 @@
 
 #include "Airport.h"
 #include "Airplane.h"
+#include "Time.h"
 
 class output {
 public:
@@ -17,9 +18,9 @@ public:
 */
     static int outputfile (vector <Airport> &airports, vector <Airplane> &airplanes);
 
-    static int landing(Airplane &airplane, Airport &airport, Runway &runway, int check);
+    static int landing(Airplane &airplane, Airport &airport, Runway &runway, int check, Time time);
 
-    static int ascending(Airplane &airplane, Airport &airport, Runway &runway, int check);
+    static int ascending(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time);
 
     static bool compare_file(string file1, string file2);
 };

@@ -24,7 +24,7 @@ public:
 */
     void addTime(unsigned int time);
 
-    string print_time();
+    string printTime();
 
 };
 
