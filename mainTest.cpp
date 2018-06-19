@@ -5,7 +5,6 @@
 #include "parser.h"
 #include "output.h"
 #include <gtest/gtest.h>
-#include <iostream>
 
 class VliegveldTest: public  ::testing::Test {
 protected:
@@ -49,6 +48,35 @@ TEST_F(VliegveldTest, DefConAirplane) {
 
 }
 
+TEST_F(VliegveldTest, SetterAirplane) {
+    airplane.setNumber("123");
+    EXPECT_EQ("123", airplane.getNumber());
+    airplane.setCallsign("555");
+    EXPECT_EQ("555", airplane.getCallsign());
+    airplane.setModel("Concorde");
+    EXPECT_EQ("Concorde", airplane.getModel());
+    airplane.setStatus("departed");
+    EXPECT_EQ("departed", airplane.getStatus());
+    airplane.setHeight(2000);
+    EXPECT_EQ(unsigned (2000), airplane.getHeight());
+    airplane.setAirport("Zaventem");
+    EXPECT_EQ("Zaventem", airplane.getAirport());
+    airplane.setGateNumber(5);
+    EXPECT_EQ(5, airplane.getGateNumber());
+    airplane.setCapacity(100);
+    EXPECT_EQ(unsigned (100), airplane.getCapacity());
+    airplane.setType("airline");
+    EXPECT_EQ("airline", airplane.getType());
+    airplane.setEngine("jet");
+    EXPECT_EQ("jet", airplane.getEngine());
+    airplane.setSize("small");
+    EXPECT_EQ("small", airplane.getSize());
+    airplane.setFuelCost(25);
+    EXPECT_EQ(unsigned (25), airplane.getFuelCost());
+    airplane.setFuel(10000);
+    EXPECT_EQ(unsigned (10000), airplane.getFuel());
+}
+
 TEST_F(VliegveldTest, DefConAirport) {
 
     EXPECT_EQ(unsigned (0), airport.getGates().size());
@@ -58,6 +86,24 @@ TEST_F(VliegveldTest, DefConAirport) {
     EXPECT_EQ("", airport.getName());
     EXPECT_EQ("", airport.getIata());
     EXPECT_EQ("", airport.getCallsign());
+
+}
+
+TEST_F(VliegveldTest, DefConRunway) {
+
+    EXPECT_EQ("",runway.getName());
+    EXPECT_EQ("",runway.getAirport());
+    EXPECT_EQ("",runway.getType());
+    EXPECT_EQ(unsigned (0),runway.getLength());
+    EXPECT_EQ(true,runway.isVacant());
+    EXPECT_EQ(unsigned (0),runway.get_Taxipoint().size());
+    EXPECT_EQ(unsigned (0),runway.get_Crossing().size());
+
+}
+
+TEST_F(VliegveldTest, DefConTime) {
+
+    EXPECT_EQ("12:00", time.printTime());
 
 }
 

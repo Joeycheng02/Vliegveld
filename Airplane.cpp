@@ -141,7 +141,7 @@ int Airplane::descending(Airport &airport, Time &time) {
 
     for (unsigned int i = 0; i <= airport.getNumberOfGates(); ++i) {
         if (i == airport.getNumberOfGates()) {
-            console << "[" << time.getTime() << "] " << "Instructing " << getCallsign() << " to take a holding pattern untill a clearance is made to land." << endl;
+            console << "[" << time.printTime() << "] " << "Instructing " << getCallsign() << " to take a holding pattern untill a clearance is made to land." << endl;
             output::landing(*this, airport, airport.getRunways()[0], 2, time);
             return -1;
         }

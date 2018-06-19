@@ -14,7 +14,6 @@ private:
     unsigned int t;
 public:
     Time();
-    unsigned int getTime();
 
 /**
 \n REQUIRE(Simulation::time >= 0, "The variable is not properly initialized");
