@@ -20,7 +20,7 @@ private:
     string callsign;
     unsigned int numberOfGates;
     vector <bool> gates;
-    vector <Runway> runways;
+    vector <Runway*> runways;
     bool heightCheck3000;
     bool heightCheck5000;
 public:
@@ -29,12 +29,12 @@ public:
 
     vector<bool> &getGates();
 
-    vector<Runway> &getRunways();
+    vector<Runway*> &getRunways();
 
 /**
 \n ENSURE(getRunways()[getRunways().size() - 1].isVacant() == runway.isVacant(), "The variable is not set correctly");
 */
-    void addRunways(Runway runway);
+    void addRunways(Runway* runway);
 
     unsigned int getNumberOfRunways() const;
 

@@ -6,7 +6,7 @@
 #include "output.h"
 #include "DesignByContract.h"
 
-int output::outputfile(vector<Airport> &airports, vector<Airplane> &airplanes) {
+int output::outputfile(vector<Airport*> &airports, vector<Airplane*> &airplanes) {
 
     REQUIRE(!airplanes.empty(), "There are no airplanes available");
     REQUIRE(!airports.empty(), "There are no airports available");
@@ -33,9 +33,9 @@ int output::outputfile(vector<Airport> &airports, vector<Airplane> &airplanes) {
     //Writes the information of all the airports in the output.txt file.
     for (int i = 0; i < int(airports.size()); ++i) {
 
-        file << "Airport: " << airports[i].getName() << " " << "(" << airports[i].getIata() << ")" << endl;
-        file << " --> gates: " << airports[i].getNumberOfGates() << endl;
-        file << " --> runways: " << airports[i].getNumberOfRunways() << endl;
+        file << "Airport: " << airports[i]->getName() << " " << "(" << airports[i]->getIata() << ")" << endl;
+        file << " --> gates: " << airports[i]->getNumberOfGates() << endl;
+        file << " --> runways: " << airports[i]->getNumberOfRunways() << endl;
         file << endl;
 
     }
@@ -49,8 +49,8 @@ int output::outputfile(vector<Airport> &airports, vector<Airplane> &airplanes) {
     //Writes the information of all the airports in the output.txt file.
     for (int i = 0; i < int(airplanes.size()); ++i) {
 
-        file << "Airplane: " << airplanes[i].getCallsign() << " " << "(" << airplanes[i].getNumber() << ")" << endl;
-        file << " --> model: " << airplanes[i].getModel() << endl;
+        file << "Airplane: " << airplanes[i]->getCallsign() << " " << "(" << airplanes[i]->getNumber() << ")" << endl;
+        file << " --> model: " << airplanes[i]->getModel() << endl;
         file << endl;
 
     }

@@ -61,20 +61,27 @@ void Runway::setLength(const unsigned int &length) {
     ENSURE(getLength() >= 0, "The variable can't be a negative number");
 }
 
-void Runway::add_Taxipoint(string taxipoint) {
+void Runway::addTaxipoint(string taxipoint) {
     taxipoints.push_back(taxipoint);
-    ENSURE(get_Taxipoint()[get_Taxipoint().size() - 1]== taxipoint, "The variable is not set correctly");
+    ENSURE(getTaxipoint()[getTaxipoint().size() - 1]== taxipoint, "The variable is not set correctly");
 }
 
-vector<string> Runway::get_Taxipoint() {
+vector<string> Runway::getTaxipoint() {
     return taxipoints;
 }
 
-void Runway::add_Crossing(string crossing) {
-    taxipoints.push_back(crossing);
-    ENSURE(get_Taxipoint()[get_Taxipoint().size() - 1]== crossing, "The variable is not set correctly");
+void Runway::addCrossing(Runway* crossing) {
+    crossings.push_back(crossing);
 }
 
-vector<string> Runway::get_Crossing() {
+vector<Runway*> Runway::getCrossing() {
     return crossings;
+}
+
+const vector<string> &Runway::getCrossings_string() const {
+    return crossings_string;
+}
+
+void Runway::addCrossings_string(string &crossings_string) {
+    Runway::crossings_string.push_back(crossings_string);
 }

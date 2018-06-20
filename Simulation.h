@@ -15,16 +15,16 @@
 
 class Simulation {
 private:
-    vector <Airport> airports;
-    vector <Airplane> airplanes;
-    vector <Runway> runways;
+    vector <Airport*> airports;
+    vector <Airplane*> airplanes;
+    vector <Runway*> runways;
     Time time;
 public:
-    vector<Airport> &getAirports();
+    vector<Airport*> &getAirports();
 
-    vector<Airplane> &getAirplanes();
+    vector<Airplane*> &getAirplanes();
 
-    vector<Runway> &getRunways();
+    vector<Runway*> &getRunways();
 
     void start();
 };

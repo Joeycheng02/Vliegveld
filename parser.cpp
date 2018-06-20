@@ -5,7 +5,7 @@
 #include "parser.h"
 #include "DesignByContract.h"
 
-int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vector<Runway> &runways, const char* path) {
+int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, vector<Runway*> &runways, const char* path) {
 
     REQUIRE(airplanes.empty(), "Airplanes must be empty");
     REQUIRE(airports.empty(), "Airports must be empty");
@@ -35,7 +35,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
         if (elemName == "AIRPORT") {
             bool one_airport = false;
             if(!one_airport) {
-                Airport airport;
+                Airport* airport = new Airport();
                 for (TiXmlElement *elem2 = elem->FirstChildElement(); elem2 != NULL;
                      elem2 = elem2->NextSiblingElement()) {
                     string elem2Name = elem2->Value();
@@ -52,7 +52,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                             if (text == NULL)
                                 continue;
                             std::string t = text->Value();
-                            airport.setName(t);
+                            airport->setName(t);
                         }
                     }
                     if (elem2Name == "iata") {
@@ -61,7 +61,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                             if (text == NULL)
                                 continue;
                             std::string t = text->Value();
-                            airport.setIata(t);
+                            airport->setIata(t);
                         }
                     }
                     if (elem2Name == "callsign") {
@@ -70,7 +70,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                             if (text == NULL)
                                 continue;
                             std::string t = text->Value();
-                            airport.setCallsign(t);
+                            airport->setCallsign(t);
                         }
                     }
                     if (elem2Name == "gates") {
@@ -89,7 +89,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                                 }
                             }
                             sscanf(t.c_str(), "%d", &i);
-                            airport.setNumberOfGates(i);
+                            airport->setNumberOfGates(i);
                         }
                     }
                 }
@@ -99,7 +99,8 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
         }
 
         if (elemName == "RUNWAY") {
-            Runway runway;
+            Runway* runway = new Runway();
+            vector<string> crossings;
             for (TiXmlElement *elem2 = elem->FirstChildElement(); elem2 != NULL;
                  elem2 = elem2->NextSiblingElement()) {
                 string elem2Name = elem2->Value();
@@ -116,7 +117,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         if (text == NULL)
                             continue;
                         std::string t = text->Value();
-                        runway.setName(t);
+                        runway->setName(t);
                     }
                 }
                 if (elem2Name == "airport") {
@@ -125,7 +126,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         if (text == NULL)
                             continue;
                         std::string t = text->Value();
-                        runway.setAirport(t);
+                        runway->setAirport(t);
                     }
                 }
                 if (elem2Name == "type"){
@@ -139,7 +140,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                             fout = true;
                             continue;
                         }
-                        runway.setType(t);
+                        runway->setType(t);
                     }
                 }
                 if (elem2Name == "length"){
@@ -158,7 +159,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                             }
                         }
                         sscanf(t.c_str(), "%d", &i);
-                        runway.setLength(i);
+                        runway->setLength(i);
                     }
                 }
                 if (elem2Name == "TAXIROUTE"){
@@ -177,7 +178,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                                 if (text == NULL)
                                     continue;
                                 std::string t = text->Value();
-                                runway.add_Taxipoint(t);
+                                runway->addTaxipoint(t);
                             }
                         }
                         if (elem3Name == "crossing"){
@@ -186,7 +187,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                                 if (text == NULL)
                                     continue;
                                 std::string t = text->Value();
-                                runway.add_Crossing(t);
+                                runway->addCrossings_string(t);
                             }
                         }
                     }
@@ -195,7 +196,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
             runways.push_back(runway);
         }
         if (elemName == "AIRPLANE") {
-            Airplane airplane;
+            Airplane* airplane = new Airplane();
             bool fuel_cost = false;
             for (TiXmlElement *elem2 = elem->FirstChildElement(); elem2 != NULL;
                  elem2 = elem2->NextSiblingElement()) {
@@ -213,7 +214,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         if (text == NULL)
                             continue;
                         std::string t = text->Value();
-                        airplane.setNumber(t);
+                        airplane->setNumber(t);
                     }
                 }
                 if (elem2Name == "callsign") {
@@ -222,7 +223,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         if (text == NULL)
                             continue;
                         std::string t = text->Value();
-                        airplane.setCallsign(t);
+                        airplane->setCallsign(t);
                     }
                 }
                 if (elem2Name == "model") {
@@ -231,7 +232,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                         if (text == NULL)
                             continue;
                         std::string t = text->Value();
-                        airplane.setModel(t);
+                        airplane->setModel(t);
                     }
                 }
                 if (elem2Name == "type") {
@@ -245,7 +246,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                             fout = true;
                             continue;
                         }
-                        airplane.setType(t);
+                        airplane->setType(t);
                     }
                 }
                 if (elem2Name == "engine") {
@@ -259,7 +260,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                             fout = true;
                             continue;
                         }
-                        airplane.setEngine(t);
+                        airplane->setEngine(t);
                     }
                 }
                 if (elem2Name == "size") {
@@ -273,7 +274,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                             fout = true;
                             continue;
                         }
-                        airplane.setSize(t);
+                        airplane->setSize(t);
                     }
                 }
                 if (elem2Name == "status") {
@@ -287,7 +288,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                             fout = true;
                             continue;
                         }
-                        airplane.setStatus(t);
+                        airplane->setStatus(t);
                     }
                 }
                 if (elem2Name == "capacity") {
@@ -305,7 +306,7 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                             }
                         }
                         sscanf(t.c_str(), "%d", &i);
-                        airplane.setCapacity(i);
+                        airplane->setCapacity(i);
                     }
                 }
                 if (elem2Name == "fuel") {
@@ -323,54 +324,54 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
                             }
                         }
                         sscanf(t.c_str(), "%d", &i);
-                        airplane.setFuel(i);
+                        airplane->setFuel(i);
                     }
                 }
                 if (!fuel_cost) {
-                    if (airplane.getSize() == "small" and airplane.getEngine() == "propeller") {
-                        airplane.setFuelCost(10);
+                    if (airplane->getSize() == "small" and airplane->getEngine() == "propeller") {
+                        airplane->setFuelCost(10);
                         fuel_cost = true;
-                        if (airplane.getType() == "private") {
-                            airplane.setSquawk_code("0001-0777");
+                        if (airplane->getType() == "private") {
+                            airplane->setSquawk_code("0001-0777");
                         }
-                        if (airplane.getType() == "emergency") {
-                            airplane.setSquawk_code("6000-6777");
+                        if (airplane->getType() == "emergency") {
+                            airplane->setSquawk_code("6000-6777");
                         }
-                    } else if (airplane.getSize() == "small" and airplane.getEngine() == "jet") {
-                        airplane.setFuelCost(25);
+                    } else if (airplane->getSize() == "small" and airplane->getEngine() == "jet") {
+                        airplane->setFuelCost(25);
                         fuel_cost = true;
-                        if (airplane.getType() == "private") {
-                            airplane.setSquawk_code("0001-0777");
+                        if (airplane->getType() == "private") {
+                            airplane->setSquawk_code("0001-0777");
                         }
-                        if (airplane.getType() == "military") {
-                            airplane.setSquawk_code("5000-5777");
+                        if (airplane->getType() == "military") {
+                            airplane->setSquawk_code("5000-5777");
                         }
-                    } else if (airplane.getSize() == "medium" and airplane.getEngine() == "propeller") {
-                        airplane.setFuelCost(50);
+                    } else if (airplane->getSize() == "medium" and airplane->getEngine() == "propeller") {
+                        airplane->setFuelCost(50);
                         fuel_cost = true;
-                        if (airplane.getType() == "airline") {
-                            airplane.setSquawk_code("2000-2777");
+                        if (airplane->getType() == "airline") {
+                            airplane->setSquawk_code("2000-2777");
                         }
-                    } else if (airplane.getSize() == "medium" and airplane.getEngine() == "jet") {
-                        airplane.setFuelCost(175);
+                    } else if (airplane->getSize() == "medium" and airplane->getEngine() == "jet") {
+                        airplane->setFuelCost(175);
                         fuel_cost = true;
-                        if (airplane.getType() == "private") {
-                            airplane.setSquawk_code("1000-1777");
+                        if (airplane->getType() == "private") {
+                            airplane->setSquawk_code("1000-1777");
                         }
-                        if (airplane.getType() == "airline") {
-                            airplane.setSquawk_code("3000-3777");
+                        if (airplane->getType() == "airline") {
+                            airplane->setSquawk_code("3000-3777");
                         }
-                    } else if (airplane.getSize() == "large" and airplane.getEngine() == "propeller") {
-                        airplane.setFuelCost(100);
+                    } else if (airplane->getSize() == "large" and airplane->getEngine() == "propeller") {
+                        airplane->setFuelCost(100);
                         fuel_cost = true;
-                        if (airplane.getType() == "military") {
-                            airplane.setSquawk_code("5000-5777");
+                        if (airplane->getType() == "military") {
+                            airplane->setSquawk_code("5000-5777");
                         }
-                    } else if (airplane.getSize() == "large" and airplane.getEngine() == "jet") {
-                        airplane.setFuelCost(250);
+                    } else if (airplane->getSize() == "large" and airplane->getEngine() == "jet") {
+                        airplane->setFuelCost(250);
                         fuel_cost = true;
-                        if (airplane.getType() == "airline") {
-                            airplane.setSquawk_code("4000-5777");
+                        if (airplane->getType() == "airline") {
+                            airplane->setSquawk_code("4000-5777");
                         }
                     }
                 }
@@ -380,18 +381,18 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
     }
     doc.Clear();
     for (int j = 0; j < int(airplanes.size()); ++j) {
-        if (airplanes[j].getStatus() == "standing at gate") {
+        if (airplanes[j]->getStatus() == "standing at gate") {
             if (0 == int(airports.size())) {
                 cout << "No gates available anymore." << endl;
                 return -1;
             }
-            if (airplanes[j].getGateNumber() == -1) {
-                for (unsigned int k = 0; k < airports[0].getNumberOfGates(); ++k) {
-                    if (airports[0].getGates()[k]) {
-                        airplanes[j].setAirport(airports[0].getName());
-                        airplanes[j].setHeight(0);
-                        airplanes[j].setGateNumber(k+1);
-                        airports[0].getGates()[k] = false;
+            if (airplanes[j]->getGateNumber() == -1) {
+                for (unsigned int k = 0; k < airports[0]->getNumberOfGates(); ++k) {
+                    if (airports[0]->getGates()[k]) {
+                        airplanes[j]->setAirport(airports[0]->getName());
+                        airplanes[j]->setHeight(0);
+                        airplanes[j]->setGateNumber(k+1);
+                        airports[0]->getGates()[k] = false;
                         break;
                     }
                 }
@@ -413,27 +414,36 @@ int parser::parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vect
     return 0;
 }
 
-void parser::addRunway(vector <Airport> &airports, vector <Runway> &runways) {
+void parser::addRunway(vector <Airport*> &airports, vector <Runway*> &runways) {
 
     REQUIRE(!runways.empty(), "There are no runways available");
     REQUIRE(!airports.empty(), "There are no airports available");
 
     for (int i = 0; i < int(runways.size()); ++i) {
         for (int j = 0; j < int(airports.size()); ++j) {
-            if(runways[i].getAirport() == airports[j].getIata()) {
-                airports[j].addRunways(runways[i]);
+            if(runways[i]->getAirport() == airports[j]->getIata()) {
+                airports[j]->addRunways(runways[i]);
             }
         }
     }
     for (int k = 0; k < int(airports.size()); ++k) {
-        ENSURE(!airports[k].getRunways().empty(), "Airport has no runway");
+        ENSURE(!airports[k]->getRunways().empty(), "Airport has no runway");
+    }
+
+    for(unsigned int R = 0; R < runways.size(); R++){
+        for(unsigned int s = 0; s < runways[R]->getCrossings_string().size(); s++){
+            for(unsigned int r = 0; r < runways.size(); r++){
+                if(runways[r]->getName() == runways[R]->getCrossings_string()[s]){
+                    runways[R]->addCrossing(runways[r]);
+                }
+            }
+        }
     }
 }
 
-void parser::full_parsing(vector<Airport> &airports, vector<Airplane> &airplanes, vector<Runway> &runways,
-                          const char *path) {
-    if(parsing(airports, airplanes, runways, path) == 1){
+void parser::full_parsing(Simulation &simulation, const char *path) {
+    if(parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), path) == 1){
         return;
     };
-    addRunway(airports, runways);
+    addRunway(simulation.getAirports(), simulation.getRunways());
 }

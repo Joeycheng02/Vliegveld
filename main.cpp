@@ -6,8 +6,7 @@ using namespace std;
 
 int main() {
     Simulation simulation;
-    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
-                        "Simulatie.xml");
+    parser::full_parsing(simulation, "Simulatie.xml");
     output::outputfile(simulation.getAirports(), simulation.getAirplanes());
     simulation.start();
 

@@ -16,7 +16,7 @@ public:
 \n REQUIRE(airplanes.size() != 0, "There are no airplanes available");
 \n REQUIRE(airports.size() != 0, "There are no airports available");
 */
-    static int outputfile (vector <Airport> &airports, vector <Airplane> &airplanes);
+    static int outputfile (vector <Airport*> &airports, vector <Airplane*> &airplanes);
 
 /**
 \n REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before requesting a landing");

@@ -129,7 +129,7 @@ public:
 \n ENSURE(getStatus() == "Standing at gate", "Airplane is not standing at a gate");
 \n ENSURE(getAirport() == airport.getName(), "Airplane is not standing at the right airport");
 */
-    int descending(Airport &airport, Time &time);
+    int descending(Airport* &airport, Time &time);
 
 /**
 \n REQUIRE (getStatus() == "Standing at gate", "Airplane is not standing at a gate");
@@ -137,7 +137,7 @@ public:
 \n ENSURE(airport.getRunways()[runwayNumber].isVacant(), "Runway is still occupied");
 \n ENSURE(getGateNumber() == -1, "Airplane is still at a gate");
 */
-    int ascending(Airport &airport, Time &time);
+    int ascending(Airport* &airport, Time &time);
 
     unsigned int getFuelCost() const;
 

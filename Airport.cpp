@@ -15,14 +15,14 @@ vector<bool> &Airport::getGates() {
     return gates;
 }
 
-vector<Runway> &Airport::getRunways() {
+vector<Runway*> &Airport::getRunways() {
     return runways;
 }
 
-void Airport::addRunways(Runway runway) {
-    runway.setVacant(true);
+void Airport::addRunways(Runway* runway) {
+    runway->setVacant(true);
     runways.push_back(runway);
-    ENSURE(getRunways()[getRunways().size() - 1].isVacant() == runway.isVacant(), "The variable is not set correctly");
+    ENSURE(getRunways()[getRunways().size() - 1]->isVacant() == runway->isVacant(), "The variable is not set correctly");
 }
 
 unsigned int Airport::getNumberOfRunways() const {
@@ -92,7 +92,7 @@ bool Airport::permissionToDescend(int height) {
     }
     if (height == 3000) {
         for (int i = 0; i < int(runways.size()); ++i) {
-            if (runways[i].isVacant()) {
+            if (runways[i]->isVacant()) {
                 setHeightCheck3000(true);
                 ENSURE(isHeightCheck3000(), "The variable is not set correctly");
                 return true;
@@ -134,6 +134,6 @@ bool Airport::permissionToAscend(int number) {
         return true;
     }
     else {
-        return runways[number].isVacant();
+        return runways[number]->isVacant();
     }
 }

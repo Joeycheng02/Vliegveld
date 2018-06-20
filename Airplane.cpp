@@ -129,7 +129,7 @@ Airplane::Airplane() {
     fuel_cost = 0;
 }
 
-int Airplane::descending(Airport &airport, Time &time) {
+int Airplane::descending(Airport* &airport, Time &time) {
 
     REQUIRE (getStatus() == "approaching", "Airplane is not approaching");
 
@@ -139,29 +139,29 @@ int Airplane::descending(Airport &airport, Time &time) {
         return -1;
     }
 
-    for (unsigned int i = 0; i <= airport.getNumberOfGates(); ++i) {
-        if (i == airport.getNumberOfGates()) {
+    for (unsigned int i = 0; i <= airport->getNumberOfGates(); ++i) {
+        if (i == airport->getNumberOfGates()) {
             console << "[" << time.printTime() << "] " << "Instructing " << getCallsign() << " to take a holding pattern untill a clearance is made to land." << endl;
-            output::landing(*this, airport, airport.getRunways()[0], 2, time);
+            output::landing(*this, *airport, *airport->getRunways()[0], 2, time);
             return -1;
         }
 
-        if (airport.getGates()[i]) {
-            airport.getGates()[i] = false;
+        if (airport->getGates()[i]) {
+            airport->getGates()[i] = false;
             setGateNumber(i+1);
             break;
         }
     }
 
     int runwayNumber = -1;
-    for (unsigned int i = 0; i <= airport.getNumberOfRunways(); ++i) {
-        if (i == airport.getNumberOfRunways()) {
+    for (unsigned int i = 0; i <= airport->getNumberOfRunways(); ++i) {
+        if (i == airport->getNumberOfRunways()) {
             console << "[" << time.printTime() << "] " << "Instructing " << getCallsign() << " to wait untill there is a free runway." << endl;
-            output::landing(*this, airport, airport.getRunways()[0], 2, time);
+            output::landing(*this, *airport, *airport->getRunways()[0], 2, time);
             return -1;
         }
 
-        if (airport.getRunways()[i].isVacant()) {
+        if (airport->getRunways()[i]->isVacant()) {
             runwayNumber = i;
             break;
         }
@@ -171,20 +171,20 @@ int Airplane::descending(Airport &airport, Time &time) {
         console << "[" << time.printTime() << "] " << "Instructing " << getCallsign() << " to get an height of 10.000ft." << endl;
         setHeight(10000);
     }
-    console << "[" << time.printTime() << "] " << getCallsign() << " is approaching " << airport.getName() << " at 10.000ft." << endl;
+    console << "[" << time.printTime() << "] " << getCallsign() << " is approaching " << airport->getName() << " at 10.000ft." << endl;
     while (getHeight() > 1000) {
         if(getHeight() == 10000 or getHeight() == 5000 or getHeight() == 3000) {
-            if (!airport.permissionToDescend(getHeight())) {
+            if (!airport->permissionToDescend(getHeight())) {
                 return -1;
             }
             if(getHeight() == 10000){
-                output::landing(*this, airport, airport.getRunways()[runwayNumber], 1, time);
+                output::landing(*this, *airport, *airport->getRunways()[runwayNumber], 1, time);
             }
             if(getHeight() == 5000){
-                output::landing(*this, airport, airport.getRunways()[runwayNumber], 3, time);
+                output::landing(*this, *airport, *airport->getRunways()[runwayNumber], 3, time);
             }
             if(getHeight() == 3000){
-                output::landing(*this, airport, airport.getRunways()[runwayNumber], 4, time);
+                output::landing(*this, *airport, *airport->getRunways()[runwayNumber], 4, time);
             }
         }
         setHeight(getHeight() - 1000);
@@ -199,19 +199,24 @@ int Airplane::descending(Airport &airport, Time &time) {
         console << "[" << time.printTime() << "] " << getCallsign() << " descended to " << getHeight() << " ft." << endl;
     }
     setHeight(getHeight() - 1000);
-    airport.getRunways()[runwayNumber].setVacant(false);
-    console << "[" << time.printTime() << "] " << getCallsign() << " is landing at "<< airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
+    airport->getRunways()[runwayNumber]->setVacant(false);
+    console << "[" << time.printTime() << "] " << getCallsign() << " is landing at "<< airport->getName() << " on runway " << airport->getRunways()[runwayNumber]->getName() << endl;
     time.addTime(2);
     setFuel(getFuel() - getFuelCost() * 2);
-    console << "[" << time.printTime() << "] " << getCallsign() << " has landed at "<< airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
+    console << "[" << time.printTime() << "] " << getCallsign() << " has landed at "<< airport->getName() << " on runway " << airport->getRunways()[runwayNumber]->getName() << endl;
     console << "[" << time.printTime() << "] " << getCallsign() << " is taxiing to Gate " << getGateNumber() << endl;
-    output::landing(*this, airport, airport.getRunways()[runwayNumber], 5, time);
+    output::landing(*this, *airport, *airport->getRunways()[runwayNumber], 5, time);
+    for(unsigned int r = 0; r < airport->getRunways()[runwayNumber]->getCrossing().size(); r++){
+        if(!airport->getRunways()[runwayNumber]->getCrossing()[r]->isVacant()){
+            console << "[" << time.printTime() << "] " << this->getCallsign() << " is crossing runway " << airport->getRunways()[runwayNumber]->getCrossing()[r]->getName() << "." << endl;
+        }
+    }
     console << "[" << time.printTime() << "] " << getCallsign() << " is standing at Gate " << getGateNumber() << endl;
-    airport.getRunways()[runwayNumber].setVacant(true);
-    setAirport(airport.getName());
+    airport->getRunways()[runwayNumber]->setVacant(true);
+    setAirport(airport->getName());
     setStatus("standing at gate");
     time.addTime(getCapacity()/2);
-    console << "[" << time.printTime() << "] " << getCapacity() << " passengers exited " << getCallsign() << " at gate " << getGateNumber() << " of " << airport.getName() << endl;
+    console << "[" << time.printTime() << "] " << getCapacity() << " passengers exited " << getCallsign() << " at gate " << getGateNumber() << " of " << airport->getName() << endl;
     if (getSize() == "small") {
         time.addTime(1);
     }
@@ -224,18 +229,18 @@ int Airplane::descending(Airport &airport, Time &time) {
     console << "[" << time.printTime() << "] " << getCallsign() << " has been checked for technical malfunctions" << endl << endl;
 
     ENSURE(getStatus() == "standing at gate", "Airplane is not standing at a gate");
-    ENSURE(getAirport() == airport.getName(), "Airplane is not standing at the right airport");
+    ENSURE(getAirport() == airport->getName(), "Airplane is not standing at the right airport");
 
     console.close();
     return 0;
 }
 
 
-int Airplane::ascending (Airport &airport, Time &time) {
+int Airplane::ascending (Airport* &airport, Time &time) {
 
     REQUIRE (getStatus() == "standing at gate", "Airplane is not standing at a gate");
 
-    REQUIRE (getAirport() == airport.getName(), "This airplane does not belong to the given aiport.");
+    REQUIRE (getAirport() == airport->getName(), "This airplane does not belong to the given aiport.");
 
     ofstream console("console_output.txt", fstream::app);
     if (!console) {
@@ -245,13 +250,13 @@ int Airplane::ascending (Airport &airport, Time &time) {
 
     int runwayNumber = -1;
 
-    for (unsigned int i = 0; i <= airport.getNumberOfRunways(); ++i) {
-        if (i == airport.getNumberOfRunways()) {
+    for (unsigned int i = 0; i <= airport->getNumberOfRunways(); ++i) {
+        if (i == airport->getNumberOfRunways()) {
             console << "[" << time.printTime() << "] " << "Instructing " << getCallsign() << " to wait untill there is a free runway." << endl;
             return -1;
         }
 
-        if (airport.getRunways()[i].isVacant()) {
+        if (airport->getRunways()[i]->isVacant()) {
             runwayNumber = i;
             break;
         }
@@ -259,26 +264,26 @@ int Airplane::ascending (Airport &airport, Time &time) {
     time.addTime(getFuel()/10000);
     console << "[" << time.printTime() << "] " << getCallsign() << " has been refueled" << endl;
     time.addTime(getCapacity()/2);
-    console << "[" << time.printTime() << "] " << getCapacity() << " passengers boarded " << getCallsign() << " at gate " << getGateNumber() << " of " << airport.getName() << endl;
+    console << "[" << time.printTime() << "] " << getCapacity() << " passengers boarded " << getCallsign() << " at gate " << getGateNumber() << " of " << airport->getName() << endl;
 
-    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 1, time);
-    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 2, time);
+    output::ascending(*this, *airport, *airport->getRunways()[runwayNumber], 1, time);
+    output::ascending(*this, *airport, *airport->getRunways()[runwayNumber], 2, time);
 
-    airport.getGates()[getGateNumber()-1] = true;
+    airport->getGates()[getGateNumber()-1] = true;
     setGateNumber(-1);
 
-    airport.permissionToAscend(-1);
-    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 3, time);
-    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 4, time);
-    console << "[" << time.printTime() << "] " << getCallsign() << " is taxiing to runway " << airport.getRunways()[runwayNumber].getName() << "." << endl;
-    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 5, time);
-    if (!airport.permissionToAscend(runwayNumber)) {
+    airport->permissionToAscend(-1);
+    output::ascending(*this, *airport, *airport->getRunways()[runwayNumber], 3, time);
+    output::ascending(*this, *airport, *airport->getRunways()[runwayNumber], 4, time);
+    console << "[" << time.printTime() << "] " << getCallsign() << " is taxiing to runway " << airport->getRunways()[runwayNumber]->getName() << "." << endl;
+    output::ascending(*this, *airport, *airport->getRunways()[runwayNumber], 5, time);
+    if (!airport->permissionToAscend(runwayNumber)) {
         return -1;
     }
-    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 6, time);
-    airport.getRunways()[runwayNumber].setVacant(false);
-    output::ascending(*this, airport, airport.getRunways()[runwayNumber], 7, time);
-    console << "[" << time.printTime() << "] " << getCallsign() << " is taking off at " << airport.getName() << " on runway " << airport.getRunways()[runwayNumber].getName() << endl;
+    output::ascending(*this, *airport, *airport->getRunways()[runwayNumber], 6, time);
+    airport->getRunways()[runwayNumber]->setVacant(false);
+    output::ascending(*this, *airport, *airport->getRunways()[runwayNumber], 7, time);
+    console << "[" << time.printTime() << "] " << getCallsign() << " is taking off at " << airport->getName() << " on runway " << airport->getRunways()[runwayNumber]->getName() << endl;
     if (getEngine() == "propeller") {
         time.addTime(3);
         setFuel(getFuel() - getFuelCost() * 3);
@@ -302,11 +307,11 @@ int Airplane::ascending (Airport &airport, Time &time) {
         console << "[" << time.printTime() << "] " << getCallsign() << " has ascended to " << getHeight() << " ft." << endl;
 
     }
-    console << "[" << time.printTime() << "] " << getCallsign() << " has left " << airport.getName() << endl << endl;
-    airport.getRunways()[runwayNumber].setVacant(true);
+    console << "[" << time.printTime() << "] " << getCallsign() << " has left " << airport->getName() << endl << endl;
+    airport->getRunways()[runwayNumber]->setVacant(true);
     setAirport("No airport assigned");
 
-    ENSURE(airport.getRunways()[runwayNumber].isVacant(), "Runway is still occupied");
+    ENSURE(airport->getRunways()[runwayNumber]->isVacant(), "Runway is still occupied");
     ENSURE(getGateNumber() == -1, "Airplane is still at a gate");
     console.close();
     return 0;

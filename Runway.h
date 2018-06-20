@@ -18,7 +18,8 @@ private:
     unsigned int length;
     bool vacant;
     vector<string> taxipoints;
-    vector<string> crossings;
+    vector<string> crossings_string;
+    vector<Runway*> crossings;
 
 public:
 
@@ -68,16 +69,17 @@ public:
 /**
 \n ENSURE(get_Taxipoint()[get_Taxipoint().size() - 1]== taxipoint, "The variable is not set correctly");
 */
-    void add_Taxipoint(string crossing);
+    void addTaxipoint(string crossing);
 
-    vector<string> get_Taxipoint();
+    vector<string> getTaxipoint();
 
-/**
-\n ENSURE(get_Taxipoint()[get_Taxipoint().size() - 1]== crossing, "The variable is not set correctly");
-*/
-    void add_Crossing(string taxipoint);
+    void addCrossing(Runway* taxipoint);
 
-    vector<string> get_Crossing();
+    vector<Runway*> getCrossing();
+
+    const vector<string> &getCrossings_string() const;
+
+    void addCrossings_string(string &crossings_string);
 };
 
 
