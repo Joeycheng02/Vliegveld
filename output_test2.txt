@@ -20,21 +20,21 @@ $ Nighthawk, descend and maintain three thousand feet.
 $ Descend and maintain three thousand feet, Nighthawk.
 
 [12:12][ATC]
-$ Nighthawk, cleared ILS approach runway12M.
+$ Nighthawk, cleared ILS approach runway 12M.
 [12:13][AIR]
 $ Cleared ILS approach runway 12M, Nighthawk.
 
 [12:18][AIR]
-$ Merksplas tower, Nighthawk, runway12M vacated.
+$ Merksplas tower, Nighthawk, runway 12M vacated.
 [12:19][ATC]
 $ taxi-instructions
 
 [12:21] [AIR]
 $ Merksplas tower, Nighthawk, requesting IFR clearancy to <destination>
 [12:22][ATC]
-$ Nighthawk, Merksplas tower, cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk <squawk-code>, Nighthawk.
+$ Nighthawk, Merksplas tower, cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk 0001-0777, Nighthawk.
 [12:23][AIR]
-$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking0001-0777, Nighthawk.
+$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking 0001-0777, Nighthawk.
 
 [12:24][AIR]
 $ Merksplas tower, Nighthawk at gate 1, requesting pushback.

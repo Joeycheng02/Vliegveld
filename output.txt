@@ -1,8 +1,76 @@
-TEST_F(VliegveldTest, runway){
-    parser::full_parsing(simulation, "Simulatie.xml");
-    // There is always 1 more taxipoint then corssings.
-    EXPECT_TRUE(simulation.getAirports()[0]->getRunways()[0]->getCrossing().size() + 1 == simulation.getAirports()[0]->getRunways()[0]->getTaxipoint().size());
-    // The taxipoints are named with the alphabet.
-    EXPECT_TRUE(simulation.getAirports()[0]->getRunways()[0]->getTaxipoint()[0] > simulation.getAirports()[0]->getRunways()[0]->getTaxipoint()[1]);
-    EXPECT_EQ(simulation.getAirports()[0]->getRunways()[0]->getCrossing()[0], simulation.getAirports()[0]->getRunways()[1]);
-}
+Airport: Test airport (BEL)
+ --> gates: 12
+ --> runways: 1
+
+
+
+Airplane: Nighthawk (M48674)
+ --> model: Nighthawk 340
+
+[12:00][AIR]
+$ Merksplas tower, Nighthawk, arriving at Test airport.
+[12:01][ATC]
+$ Nighthawk, radar contact, descend and maintain five thousand feet, squawk 0001-0777.
+[12:02][AIR]
+$ Descend and maintain five thousand feet, sqauwking 0001-0777, Nighthawk.
+
+[12:08][ATC]
+$ Nighthawk, descend and maintain three thousand feet.
+[12:09][AIR]
+$ Descend and maintain three thousand feet, Nighthawk.
+
+[12:12][ATC]
+$ Nighthawk, cleared ILS approach runway 12M.
+[12:13][AIR]
+$ Cleared ILS approach runway 12M, Nighthawk.
+
+[12:18][AIR]
+$ Merksplas tower, Nighthawk, runway 12M vacated.
+[12:19][ATC]
+$ taxi-instructions
+
+[12:21] [AIR]
+$ Merksplas tower, Nighthawk, requesting IFR clearancy to <destination>
+[12:22][ATC]
+$ Nighthawk, Merksplas tower, cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk 0001-0777, Nighthawk.
+[12:23][AIR]
+$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking 0001-0777, Nighthawk.
+
+[12:24][AIR]
+$ Merksplas tower, Nighthawk at gate 1, requesting pushback.
+[12:25][ATC]
+$ Nighthawk, Merksplas tower, pushback approved.
+[12:26][AIR]
+$ Pushback approved, Nighthawk.
+
+[12:27][AIR]
+$ Nighthawk is ready to taxi.
+[12:28][ATC]
+$ taxi-instructions
+
+[12:29][AIR]
+$ Merksplas tower, Nighthawk, holding short at 12M
+[12:30][ATC]
+$ Nighthawk, hold position.
+[12:31][AIR]
+$ Holding position, Nighthawk.
+
+[12:32][AIR]
+$ Merksplas tower, Nighthawk, holding short at 12M
+[12:33][ATC]
+$ Nighthawk, line-up runway 12M and wait.
+[12:34][AIR]
+$ Lining up runway 12M and wait, Nighthawk.
+
+[12:35][AIR]
+$ Merksplas tower, Nighthawk, holding short at 12M
+[12:36][ATC]
+$ Nighthawk, runway 12M cleared for take-off.
+[12:37][AIR]
+$ Runway 12M cleared for take-off, Nighthawk.
+
+[12:38][ATC]
+$ Nighthawk, runway 12M cleared for take-off.
+[12:39][AIR]
+$ Runway 12M cleared for take-off, Nighthawk.
+

@@ -45,6 +45,7 @@ TEST_F(VliegveldTest, DefConAirplane) {
     EXPECT_EQ("", airplane.getSize());
     EXPECT_EQ(unsigned (0), airplane.getFuelCost());
     EXPECT_EQ(unsigned (0), airplane.getFuel());
+    EXPECT_EQ("", airplane.getSquawk_code());
 
 }
 
@@ -75,6 +76,9 @@ TEST_F(VliegveldTest, SetterAirplane) {
     EXPECT_EQ(unsigned (25), airplane.getFuelCost());
     airplane.setFuel(10000);
     EXPECT_EQ(unsigned (10000), airplane.getFuel());
+    airplane.setSquawk_code("442");
+    EXPECT_EQ("442", airplane.getSquawk_code());
+
 }
 
 TEST_F(VliegveldTest, ascending){
@@ -95,8 +99,10 @@ TEST_F(VliegveldTest, Descending) {
     EXPECT_TRUE(simulation.getAirplanes()[0]->getStatus() == "approaching");
     simulation.getAirplanes()[0]->descending(simulation.getAirports()[0], time);
     EXPECT_TRUE(simulation.getAirplanes()[0]->getStatus() == "standing at gate");
-    EXPECT_EQ(unsigned (0), simulation.getAirplanes()[1]->getHeight());
-    EXPECT_DEATH(simulation.getAirplanes()[1]->descending(simulation.getAirports()[0], time), "Airplane is not approaching");
+    EXPECT_EQ(unsigned (0), simulation.getAirplanes()[0]->getHeight());
+    EXPECT_EQ(1, simulation.getAirplanes()[1]->getGateNumber());
+    EXPECT_EQ(2, simulation.getAirplanes()[0]->getGateNumber());
+    EXPECT_DEATH(simulation.getAirplanes()[0]->descending(simulation.getAirports()[0], time), "Airplane is not approaching");
 
 }
 
@@ -123,6 +129,21 @@ TEST_F(VliegveldTest, SetterAirport) {
     airport.setCallsign("Brussels Tower");
     EXPECT_EQ("Brussels Tower", airport.getCallsign());
 
+}
+
+TEST_F(VliegveldTest, Airport) {
+
+    parser::full_parsing(simulation, "Simulatie.xml");
+    EXPECT_TRUE(simulation.getAirports()[0]->getRunways()[0]->isVacant());
+    EXPECT_TRUE(simulation.getAirports()[0]->permissionToAscend(0));
+    simulation.getAirports()[0]->getRunways()[0]->setVacant(false);
+    EXPECT_FALSE(simulation.getAirports()[0]->permissionToAscend(0));
+    EXPECT_FALSE(simulation.getAirports()[0]->permissionToDescend(12000));
+    EXPECT_TRUE(simulation.getAirports()[0]->permissionToDescend(10000));
+    EXPECT_TRUE(simulation.getAirports()[0]->permissionToDescend(5000));
+    EXPECT_FALSE(simulation.getAirports()[0]->permissionToDescend(3000));
+    simulation.getAirports()[0]->getRunways()[0]->setVacant(true);
+    EXPECT_TRUE(simulation.getAirports()[0]->permissionToDescend(3000));
 }
 
 TEST_F(VliegveldTest, DefConRunway) {
@@ -152,6 +173,15 @@ TEST_F(VliegveldTest, SetterRunway) {
 
 }
 
+TEST_F(VliegveldTest, runway){
+    parser::full_parsing(simulation, "Simulatie.xml");
+    // There is always 1 more taxipoint then corssings.
+    EXPECT_TRUE(simulation.getAirports()[0]->getRunways()[0]->getCrossing().size() + 1 == simulation.getAirports()[0]->getRunways()[0]->getTaxipoint().size());
+    // The taxipoints are named with the alphabet.
+    EXPECT_TRUE(simulation.getAirports()[0]->getRunways()[0]->getTaxipoint()[0] > simulation.getAirports()[0]->getRunways()[0]->getTaxipoint()[1]);
+    EXPECT_EQ(simulation.getAirports()[0]->getRunways()[0]->getCrossing()[0], simulation.getAirports()[0]->getRunways()[1]);
+}
+
 TEST_F(VliegveldTest, DefConTime) {
 
     EXPECT_EQ("12:00", time.printTime());
@@ -171,11 +201,12 @@ TEST_F(VliegveldTest, Parsing) {
 
     parser::full_parsing(simulation, "Simulatie.xml");
     EXPECT_EQ("Antwerp International Airport", simulation.getAirports()[0]->getName());
-    EXPECT_EQ(unsigned (1), simulation.getAirports()[0]->getNumberOfRunways());
+    EXPECT_EQ(unsigned (2), simulation.getAirports()[0]->getNumberOfRunways());
     EXPECT_EQ(unsigned (10), simulation.getAirports()[0]->getNumberOfGates());
     EXPECT_EQ("ANR", simulation.getAirports()[0]->getIata());
     EXPECT_EQ("Antwerp Tower", simulation.getAirports()[0]->getCallsign());
-    EXPECT_EQ("11R", simulation.getAirports()[0]->getRunways()[0]->getName());
+    EXPECT_EQ("12R", simulation.getAirports()[0]->getRunways()[0]->getName());
+    EXPECT_EQ("11R", simulation.getAirports()[0]->getRunways()[1]->getName());
     EXPECT_EQ("ANR", simulation.getAirports()[0]->getRunways()[0]->getAirport());
 
 }
