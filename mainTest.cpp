@@ -77,6 +77,29 @@ TEST_F(VliegveldTest, SetterAirplane) {
     EXPECT_EQ(unsigned (10000), airplane.getFuel());
 }
 
+TEST_F(VliegveldTest, ascending){
+
+    parser::full_parsing(simulation, "Simulatie.xml");
+    EXPECT_EQ(unsigned (0), simulation.getAirplanes()[1]->getHeight());
+    EXPECT_TRUE(simulation.getAirplanes()[1]->getStatus() == "standing at gate");
+    simulation.getAirplanes()[1]->ascending(simulation.getAirports()[0], time);
+    EXPECT_TRUE(simulation.getAirplanes()[1]->getStatus() == "departed");
+    EXPECT_EQ(unsigned (5000), simulation.getAirplanes()[1]->getHeight());
+    EXPECT_EQ(-1, simulation.getAirplanes()[1]->getGateNumber());
+    EXPECT_DEATH(simulation.getAirplanes()[1]->ascending(simulation.getAirports()[0], time), "Airplane is not standing at a gate");
+}
+
+TEST_F(VliegveldTest, Descending) {
+
+    parser::full_parsing(simulation, "Simulatie.xml");
+    EXPECT_TRUE(simulation.getAirplanes()[0]->getStatus() == "approaching");
+    simulation.getAirplanes()[0]->descending(simulation.getAirports()[0], time);
+    EXPECT_TRUE(simulation.getAirplanes()[0]->getStatus() == "standing at gate");
+    EXPECT_EQ(unsigned (0), simulation.getAirplanes()[1]->getHeight());
+    EXPECT_DEATH(simulation.getAirplanes()[1]->descending(simulation.getAirports()[0], time), "Airplane is not approaching");
+
+}
+
 TEST_F(VliegveldTest, DefConAirport) {
 
     EXPECT_EQ(unsigned (0), airport.getGates().size());
@@ -89,15 +112,43 @@ TEST_F(VliegveldTest, DefConAirport) {
 
 }
 
+TEST_F(VliegveldTest, SetterAirport) {
+
+    airport.setNumberOfGates(5);
+    EXPECT_EQ(unsigned (5), airport.getNumberOfGates());
+    airport.setName("Zaventem");
+    EXPECT_EQ("Zaventem", airport.getName());
+    airport.setIata("BRU");
+    EXPECT_EQ("BRU", airport.getIata());
+    airport.setCallsign("Brussels Tower");
+    EXPECT_EQ("Brussels Tower", airport.getCallsign());
+
+}
+
 TEST_F(VliegveldTest, DefConRunway) {
 
     EXPECT_EQ("",runway.getName());
     EXPECT_EQ("",runway.getAirport());
     EXPECT_EQ("",runway.getType());
     EXPECT_EQ(unsigned (0),runway.getLength());
-    EXPECT_EQ(true,runway.isVacant());
-    EXPECT_EQ(unsigned (0),runway.get_Taxipoint().size());
-    EXPECT_EQ(unsigned (0),runway.get_Crossing().size());
+    EXPECT_TRUE(runway.isVacant());
+    EXPECT_EQ(unsigned (0),runway.getTaxipoint().size());
+    EXPECT_EQ(unsigned (0),runway.getCrossing().size());
+
+}
+
+TEST_F(VliegveldTest, SetterRunway) {
+
+    runway.setName("2LR");
+    EXPECT_EQ("2LR",runway.getName());
+    runway.setAirport("Zaventem");
+    EXPECT_EQ("Zaventem",runway.getAirport());
+    runway.setType("asphalt");
+    EXPECT_EQ("asphalt",runway.getType());
+    runway.setLength(200);
+    EXPECT_EQ(unsigned (200),runway.getLength());
+    runway.setVacant(false);
+    EXPECT_FALSE(runway.isVacant());
 
 }
 
@@ -107,86 +158,65 @@ TEST_F(VliegveldTest, DefConTime) {
 
 }
 
+TEST_F(VliegveldTest, SetterTime) {
+
+    time.addTime(20);
+    EXPECT_EQ("12:20", time.printTime());
+    time.addTime(700);
+    EXPECT_EQ("00:00", time.printTime());
+
+}
+
 TEST_F(VliegveldTest, Parsing) {
 
-    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
-                      "Simulatie.xml");
-    EXPECT_EQ("Antwerp International Airport", simulation.getAirports()[0].getName());
-    EXPECT_EQ(unsigned (1), simulation.getAirports()[0].getNumberOfRunways());
-    EXPECT_EQ(unsigned (10), simulation.getAirports()[0].getNumberOfGates());
-    EXPECT_EQ("ANR", simulation.getAirports()[0].getIata());
-    EXPECT_EQ("Antwerp Tower", simulation.getAirports()[0].getCallsign());
-    EXPECT_EQ("11R", simulation.getAirports()[0].getRunways()[0].getName());
-    EXPECT_EQ("ANR", simulation.getAirports()[0].getRunways()[0].getAirport());
+    parser::full_parsing(simulation, "Simulatie.xml");
+    EXPECT_EQ("Antwerp International Airport", simulation.getAirports()[0]->getName());
+    EXPECT_EQ(unsigned (1), simulation.getAirports()[0]->getNumberOfRunways());
+    EXPECT_EQ(unsigned (10), simulation.getAirports()[0]->getNumberOfGates());
+    EXPECT_EQ("ANR", simulation.getAirports()[0]->getIata());
+    EXPECT_EQ("Antwerp Tower", simulation.getAirports()[0]->getCallsign());
+    EXPECT_EQ("11R", simulation.getAirports()[0]->getRunways()[0]->getName());
+    EXPECT_EQ("ANR", simulation.getAirports()[0]->getRunways()[0]->getAirport());
 
 }
 
 TEST_F(VliegveldTest, Parsing_Test){ // Deze test test alle attributen van de parser m.b.v. een test xml-bestand
 
-    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "test.xml");
-    EXPECT_EQ("Test airport", simulation.getAirports()[0].getName());
-    EXPECT_EQ("BEL", simulation.getAirports()[0].getIata());
-    EXPECT_EQ("Merksplas tower", simulation.getAirports()[0].getCallsign());
-    EXPECT_EQ(unsigned (12), simulation.getAirports()[0].getNumberOfGates());
+    parser::full_parsing(simulation, "test.xml");
+    EXPECT_EQ("Test airport", simulation.getAirports()[0]->getName());
+    EXPECT_EQ("BEL", simulation.getAirports()[0]->getIata());
+    EXPECT_EQ("Merksplas tower", simulation.getAirports()[0]->getCallsign());
+    EXPECT_EQ(unsigned (12), simulation.getAirports()[0]->getNumberOfGates());
 
-    EXPECT_EQ("12M", simulation.getRunways()[0].getName());
-    EXPECT_EQ("BEL", simulation.getRunways()[0].getAirport());
-    EXPECT_EQ("grass", simulation.getRunways()[0].getType());
-    EXPECT_EQ(unsigned (1212), simulation.getRunways()[0].getLength());
+    EXPECT_EQ("12M", simulation.getRunways()[0]->getName());
+    EXPECT_EQ("BEL", simulation.getRunways()[0]->getAirport());
+    EXPECT_EQ("grass", simulation.getRunways()[0]->getType());
+    EXPECT_EQ(unsigned (1212), simulation.getRunways()[0]->getLength());
 
-    EXPECT_EQ("M48674", simulation.getAirplanes()[0].getNumber());
-    EXPECT_EQ("Nighthawk", simulation.getAirplanes()[0].getCallsign());
-    EXPECT_EQ("Nighthawk 340", simulation.getAirplanes()[0].getModel());
-    EXPECT_EQ("private", simulation.getAirplanes()[0].getType());
-    EXPECT_EQ("jet", simulation.getAirplanes()[0].getEngine());
-    EXPECT_EQ("small", simulation.getAirplanes()[0].getSize());
-    EXPECT_EQ("approaching", simulation.getAirplanes()[0].getStatus());
-    EXPECT_EQ(unsigned (1), simulation.getAirplanes()[0].getCapacity());
+    EXPECT_EQ("M48674", simulation.getAirplanes()[0]->getNumber());
+    EXPECT_EQ("Nighthawk", simulation.getAirplanes()[0]->getCallsign());
+    EXPECT_EQ("Nighthawk 340", simulation.getAirplanes()[0]->getModel());
+    EXPECT_EQ("private", simulation.getAirplanes()[0]->getType());
+    EXPECT_EQ("jet", simulation.getAirplanes()[0]->getEngine());
+    EXPECT_EQ("small", simulation.getAirplanes()[0]->getSize());
+    EXPECT_EQ("approaching", simulation.getAirplanes()[0]->getStatus());
+    EXPECT_EQ(unsigned (1), simulation.getAirplanes()[0]->getCapacity());
 
-}
-
-TEST_F(VliegveldTest, Descending) {
-
-    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
-                      "Simulatie.xml");
-    simulation.getAirplanes()[0].descending(simulation.getAirports()[0], time);
-    EXPECT_EQ("standing at gate", simulation.getAirplanes()[0].getStatus());
-
-}
-
-TEST_F(VliegveldTest, ExpectedErrors) {
-
-    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
-                      "Simulatie.xml");
-    Airplane airplanetest;
-    EXPECT_DEATH(airplanetest.descending(simulation.getAirports()[0], time), "Airplane is not approaching");
-    EXPECT_DEATH(parser::parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "Simulatie.xml"), "Airplanes must be empty");
-
-}
-
-TEST_F(VliegveldTest, ascending){
-
-    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(),
-                      "Simulatie.xml");
-    EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "standing at gate");
-    simulation.getAirplanes()[1].ascending(simulation.getAirports()[0], time);
-    EXPECT_TRUE(simulation.getAirplanes()[1].getStatus() == "departed");
-
-    remove ("console_output.txt");
 }
 
 TEST_F(VliegveldTest, output){
-    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "Simulatie.xml");
+    parser::full_parsing(simulation, "Simulatie.xml");
     output::outputfile(simulation.getAirports(), simulation.getAirplanes());
     simulation.start();
     EXPECT_TRUE(output::compare_file("output.txt", "output_test.txt"));
 }
 
 TEST_F(VliegveldTest, output_test){
-    parser::full_parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), "test.xml");
+    parser::full_parsing(simulation, "test.xml");
     output::outputfile(simulation.getAirports(), simulation.getAirplanes());
     simulation.start();
     EXPECT_TRUE(output::compare_file("output.txt", "output_test2.txt"));
+    remove("console_output.txt");
 }
 
 int main(int argc, char **argv) {
