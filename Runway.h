@@ -67,18 +67,25 @@ public:
     void setLength(const unsigned int &length);
 
 /**
-\n ENSURE(get_Taxipoint()[get_Taxipoint().size() - 1]== taxipoint, "The variable is not set correctly");
+\n ENSURE(getTaxipoint()[getTaxipoint().size() - 1]== taxipoint, "The variable is not set correctly");
 */
     void addTaxipoint(string crossing);
 
     vector<string> getTaxipoint();
 
-    void addCrossing(Runway* taxipoint);
+/**
+\n ENSURE(getCrossing()[getCrossing.size() - 1]== crossing, "The variable is not set correctly");
+*/
+    void addCrossing(Runway* crossing);
 
     vector<Runway*> getCrossing();
 
     const vector<string> &getCrossings_string() const;
 
+/**
+\n ENSURE(getCrossings_string()[getCrossings_string().size() - 1]== crossings_string, "The variable is not set correctly");
+
+*/    
     void addCrossings_string(string &crossings_string);
 };
 

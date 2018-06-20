@@ -72,6 +72,8 @@ vector<string> Runway::getTaxipoint() {
 
 void Runway::addCrossing(Runway* crossing) {
     crossings.push_back(crossing);
+    ENSURE(getCrossing()[getCrossing().size() - 1]== crossing, "The variable is not set correctly");
+
 }
 
 vector<Runway*> Runway::getCrossing() {
@@ -84,4 +86,6 @@ const vector<string> &Runway::getCrossings_string() const {
 
 void Runway::addCrossings_string(string &crossings_string) {
     Runway::crossings_string.push_back(crossings_string);
+    ENSURE(getCrossings_string()[getCrossings_string().size() - 1]== crossings_string, "The variable is not set correctly");
+
 }

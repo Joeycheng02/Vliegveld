@@ -30,6 +30,10 @@ public:
  */
     static int ascending(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time);
 
+/**
+\n REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before taxiën");
+\n ENSURE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty after taxiën");
+ */
     static int taxien(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time, const string &taxipoint, int gatenumber);
 
     static bool compare_file(string file1, string file2);
