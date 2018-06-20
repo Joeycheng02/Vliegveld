@@ -250,6 +250,12 @@ TEST_F(VliegveldTest, output_test){
     remove("console_output.txt");
 }
 
+TEST_F(VliegveldTest, fout_xml){
+    EXPECT_DEATH(parser::full_parsing(simulation, "fout_text.xml"), "");
+    EXPECT_DEATH(parser::full_parsing(simulation, "fout_xml.xml"), "Error reading end tag.");
+    remove("console_output.txt");
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

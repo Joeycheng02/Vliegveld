@@ -10,6 +10,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
     REQUIRE(airplanes.empty(), "Airplanes must be empty");
     REQUIRE(airports.empty(), "Airports must be empty");
     REQUIRE(runways.empty(), "Runways must be empty");
+    ofstream console("console_output.txt", fstream::app);
     bool fout = false;
 
     TiXmlDocument doc;
@@ -29,7 +30,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
          elem = elem->NextSiblingElement()) {
         std::string elemName = elem->Value();
         if (elemName != "AIRPORT" and elemName != "RUNWAY" and elemName != "AIRPLANE"){
-            cout << elemName << " staat niet in de parser en wordt dus genegeerd." << endl;
+            console << elemName << " staat niet in de parser en wordt dus genegeerd." << endl;
             continue;
         }
         if (elemName == "AIRPORT") {
@@ -42,7 +43,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
 
                     if (elem2Name != "name" and elem2Name != "iata" and elem2Name != "callsign" and
                         elem2Name != "gates") {
-                        cout << elem2Name << " is geen variabele van Airport." << endl;
+                        console << elem2Name << " is geen variabele van Airport." << endl;
                         continue;
                     }
 
@@ -84,7 +85,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                                 if (t[k] != '0' and t[k] != '1' and t[k] != '2' and t[k] != '3' and t[k] != '4' and
                                     t[k] != '5'
                                     and t[k] != '6' and t[k] != '7' and t[k] != '8' and t[k] != '9') {
-                                    cout << "De " << elem2Name << " moet een integer zijn.";
+                                    console << "De " << elem2Name << " moet een integer zijn.";
                                     return -1;
                                 }
                             }
@@ -107,7 +108,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
 
                 if (elem2Name != "name" and elem2Name != "airport" and elem2Name != "type" and elem2Name != "length"
                         and elem2Name != "TAXIROUTE"){
-                    cout << elem2Name << " is geen variabele van Runway." << endl;
+                    console << elem2Name << " is geen variabele van Runway." << endl;
                     continue;
                 }
 
@@ -136,7 +137,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                             continue;
                         std::string t = text->Value();
                         if (t != "grass" and t != "asphalt"){
-                            cout << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
+                            console << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
                             fout = true;
                             continue;
                         }
@@ -154,7 +155,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                             if (t[k] != '0' and t[k] != '1' and t[k] != '2' and t[k] != '3' and t[k] != '4' and
                                 t[k] != '5'
                                 and t[k] != '6' and t[k] != '7' and t[k] != '8' and t[k] != '9') {
-                                cout << "De " << elem2Name << " moet een integer zijn.";
+                                console << "De " << elem2Name << " moet een integer zijn.";
                                 return -1;
                             }
                         }
@@ -168,7 +169,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                         string elem3Name = elem3->Value();
 
                         if (elem3Name != "taxipoint" and elem3Name != "crossing") {
-                            cout << elem3Name << " is geen variabele van Runway." << endl;
+                            console << elem3Name << " is geen variabele van Runway." << endl;
                             continue;
                         }
 
@@ -204,7 +205,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
 
                 if (elem2Name != "model" and elem2Name != "number" and elem2Name != "callsign" and elem2Name != "type" and elem2Name != "engine" and elem2Name != "size" and
                     elem2Name != "status" and elem2Name != "capacity" and elem2Name != "fuel"){
-                    cout << elem2Name << " is geen variabele van Airplane." << endl;
+                    console << elem2Name << " is geen variabele van Airplane." << endl;
                     continue;
                 }
 
@@ -242,7 +243,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                             continue;
                         std::string t = text->Value();
                         if (t != "private" and t != "airline" and t != "military" and t != "emergency"){
-                            cout << t << " is geen geldig " << elem2Name << " voor een Airplane." << endl;
+                            console << t << " is geen geldig " << elem2Name << " voor een Airplane." << endl;
                             fout = true;
                             continue;
                         }
@@ -256,7 +257,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                             continue;
                         std::string t = text->Value();
                         if (t != "jet" and t != "propeller"){
-                            cout << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
+                            console << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
                             fout = true;
                             continue;
                         }
@@ -270,7 +271,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                             continue;
                         std::string t = text->Value();
                         if (t != "small" and t != "medium" and t != "large"){
-                            cout << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
+                            console << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
                             fout = true;
                             continue;
                         }
@@ -284,7 +285,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                             continue;
                         std::string t = text->Value();
                         if (t != "approaching" and t != "standing at gate" and t != "departing"){
-                            cout << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
+                            console << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
                             fout = true;
                             continue;
                         }
@@ -301,7 +302,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                         for(unsigned int k = 0; k<t.size(); k++){
                             if(t[k]!='0' and t[k]!='1' and t[k]!='2' and t[k]!='3' and t[k]!='4' and t[k]!='5'
                                and t[k]!='6' and t[k]!='7' and t[k]!='8' and t[k]!='9'){
-                                cout << "De " << elem2Name << " moet een integer zijn.";
+                                console << "De " << elem2Name << " moet een integer zijn.";
                                 return -1;
                             }
                         }
@@ -319,7 +320,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                         for(unsigned int k = 0; k<t.size(); k++){
                             if(t[k]!='0' and t[k]!='1' and t[k]!='2' and t[k]!='3' and t[k]!='4' and t[k]!='5'
                                and t[k]!='6' and t[k]!='7' and t[k]!='8' and t[k]!='9'){
-                                cout << "De " << elem2Name << " moet een integer zijn.";
+                                console << "De " << elem2Name << " moet een integer zijn.";
                                 return -1;
                             }
                         }
@@ -383,7 +384,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
     for (int j = 0; j < int(airplanes.size()); ++j) {
         if (airplanes[j]->getStatus() == "standing at gate") {
             if (0 == int(airports.size())) {
-                cout << "No gates available anymore." << endl;
+                console << "No gates available anymore." << endl;
                 return -1;
             }
             if (airplanes[j]->getGateNumber() == -1) {
@@ -410,6 +411,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
     ENSURE(!airplanes.empty(), "Airplanes can't be empty");
     ENSURE(!airports.empty(), "Airports can't be empty");
     ENSURE(!runways.empty(), "Runways can't be empty");
+    console.close();
 
     return 0;
 }
