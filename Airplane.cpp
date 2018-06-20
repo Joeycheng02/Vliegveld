@@ -207,9 +207,16 @@ int Airplane::descending(Airport* &airport, Time &time) {
     console << "[" << time.printTime() << "] " << getCallsign() << " is taxiing to Gate " << getGateNumber() << endl;
     output::landing(*this, *airport, *airport->getRunways()[runwayNumber], 5, time);
     for(unsigned int r = 0; r < airport->getRunways()[runwayNumber]->getCrossing().size(); r++){
-        if(!airport->getRunways()[runwayNumber]->getCrossing()[r]->isVacant()){
-            console << "[" << time.printTime() << "] " << this->getCallsign() << " is crossing runway " << airport->getRunways()[runwayNumber]->getCrossing()[r]->getName() << "." << endl;
+        output::taxien(*this, *airport, *airport->getRunways()[runwayNumber], 1, time, airport->getRunways()[runwayNumber]->getTaxipoint()[r], gateNumber);
+        console << "[" << time.printTime() << "] " << this->getCallsign() << " is standing at taxipoint " <<  airport->getRunways()[runwayNumber]->getTaxipoint()[r] << " and is waiting for permission to cross runway " << airport->getRunways()[runwayNumber]->getCrossing()[r]->getName() << "." << endl;
+        output::taxien(*this, *airport, *airport->getRunways()[runwayNumber], 4, time, airport->getRunways()[runwayNumber]->getTaxipoint()[r], gateNumber);
+        while(!airport->getRunways()[runwayNumber]->getCrossing()[r]->isVacant()){
+            console << "[" << time.printTime() << "] " << this->getCallsign() << " has no permission to cross and is waiting." << endl;
         }
+        console << "[" << time.printTime() << "] " << this->getCallsign() << " is crossing runway " << airport->getRunways()[runwayNumber]->getCrossing()[r]->getName() << " to taxipoint " << airport->getRunways()[runwayNumber]->getTaxipoint()[r+1] << "." << endl;
+        time.addTime(1);
+        output::taxien(*this, *airport, *airport->getRunways()[runwayNumber], 3, time, airport->getRunways()[runwayNumber]->getTaxipoint()[r], gateNumber);
+
     }
     console << "[" << time.printTime() << "] " << getCallsign() << " is standing at Gate " << getGateNumber() << endl;
     airport->getRunways()[runwayNumber]->setVacant(true);
@@ -276,6 +283,23 @@ int Airplane::ascending (Airport* &airport, Time &time) {
     output::ascending(*this, *airport, *airport->getRunways()[runwayNumber], 3, time);
     output::ascending(*this, *airport, *airport->getRunways()[runwayNumber], 4, time);
     console << "[" << time.printTime() << "] " << getCallsign() << " is taxiing to runway " << airport->getRunways()[runwayNumber]->getName() << "." << endl;
+    if (!airport->getRunways()[runwayNumber]->getCrossing().empty()) {
+        for (long r = airport->getRunways()[runwayNumber]->getCrossing().size()-1; r > -1; r--) {
+            output::taxien(*this, *airport, *airport->getRunways()[runwayNumber], 1, time, airport->getRunways()[runwayNumber]->getTaxipoint()[r], gateNumber);
+            console << "[" << time.printTime() << "] " << this->getCallsign() << " is standing at taxipoint "
+                    << airport->getRunways()[runwayNumber]->getTaxipoint()[r+1]
+                    << " and is waiting for permission to cross runway "
+                    << airport->getRunways()[runwayNumber]->getCrossing()[r]->getName() << "." << endl;
+            output::taxien(*this, *airport, *airport->getRunways()[runwayNumber], 4, time, airport->getRunways()[runwayNumber]->getTaxipoint()[r], gateNumber);
+            while(!airport->getRunways()[runwayNumber]->getCrossing()[r]->isVacant()){
+                console << "[" << time.printTime() << "] " << this->getCallsign() << " has no permission to cross and is waiting." << endl;
+            }
+            console << "[" << time.printTime() << "] " << this->getCallsign() << " is crossing runway "
+                    << airport->getRunways()[runwayNumber]->getCrossing()[r]->getName() << " to taxipoint " << airport->getRunways()[runwayNumber]->getTaxipoint()[r] << "." << endl;
+            time.addTime(1);
+            output::taxien(*this, *airport, *airport->getRunways()[runwayNumber], 2, time, airport->getRunways()[runwayNumber]->getTaxipoint()[r], gateNumber);
+        }
+    }
     output::ascending(*this, *airport, *airport->getRunways()[runwayNumber], 5, time);
     if (!airport->permissionToAscend(runwayNumber)) {
         return -1;

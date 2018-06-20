@@ -106,7 +106,7 @@ int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int ch
 
     if(check == 4){
         file << "[" << time.printTime() << "][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", cleared ILS approach runway" << runway.getName() << "." << endl;
+             << "$ " << airplane.getCallsign() << ", cleared ILS approach runway " << runway.getName() << "." << endl;
         time.addTime(1);
         file << "[" << time.printTime() << "][AIR]" << endl
              << "$ Cleared ILS approach runway " << runway.getName() << ", " << airplane.getCallsign() << "." << endl << endl;
@@ -115,7 +115,7 @@ int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int ch
 
     if(check == 5) {
         file << "[" << time.printTime() << "][AIR]" << endl
-             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", runway" << runway.getName() << " vacated." << endl;
+             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", runway " << runway.getName() << " vacated." << endl;
         time.addTime(1);
         file << "[" << time.printTime() << "][ATC]" << endl
              << "$ taxi-instructions" << endl << endl;
@@ -143,10 +143,10 @@ int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int 
              << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", requesting IFR clearancy to <destination>" << endl;
         time.addTime(1);
         file << "[" << time.printTime() << "][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", "  << airport.getCallsign() << ", cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk <squawk-code>, " << airplane.getCallsign() << "." << endl;
+             << "$ " << airplane.getCallsign() << ", "  << airport.getCallsign() << ", cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk " << airplane.getSquawk_code() << ", " << airplane.getCallsign() << "." << endl;
         time.addTime(1);
         file << "[" << time.printTime() << "][AIR]" << endl
-             << "$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking" << airplane.getSquawk_code() << ", " << airplane.getCallsign() << "." << endl << endl;
+             << "$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking " << airplane.getSquawk_code() << ", " << airplane.getCallsign() << "." << endl << endl;
         time.addTime(1);
     }
 
@@ -214,6 +214,70 @@ int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int 
         file << "[" << time.printTime() << "][AIR]" << endl
              << "$ Runway " << runway.getName() << " cleared for take-off, " << airplane.getCallsign() << "." << endl << endl;
         time.addTime(1);
+    }
+
+    file.close();
+
+    ENSURE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty after ascending");
+
+    return 0;
+}
+
+int output::taxien(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time, const string &taxipoint, int gatenumber) {
+    REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before requesting to ascend");
+
+    ofstream file;
+    file.open("output.txt", ios_base::app);
+    if (!file) {
+        cout << "Couldn't open the file." << endl;
+        return -1;
+    }
+
+    if(check == 1) {
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", taxi to holding point " << runway.getName() << " via " + taxipoint + "."
+             << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
+             << "$ Taxi to holding point " << runway.getName() << " via " + taxipoint + ", " << airplane.getCallsign() << "."
+             << endl << endl;
+        time.addTime(1);
+    }
+
+    if(check == 2) {
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", taxi to runway " << runway.getName() << " via " + taxipoint + "."
+             << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
+             << "$ Taxi to runway " << runway.getName() << " via " + taxipoint + ", " << airplane.getCallsign() << "."
+             << endl << endl;
+        time.addTime(1);
+    }
+
+    if(check == 3) {
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", taxi to gate " << gatenumber << " via " + taxipoint + "."
+             << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
+             << "$ Taxi to gate " << gatenumber << " via " + taxipoint + ", " << airplane.getCallsign() << "."
+             << endl << endl;
+        time.addTime(1);
+    }
+
+    if(check == 4) {
+        file << "[" << time.printTime() << "][AIR]" << endl
+             << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", holding short at " << runway.getName() << "."
+             << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][ATC]" << endl
+             << "$ " << airplane.getCallsign() << ", cleared to cross " << runway.getName() << "."
+             << endl;
+        time.addTime(1);
+        file << "[" << time.printTime() << "][AIR]" << endl
+             << "$ Cleared to cross " << runway.getName() << "."
+             << endl << endl;
     }
 
     file.close();

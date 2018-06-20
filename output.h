@@ -30,6 +30,8 @@ public:
  */
     static int ascending(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time);
 
+    static int taxien(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time, const string &taxipoint, int gatenumber);
+
     static bool compare_file(string file1, string file2);
 };
 
