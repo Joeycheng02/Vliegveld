@@ -251,8 +251,14 @@ TEST_F(VliegveldTest, output_test){
 }
 
 TEST_F(VliegveldTest, fout_xml){
-    EXPECT_DEATH(parser::full_parsing(simulation, "fout_text.xml"), "");
+    EXPECT_DEATH(parser::full_parsing(simulation, "fout_xml_0.xml"), "Failed to open file");
+    EXPECT_DEATH(parser::full_parsing(simulation, "output.txt"), "Error document empty.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "fout_text.xml"), "Airport has no runway");
     EXPECT_DEATH(parser::full_parsing(simulation, "fout_xml.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "fout_xml_2.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "fout_xml_3.xml"), "Airplanes can't be empty");
+    EXPECT_DEATH(parser::full_parsing(simulation, "fout_xml_4.xml"), "There are no airports available");
+
     remove("console_output.txt");
 }
 
