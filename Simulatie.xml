@@ -22,7 +22,7 @@
         <name>11R</name>
         <airport>ANR</airport>
         <type>asphalt</type>
-        <length>1510</length>
+        <length>1000</length>
         <TAXIROUTE>
             <taxipoint>Alpha</taxipoint>
         </TAXIROUTE>
@@ -37,6 +37,7 @@
         <size>small</size>
         <status>approaching</status>
         <capacity>6</capacity>
+        <squawk>666</squawk>
         <fuel>5000</fuel>
     </AIRPLANE>
 
@@ -49,6 +50,7 @@
         <size>large</size>
         <status>standing at gate</status>
         <capacity>150</capacity>
+        <squawk>4666</squawk>
         <fuel>50000</fuel>
     </AIRPLANE>
 </SIMULATIE>

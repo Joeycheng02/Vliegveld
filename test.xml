@@ -22,6 +22,7 @@
         <size>small</size>
         <status>approaching</status>
         <capacity>1</capacity>
+        <squawk>433</squawk>
         <fuel>10000</fuel>
     </AIRPLANE>
 </SIMULATIE>

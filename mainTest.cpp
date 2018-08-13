@@ -45,7 +45,7 @@ TEST_F(VliegveldTest, DefConAirplane) {
     EXPECT_EQ("", airplane.getSize());
     EXPECT_EQ(unsigned (0), airplane.getFuelCost());
     EXPECT_EQ(unsigned (0), airplane.getFuel());
-    EXPECT_EQ("", airplane.getSquawk_code());
+    EXPECT_EQ(unsigned (0), airplane.getSquawk_code());
 
 }
 
@@ -76,8 +76,8 @@ TEST_F(VliegveldTest, SetterAirplane) {
     EXPECT_EQ(unsigned (25), airplane.getFuelCost());
     airplane.setFuel(10000);
     EXPECT_EQ(unsigned (10000), airplane.getFuel());
-    airplane.setSquawk_code("442");
-    EXPECT_EQ("442", airplane.getSquawk_code());
+    airplane.setSquawk_code(422);
+    EXPECT_EQ(unsigned (422), airplane.getSquawk_code());
 
 }
 

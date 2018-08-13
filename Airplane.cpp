@@ -127,6 +127,7 @@ Airplane::Airplane() {
     capacity = 0;
     fuel = 0;
     fuel_cost = 0;
+    squawk_code = 0;
 }
 
 int Airplane::descending(Airport* &airport, Time &time) {
@@ -361,11 +362,11 @@ void Airplane::setFuel(unsigned int fuel) {
     ENSURE(getFuel() == fuel, "The variable is not set correctly");
 }
 
-const string &Airplane::getSquawk_code() const {
+unsigned int &Airplane::getSquawk_code(){
     return squawk_code;
 }
 
-void Airplane::setSquawk_code(const string &squawk_code) {
+void Airplane::setSquawk_code(unsigned int squawk_code) {
     REQUIRE(Airplane::squawk_code != squawk_code, "The variable already has this value");
     Airplane::squawk_code = squawk_code;
     ENSURE(getSquawk_code() == squawk_code, "The variable is not set correctly");}

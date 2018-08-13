@@ -27,7 +27,7 @@ private:
     unsigned int height;
     unsigned int fuel;
     unsigned int fuel_cost;
-    string squawk_code;
+    unsigned int squawk_code;
 
 public:
     Airplane();
@@ -155,13 +155,13 @@ public:
 */
     void setFuel(unsigned int fuel);
 
-    const string &getSquawk_code() const;
+    unsigned int  &getSquawk_code();
 
 /**
 \n REQUIRE(Airplane::squawk_code != squawk_code, "The variable already has this value");
 \n ENSURE(getSquawk_code() == squawk_code, "The variable is not set correctly");
 */
-    void setSquawk_code(const string &squawk_code);
+    void setSquawk_code(unsigned int squawk_code);
 };
 
 
