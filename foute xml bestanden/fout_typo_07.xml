@@ -1,4 +1,5 @@
- <AIRPORT>
+<SIMULATIE>
+    <AIRPORT>
         <name>Antwerp International Airport</name>
         <iata>ANR</iata>
         <callsign>Antwerp Tower</callsign>
@@ -8,7 +9,11 @@
     <RUNWAY>
         <name>12R</name>
         <airport>ANR</airport>
-        <type>grass</type>
+
+
+        <typee>grass</typee>
+
+
         <length>1500</length>
         <TAXIROUTE>
             <taxipoint>Bravo</taxipoint>

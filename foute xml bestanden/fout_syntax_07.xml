@@ -1,4 +1,6 @@
-<SIMULATIE>
+<>
+
+
     <AIRPORT>
         <name>Antwerp International Airport</name>
         <iata>ANR</iata>
@@ -51,4 +53,4 @@
         <capacity>150</capacity>
         <fuel>50000</fuel>
     </AIRPLANE>
-</SIMULATIE>
+</>

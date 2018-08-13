@@ -3,8 +3,12 @@
         <name>Antwerp International Airport</name>
         <iata>ANR</iata>
         <callsign>Antwerp Tower</callsign>
-        <gates>10</gates
+        <gates>10</gates>
     </AIRPORT>
+
+
+    <SIMULATIE>SS</SIMULATIE>
+
 
     <RUNWAY>
         <name>12R</name>

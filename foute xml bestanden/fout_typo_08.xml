@@ -1,10 +1,15 @@
 <SIMULATIE>
-    <AIRPOR>
+    <AIRPORT>
         <name>Antwerp International Airport</name>
         <iata>ANR</iata>
         <callsign>Antwerp Tower</callsign>
+
+
         <gates>10</gates>
-    </AIRPOR>
+        <gates>12</gates>
+
+
+    </AIRPORT>
 
     <RUNWAY>
         <name>12R</name>
