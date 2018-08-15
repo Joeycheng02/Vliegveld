@@ -4,11 +4,7 @@
         <iata>ANR</iata>
         <callsign>Antwerp Tower</callsign>
         <gates>10</gates>
-
-
-    <\AIRPORT>
-
-
+    </AIRPORT>
 
     <RUNWAY>
         <name>12R</name>
@@ -19,6 +15,11 @@
             <taxipoint>Bravo</taxipoint>
             <crossing>11R</crossing>
             <taxipoint>Alpha</taxipoint>
+
+
+            <gates>5</gates>
+
+
         </TAXIROUTE>
     </RUNWAY>
 

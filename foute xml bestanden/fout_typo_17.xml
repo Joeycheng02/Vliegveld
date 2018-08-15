@@ -4,11 +4,7 @@
         <iata>ANR</iata>
         <callsign>Antwerp Tower</callsign>
         <gates>10</gates>
-
-
-    <\AIRPORT>
-
-
+    </AIRPORT>
 
     <RUNWAY>
         <name>12R</name>
@@ -34,7 +30,10 @@
 
     <AIRPLANE>
         <number>N11842</number>
-        <callsign>Cessna 842</callsign>
+
+
+
+
         <model>Cessna 340</model>
         <type>private</type>
         <engine>propeller</engine>

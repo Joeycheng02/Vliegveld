@@ -6,9 +6,10 @@
         <gates>10</gates>
 
 
-    <\AIRPORT>
+        <fout>fout</fout>
 
 
+    </AIRPORT>
 
     <RUNWAY>
         <name>12R</name>

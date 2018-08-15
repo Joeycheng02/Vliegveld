@@ -6,7 +6,11 @@
         <gates>10</gates>
     </AIRPORT>
 
+
+
     <RUNWAY)>
+
+
         <name>12R</name>
         <airport>ANR</airport>
         <type>grass</type>

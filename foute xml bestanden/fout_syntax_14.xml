@@ -4,13 +4,13 @@
         <iata>ANR</iata>
         <callsign>Antwerp Tower</callsign>
         <gates>10</gates>
-
-
-    <\AIRPORT>
+    </AIRPORT>
 
 
 
-    <RUNWAY>
+    <RUNWAY*>
+
+
         <name>12R</name>
         <airport>ANR</airport>
         <type>grass</type>

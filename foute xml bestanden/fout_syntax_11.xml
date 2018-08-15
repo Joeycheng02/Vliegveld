@@ -4,16 +4,16 @@
         <iata>ANR</iata>
         <callsign>Antwerp Tower</callsign>
         <gates>10</gates>
-
-
-    </AIRPORT>cxczxczx
-
-
+    </AIRPORT>
 
     <RUNWAY>
         <name>12R</name>
         <airport>ANR</airport>
-        <type>grass</type>
+
+
+        </type>grass</type>
+
+
         <length>1500</length>
         <TAXIROUTE>
             <taxipoint>Bravo</taxipoint>

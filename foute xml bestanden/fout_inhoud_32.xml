@@ -4,11 +4,7 @@
         <iata>ANR</iata>
         <callsign>Antwerp Tower</callsign>
         <gates>10</gates>
-
-
-    <\AIRPORT>
-
-
+    </AIRPORT>
 
     <RUNWAY>
         <name>12R</name>
@@ -53,6 +49,10 @@
         <size>large</size>
         <status>standing at gate</status>
         <capacity>150</capacity>
-        <fuel>50000</fuel>
+
+
+        <fuel>-50000</fuel>
+
+
     </AIRPLANE>
 </SIMULATIE>

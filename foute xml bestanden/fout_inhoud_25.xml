@@ -4,11 +4,7 @@
         <iata>ANR</iata>
         <callsign>Antwerp Tower</callsign>
         <gates>10</gates>
-
-
-    <\AIRPORT>
-
-
+    </AIRPORT>
 
     <RUNWAY>
         <name>12R</name>
@@ -49,7 +45,11 @@
         <callsign>Cessna 841</callsign>
         <model>Cessna 341</model>
         <type>airline</type>
-        <engine>jet</engine>
+
+
+        <engine>geen</engine>
+
+
         <size>large</size>
         <status>standing at gate</status>
         <capacity>150</capacity>
