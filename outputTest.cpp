@@ -33,5 +33,6 @@ TEST_F(OutputTest, output_test){
     output::outputfile(simulation.getAirports(), simulation.getAirplanes());
     simulation.start();
     EXPECT_TRUE(output::compare_file("output.txt", "output_test2.txt"));
+
     remove("console_output.txt");
 }

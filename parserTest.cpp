@@ -56,4 +56,16 @@ TEST_F(ParserTest, Parsing_Test){ // Deze test test alle attributen van de parse
     EXPECT_EQ("approaching", simulation.getAirplanes()[0]->getStatus());
     EXPECT_EQ(1, simulation.getAirplanes()[0]->getCapacity());
 
+    remove("console_output.txt");
 }
+
+//TEST_F(VliegveldTest, fout_xml){
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_xml_0.xml"), "Failed to open file");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "output.txt"), "Error document empty.");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_text.xml"), "Airport has no runway");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_xml_1.xml"), "Error reading end tag.");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_xml_2.xml"), "Error reading end tag.");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_xml_3.xml"), "Airplanes can't be empty");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_xml_4.xml"), "There are no airports available");
+//    remove("console_output.txt");
+//}

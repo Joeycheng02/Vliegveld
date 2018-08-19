@@ -55,4 +55,6 @@ TEST_F(RunwayTest, runway){
     // The taxipoints are named with the alphabet.
     EXPECT_TRUE(simulation.getAirports()[0]->getRunways()[0]->getTaxipoint()[0] > simulation.getAirports()[0]->getRunways()[0]->getTaxipoint()[1]);
     EXPECT_EQ(simulation.getAirports()[0]->getRunways()[0]->getCrossing()[0], simulation.getAirports()[0]->getRunways()[1]);
+
+    remove("console_output.txt");
 }

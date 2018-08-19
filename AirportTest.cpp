@@ -59,4 +59,6 @@ TEST_F(AirportTest, permission) {
     EXPECT_FALSE(simulation.getAirports()[0]->permissionToDescend(3000));
     simulation.getAirports()[0]->getRunways()[0]->setVacant(true);
     EXPECT_TRUE(simulation.getAirports()[0]->permissionToDescend(3000));
+
+    remove("console_output.txt");
 }

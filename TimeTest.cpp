@@ -33,4 +33,5 @@ TEST_F(TimeTest, SetterTime) {
     time.addTime(700);
     EXPECT_EQ("00:00", time.printTime());
 
+    remove("console_output.txt");
 }
