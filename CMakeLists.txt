@@ -27,7 +27,9 @@ set(RELEASE_SOURCE_FILES Airplane.cpp
         parser.cpp
         parser.h
         output.cpp
-        output.h Time.cpp Time.h)
+        output.h
+        Time.cpp
+        Time.h)
 
 set(DEBUG_SOURCE_FILES Airplane.cpp
         Airplane.h
@@ -49,7 +51,9 @@ set(DEBUG_SOURCE_FILES Airplane.cpp
         output.cpp
         output.h
         Time.cpp
-        Time.h)
+        Time.h
+        AirplaneTest.cpp
+        AirportTest.cpp outputTest.cpp RunwayTest.cpp parserTest.cpp TimeTest.cpp SimulationTest.cpp)
 
 add_executable(Vliegveld ${RELEASE_SOURCE_FILES})
 add_executable(Vliegveld_debug ${DEBUG_SOURCE_FILES})
