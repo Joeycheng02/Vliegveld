@@ -14,7 +14,6 @@ Airplane::Airplane() {
     capacity = 0;
     fuel = 0;
     fuel_cost = 0;
-    squawk_code = 0;
 }
 
 const string &Airplane::getNumber() const {
@@ -366,88 +365,3 @@ void Airplane::setFuel(int fuel) {
 
 }
 
-int &Airplane::getSquawk_code(){
-    return squawk_code;
-}
-
-void Airplane::setSquawk_code(int squawk_code) {
-    REQUIRE(Airplane::squawk_code != squawk_code, "The variable already has this value");
-    ofstream console("console_output.txt", fstream::app);
-    if (this->getSize() == "small" and this->getEngine() == "propeller") {
-        if (this->getType() == "private") {
-            if(squawk_code < 1 or squawk_code > 777){
-                console << this->getNumber() << " heeft een ongeldige squawk code." << endl;
-            }
-            else {
-                Airplane::squawk_code = squawk_code;
-            }
-        }
-        if (this->getType() == "emergency") {
-            if(squawk_code < 6000 or squawk_code > 6777){
-                console << this->getNumber() << " heeft een ongeldige squawk code." << endl;
-            }
-            else {
-                Airplane::squawk_code = squawk_code;
-            }
-        }
-    } else if (this->getSize() == "small" and this->getEngine() == "jet") {
-        if (this->getType() == "private") {
-            if(squawk_code < 1 or squawk_code > 777){
-                console << this->getNumber() << " heeft een ongeldige squawk code." << endl;
-            }
-            else {
-                Airplane::squawk_code = squawk_code;
-            }
-        }
-        if (this->getType() == "military") {
-            if(squawk_code < 5000 or squawk_code > 5777){
-                console << this->getNumber() << " heeft een ongeldige squawk code." << endl;
-            }
-            else {
-                Airplane::squawk_code = squawk_code;
-            }        }
-    } else if (this->getSize() == "medium" and this->getEngine() == "propeller") {
-        if (this->getType() == "airline") {
-            if(squawk_code < 2000 or squawk_code > 2777){
-                console << this->getNumber() << " heeft een ongeldige squawk code." << endl;
-            }
-            else {
-                Airplane::squawk_code = squawk_code;
-            }        }
-    } else if (this->getSize() == "medium" and this->getEngine() == "jet") {
-        if (this->getType() == "private") {
-            if(squawk_code < 1000 or squawk_code > 1777){
-                console << this->getNumber() << " heeft een ongeldige squawk code." << endl;
-            }
-            else {
-                Airplane::squawk_code = squawk_code;
-            }        }
-        if (this->getType() == "airline") {
-            if(squawk_code < 3000 or squawk_code > 3777){
-                console << this->getNumber() << " heeft een ongeldige squawk code." << endl;
-            }
-            else {
-                Airplane::squawk_code = squawk_code;
-            }        }
-    } else if (this->getSize() == "large" and this->getEngine() == "propeller") {
-        if (this->getType() == "military") {
-            if(squawk_code < 5000 or squawk_code > 5777){
-                console << this->getNumber() << " heeft een ongeldige squawk code." << endl;
-            }
-            else {
-                Airplane::squawk_code = squawk_code;
-            }        }
-    } else if (this->getSize() == "large" and this->getEngine() == "jet") {
-        if (this->getType() == "airline") {
-            if(squawk_code < 4000 or squawk_code > 5777){
-                console << this->getNumber() << " heeft een ongeldige squawk code." << endl;
-            }
-            else {
-                Airplane::squawk_code = squawk_code;
-            }        }
-    }
-    console.close();
-    ENSURE(getSquawk_code() == squawk_code, "The variable is not set correctly");
-    ENSURE(getSquawk_code() > 0, "The variable can't be smaller then 1");
-    ENSURE(getSquawk_code() <= 6777, "The variable can't be higher than 6777");
-}

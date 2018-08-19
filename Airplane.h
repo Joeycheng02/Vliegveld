@@ -27,7 +27,6 @@ private:
     int height;
     int fuel;
     int fuel_cost;
-    int squawk_code;
 
 public:
     Airplane();
@@ -156,15 +155,7 @@ public:
 \n ENSURE(getFuel() >= 0, "The variable can't be a negative number");
 */
     void setFuel(int fuel);
-
-    int  &getSquawk_code();
-
-/**
-\n REQUIRE(Airplane::squawk_code != squawk_code, "The variable already has this value");
-\n ENSURE(getSquawk_code() == squawk_code, "The variable is not set correctly");
-\n ENSURE(getSquawk_code() >= 1, "The variable can't be smaller then 1");
-*/
-    void setSquawk_code(int squawk_code);
+    
 };
 
 

@@ -222,7 +222,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                 string elem2Name = elem2->Value();
 
                 if (elem2Name != "model" and elem2Name != "number" and elem2Name != "callsign" and elem2Name != "type" and elem2Name != "engine" and elem2Name != "size" and
-                    elem2Name != "status" and elem2Name != "capacity" and elem2Name != "squawk" and elem2Name != "fuel"){
+                    elem2Name != "status" and elem2Name != "capacity" and elem2Name != "fuel"){
                     console << elem2Name << " is geen variabele van Airplane." << endl;
                     return -1;
                 }
@@ -338,26 +338,6 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                         }
                         sscanf(t.c_str(), "%d", &i);
                         airplane->setCapacity(i);
-                    }
-                }
-                if (elem2Name == "squawk") {
-                    for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
-                        TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van airplane is niet gegeven." << endl;
-                            return -1;
-                        }
-                        const std::string t = text->Value();
-                        unsigned int i;
-                        for(unsigned int k = 0; k<t.size(); k++){
-                            if(t[k]!='0' and t[k]!='1' and t[k]!='2' and t[k]!='3' and t[k]!='4' and t[k]!='5'
-                               and t[k]!='6' and t[k]!='7' and t[k]!='8' and t[k]!='9'){
-                                console << "De " << elem2Name << " moet een integer zijn.";
-                                return -1;
-                            }
-                        }
-                        sscanf(t.c_str(), "%d", &i);
-                        airplane->setSquawk_code(i);
                     }
                 }
                 if (elem2Name == "fuel") {

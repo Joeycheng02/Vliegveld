@@ -45,8 +45,6 @@ TEST_F(VliegveldTest, DefConAirplane) {
     EXPECT_EQ("", airplane.getSize());
     EXPECT_EQ(0, airplane.getFuelCost());
     EXPECT_EQ(0, airplane.getFuel());
-    EXPECT_EQ(0, airplane.getSquawk_code());
-
 }
 
 TEST_F(VliegveldTest, SetterAirplane) {
@@ -76,8 +74,6 @@ TEST_F(VliegveldTest, SetterAirplane) {
     EXPECT_EQ(25, airplane.getFuelCost());
     airplane.setFuel(10000);
     EXPECT_EQ(10000, airplane.getFuel());
-    airplane.setSquawk_code(422);
-    EXPECT_EQ(422, airplane.getSquawk_code());
 
 }
 
@@ -295,14 +291,6 @@ TEST_F(VliegveldTest, Airplane_edgeCases) {
     EXPECT_EQ(1, simulation.getAirplanes()[0]->getFuelCost());
     simulation.getAirplanes()[0]->setFuelCost(100);
     EXPECT_EQ(100, simulation.getAirplanes()[0]->getFuelCost());
-
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setSquawk_code(-4948), "The variable is not set correctly");
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setSquawk_code(-1), "The variable is not set correctly");
-    simulation.getAirplanes()[0]->setSquawk_code(1);
-    EXPECT_EQ(1, simulation.getAirplanes()[0]->getSquawk_code());
-    simulation.getAirplanes()[0]->setSquawk_code(246);
-    EXPECT_EQ(246, simulation.getAirplanes()[0]->getSquawk_code());
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setSquawk_code(4256), "The variable is not set correctly");
 
 
     remove("console_output.txt");

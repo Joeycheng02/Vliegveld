@@ -79,10 +79,10 @@ int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int ch
              << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", arriving at " << airport.getName() << "." << endl;
         time.addTime(1);
         file << "[" << time.printTime() << "][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", radar contact, descend and maintain five thousand feet, squawk " << airplane.getSquawk_code() << "."<< endl;
+             << "$ " << airplane.getCallsign() << ", radar contact, descend and maintain five thousand feet, squawk " << "[sqauwk]" << "."<< endl;
         time.addTime(1);
         file << "[" << time.printTime() << "][AIR]" << endl
-             << "$ Descend and maintain five thousand feet, sqauwking " << airplane.getSquawk_code() << ", " << airplane.getCallsign() << "." << endl << endl;
+             << "$ Descend and maintain five thousand feet, sqauwking " << "[sqauwk]" << ", " << airplane.getCallsign() << "." << endl << endl;
         time.addTime(1);
     }
 
@@ -143,10 +143,10 @@ int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int 
              << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", requesting IFR clearancy to <destination>" << endl;
         time.addTime(1);
         file << "[" << time.printTime() << "][ATC]" << endl
-             << "$ " << airplane.getCallsign() << ", "  << airport.getCallsign() << ", cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk " << airplane.getSquawk_code() << ", " << airplane.getCallsign() << "." << endl;
+             << "$ " << airplane.getCallsign() << ", "  << airport.getCallsign() << ", cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk " << "[sqauwk]" << ", " << airplane.getCallsign() << "." << endl;
         time.addTime(1);
         file << "[" << time.printTime() << "][AIR]" << endl
-             << "$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking " << airplane.getSquawk_code() << ", " << airplane.getCallsign() << "." << endl << endl;
+             << "$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking " << "[sqauwk]" << ", " << airplane.getCallsign() << "." << endl << endl;
         time.addTime(1);
     }
 

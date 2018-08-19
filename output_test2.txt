@@ -10,9 +10,9 @@ Airplane: Nighthawk (M48674)
 [12:00][AIR]
 $ Merksplas tower, Nighthawk, arriving at Test airport.
 [12:01][ATC]
-$ Nighthawk, radar contact, descend and maintain five thousand feet, squawk 433.
+$ Nighthawk, radar contact, descend and maintain five thousand feet, squawk [sqauwk].
 [12:02][AIR]
-$ Descend and maintain five thousand feet, sqauwking 433, Nighthawk.
+$ Descend and maintain five thousand feet, sqauwking [sqauwk], Nighthawk.
 
 [12:08][ATC]
 $ Nighthawk, descend and maintain three thousand feet.
@@ -32,9 +32,9 @@ $ taxi-instructions
 [12:21] [AIR]
 $ Merksplas tower, Nighthawk, requesting IFR clearancy to <destination>
 [12:22][ATC]
-$ Nighthawk, Merksplas tower, cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk 433, Nighthawk.
+$ Nighthawk, Merksplas tower, cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk [sqauwk], Nighthawk.
 [12:23][AIR]
-$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking 433, Nighthawk.
+$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking [sqauwk], Nighthawk.
 
 [12:24][AIR]
 $ Merksplas tower, Nighthawk at gate 1, requesting pushback.
