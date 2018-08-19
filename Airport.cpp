@@ -29,14 +29,14 @@ unsigned int Airport::getNumberOfRunways() const {
     return unsigned (runways.size());
 }
 
-unsigned int Airport::getNumberOfGates() const {
+int Airport::getNumberOfGates() const {
     return numberOfGates;
 }
 
-void Airport::setNumberOfGates(unsigned int numberOfGates) {
+void Airport::setNumberOfGates(int numberOfGates) {
     REQUIRE(Airport::numberOfGates >= 0, "The variable is not properly initialized");
     Airport::numberOfGates = numberOfGates;
-    for (unsigned int i = 0; i < numberOfGates; ++i) {
+    for (int i = 0; i < numberOfGates; ++i) {
         gates.push_back(true);
     }
     ENSURE(getNumberOfGates() == numberOfGates, "The variable is not set correctly");

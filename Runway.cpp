@@ -50,11 +50,11 @@ void Runway::setType(const string &type) {
     ENSURE(getType() == type, "The variable is not set correctly");
 }
 
-const unsigned int &Runway::getLength() const {
+const int &Runway::getLength() const {
     return length;
 }
 
-void Runway::setLength(const unsigned int &length) {
+void Runway::setLength(const int &length) {
     REQUIRE(Runway::length >= 0, "The variable is not properly initialized");
     Runway::length = length;
     ENSURE(getLength() == length, "The variable is not set correctly");

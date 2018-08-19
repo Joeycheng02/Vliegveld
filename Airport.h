@@ -18,7 +18,7 @@ private:
     string name;
     string iata;
     string callsign;
-    unsigned int numberOfGates;
+    int numberOfGates;
     vector <bool> gates;
     vector <Runway*> runways;
     bool heightCheck3000;
@@ -38,14 +38,14 @@ public:
 
     unsigned int getNumberOfRunways() const;
 
-    unsigned int getNumberOfGates() const;
+    int getNumberOfGates() const;
 
 /**
 \n REQUIRE(Airport::numberOfGates >= 0, "The variable is not properly initialized");
 \n ENSURE(getNumberOfGates() == numberOfGates, "The variable is not set correctly");
 \n ENSURE(getNumberOfGates() >= 0, "The variable can't be a negative number");
 */
-    void setNumberOfGates(unsigned numberOfGates);
+    void setNumberOfGates(int numberOfGates);
 
     const string &getName() const;
 

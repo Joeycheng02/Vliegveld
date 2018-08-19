@@ -22,12 +22,12 @@ private:
     string size;
     string status;
     string airport;
-    unsigned int capacity;
+    int capacity; // unsigned int werkte niet
     int gateNumber;
-    unsigned int height;
-    unsigned int fuel;
-    unsigned int fuel_cost;
-    unsigned int squawk_code;
+    int height;
+    int fuel;
+    int fuel_cost;
+    int squawk_code;
 
 public:
     Airplane();
@@ -64,14 +64,14 @@ public:
 */
     void setStatus(const string &status);
 
-    unsigned int getHeight() const;
+    int getHeight() const;
 
 /**
 \n REQUIRE(Airplane::height >= 0, "The variable is not properly initialized");
 \n ENSURE(getHeight() == height, "The variable is not set correctly");
 \n ENSURE(getHeight() >= 0, "The variable can't be a negative number");
 */
-    void setHeight(unsigned int height);
+    void setHeight(int height);
 
 
     const string &getAirport() const;
@@ -91,14 +91,14 @@ public:
 */
     void setGateNumber(int gateNumber);
 
-    unsigned int getCapacity() const;
+    int getCapacity() const;
 
 /**
 \n REQUIRE(Airplane::capacity >=0, "The variable is not properly initialized");
 \n ENSURE(getCapacity() == capacity, "The variable is not set correctly");
 \n ENSURE(getCapacity() >= 0, "The variable can't be a negative number");
 */
-    void setCapacity(unsigned int passengers);
+    void setCapacity(int passengers);
 
     const string &getType() const;
 
@@ -139,29 +139,32 @@ public:
 */
     int ascending(Airport* &airport, Time &time);
 
-    unsigned int getFuelCost() const;
+    int getFuelCost() const;
 
 /**
 \n REQUIRE(Airplane::fuel_cost != fuel_cost, "The variable already has this value");
 \n ENSURE(getFuelCost() == fuel_cost, "The variable is not set correctly");
+\n ENSURE(getFuelCost() >= 0, "The variable can't be a negative number");
 */
-    void setFuelCost(unsigned int fuel_cost);
+    void setFuelCost(int fuel_cost);
 
-    unsigned int getFuel() const;
+    int getFuel() const;
 
 /**
 \n REQUIRE(Airplane::fuel != fuel, "The variable already has this value");
 \n ENSURE(getFuel() == fuel, "The variable is not set correctly");
+\n ENSURE(getFuel() >= 0, "The variable can't be a negative number");
 */
-    void setFuel(unsigned int fuel);
+    void setFuel(int fuel);
 
-    unsigned int  &getSquawk_code();
+    int  &getSquawk_code();
 
 /**
 \n REQUIRE(Airplane::squawk_code != squawk_code, "The variable already has this value");
 \n ENSURE(getSquawk_code() == squawk_code, "The variable is not set correctly");
+\n ENSURE(getSquawk_code() >= 1, "The variable can't be smaller then 1");
 */
-    void setSquawk_code(unsigned int squawk_code);
+    void setSquawk_code(int squawk_code);
 };
 
 

@@ -15,7 +15,7 @@ private:
     string name;
     string airport;
     string type;
-    unsigned int length;
+    int length;
     bool vacant;
     vector<string> taxipoints;
     vector<string> crossings_string;
@@ -57,14 +57,14 @@ public:
 */
     void setType(const string &type);
 
-    const unsigned int &getLength() const;
+    const int &getLength() const;
 
 /**
 \n REQUIRE(Runway::length >= 0, "The variable is not properly initialized");
 \n ENSURE(getLength() == length, "The variable is not set correctly");
 \n ENSURE(getLength() >= 0, "The variable can't be a negative number");
 */
-    void setLength(const unsigned int &length);
+    void setLength(const int &length);
 
 /**
 \n ENSURE(getTaxipoint()[getTaxipoint().size() - 1]== taxipoint, "The variable is not set correctly");

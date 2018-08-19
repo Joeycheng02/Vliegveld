@@ -383,70 +383,16 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
             }
             if (airplane->getSize() == "small" and airplane->getEngine() == "propeller") {
                 airplane->setFuelCost(10);
-                if (airplane->getType() == "private") {
-                    if(airplane->getSquawk_code() < 1 or airplane->getSquawk_code() > 777){
-                        console << airplane->getNumber() << " heeft een ongeldige squawk code." << endl;
-                        return -1;
-                    }
-                }
-                if (airplane->getType() == "emergency") {
-                    if(airplane->getSquawk_code() < 6000 or airplane->getSquawk_code() > 6777){
-                        console << airplane->getNumber() << " heeft een ongeldige squawk code." << endl;
-                        return -1;
-                    }
-                }
             } else if (airplane->getSize() == "small" and airplane->getEngine() == "jet") {
                 airplane->setFuelCost(25);
-                if (airplane->getType() == "private") {
-                    if(airplane->getSquawk_code() < 1 or airplane->getSquawk_code() > 777){
-                        console << airplane->getNumber() << " heeft een ongeldige squawk code." << endl;
-                        return -1;
-                    }
-                }
-                if (airplane->getType() == "military") {
-                    if(airplane->getSquawk_code() < 5000 or airplane->getSquawk_code() > 5777){
-                        console << airplane->getNumber() << " heeft een ongeldige squawk code." << endl;
-                        return -1;
-                    }
-                }
             } else if (airplane->getSize() == "medium" and airplane->getEngine() == "propeller") {
                 airplane->setFuelCost(50);
-                if (airplane->getType() == "airline") {
-                    if(airplane->getSquawk_code() < 2000 or airplane->getSquawk_code() > 2777){
-                        console << airplane->getNumber() << " heeft een ongeldige squawk code." << endl;
-                        return -1;
-                    }
-                }
             } else if (airplane->getSize() == "medium" and airplane->getEngine() == "jet") {
                 airplane->setFuelCost(175);
-                if (airplane->getType() == "private") {
-                    if(airplane->getSquawk_code() < 1000 or airplane->getSquawk_code() > 1777){
-                        console << airplane->getNumber() << " heeft een ongeldige squawk code." << endl;
-                        return -1;
-                    }
-                }
-                if (airplane->getType() == "airline") {
-                    if(airplane->getSquawk_code() < 3000 or airplane->getSquawk_code() > 3777){
-                        console << airplane->getNumber() << " heeft een ongeldige squawk code." << endl;
-                        return -1;
-                    }
-                }
             } else if (airplane->getSize() == "large" and airplane->getEngine() == "propeller") {
                 airplane->setFuelCost(100);
-                if (airplane->getType() == "military") {
-                    if(airplane->getSquawk_code() < 5000 or airplane->getSquawk_code() > 5777){
-                        console << airplane->getNumber() << " heeft een ongeldige squawk code." << endl;
-                        return -1;
-                    }
-                }
             } else if (airplane->getSize() == "large" and airplane->getEngine() == "jet") {
                 airplane->setFuelCost(250);
-                if (airplane->getType() == "airline") {
-                    if(airplane->getSquawk_code() < 4000 or airplane->getSquawk_code() > 5777){
-                        console << airplane->getNumber() << " heeft een ongeldige squawk code." << endl;
-                        return -1;
-                    }
-                }
             }
             airplanes_temp.push_back(airplane);
         }
@@ -463,7 +409,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                 return -1;
             }
             if (airplanes[j]->getGateNumber() == -1) {
-                for (unsigned int k = 0; k < airports[0]->getNumberOfGates(); ++k) {
+                for (int k = 0; k < airports[0]->getNumberOfGates(); ++k) {
                     if (airports[0]->getGates()[k]) {
                         airplanes[j]->setAirport(airports[0]->getName());
                         airplanes[j]->setHeight(0);
