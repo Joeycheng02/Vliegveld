@@ -13,17 +13,12 @@ protected:
     virtual void TearDown() {
     }
 
-    Simulation simulation;
-    Airplane airplane;
-    Airport airport;
-    Runway runway;
     Time time;
 };
 
 TEST_F(TimeTest, DefConTime) {
 
     EXPECT_EQ("12:00", time.printTime());
-
 }
 
 TEST_F(TimeTest, SetterTime) {
@@ -32,6 +27,8 @@ TEST_F(TimeTest, SetterTime) {
     EXPECT_EQ("12:20", time.printTime());
     time.addTime(700);
     EXPECT_EQ("00:00", time.printTime());
+
+
 
     remove("console_output.txt");
 }

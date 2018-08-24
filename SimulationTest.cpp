@@ -14,10 +14,7 @@ protected:
     }
 
     Simulation simulation;
-    Airplane airplane;
-    Airport airport;
     Runway runway;
-    Time time;
 };
 
 TEST_F(SimulationTest, DefCon) {
@@ -26,6 +23,8 @@ TEST_F(SimulationTest, DefCon) {
     EXPECT_EQ(0, int(simulation.getAirplanes().size()));
     EXPECT_EQ(0, int(simulation.getRunways().size()));
     EXPECT_TRUE(runway.isVacant());
+
+
 
     remove("console_output.txt");
 }

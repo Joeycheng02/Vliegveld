@@ -14,10 +14,6 @@ protected:
     }
 
     Simulation simulation;
-    Airplane airplane;
-    Airport airport;
-    Runway runway;
-    Time time;
 };
 
 TEST_F(ParserTest, Parsing) {
@@ -31,7 +27,6 @@ TEST_F(ParserTest, Parsing) {
     EXPECT_EQ("12R", simulation.getAirports()[0]->getRunways()[0]->getName());
     EXPECT_EQ("11R", simulation.getAirports()[0]->getRunways()[1]->getName());
     EXPECT_EQ("ANR", simulation.getAirports()[0]->getRunways()[0]->getAirport());
-
 }
 
 TEST_F(ParserTest, Parsing_Test){ // Deze test test alle attributen van de parser m.b.v. een test xml-bestand
@@ -55,6 +50,8 @@ TEST_F(ParserTest, Parsing_Test){ // Deze test test alle attributen van de parse
     EXPECT_EQ("small", simulation.getAirplanes()[0]->getSize());
     EXPECT_EQ("approaching", simulation.getAirplanes()[0]->getStatus());
     EXPECT_EQ(1, simulation.getAirplanes()[0]->getCapacity());
+
+
 
     remove("console_output.txt");
 }

@@ -14,10 +14,7 @@ protected:
     }
 
     Simulation simulation;
-    Airplane airplane;
-    Airport airport;
     Runway runway;
-    Time time;
 };
 
 
@@ -30,7 +27,6 @@ TEST_F(RunwayTest, DefCon) {
     EXPECT_TRUE(runway.isVacant());
     EXPECT_EQ(unsigned(0),runway.getTaxipoint().size());
     EXPECT_EQ(unsigned(0),runway.getCrossing().size());
-
 }
 
 TEST_F(RunwayTest, Setter) {
@@ -45,7 +41,6 @@ TEST_F(RunwayTest, Setter) {
     EXPECT_EQ(200,runway.getLength());
     runway.setVacant(false);
     EXPECT_FALSE(runway.isVacant());
-
 }
 
 TEST_F(RunwayTest, runway){
@@ -55,6 +50,8 @@ TEST_F(RunwayTest, runway){
     // The taxipoints are named with the alphabet.
     EXPECT_TRUE(simulation.getAirports()[0]->getRunways()[0]->getTaxipoint()[0] > simulation.getAirports()[0]->getRunways()[0]->getTaxipoint()[1]);
     EXPECT_EQ(simulation.getAirports()[0]->getRunways()[0]->getCrossing()[0], simulation.getAirports()[0]->getRunways()[1]);
+
+
 
     remove("console_output.txt");
 }

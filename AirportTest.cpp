@@ -15,10 +15,7 @@ protected:
     }
 
     Simulation simulation;
-    Airplane airplane;
     Airport airport;
-    Runway runway;
-    Time time;
 };
 
 TEST_F(AirportTest, DefCon) {
@@ -30,7 +27,6 @@ TEST_F(AirportTest, DefCon) {
     EXPECT_EQ("", airport.getName());
     EXPECT_EQ("", airport.getIata());
     EXPECT_EQ("", airport.getCallsign());
-
 }
 
 TEST_F(AirportTest, Setter) {
@@ -43,7 +39,6 @@ TEST_F(AirportTest, Setter) {
     EXPECT_EQ("BRU", airport.getIata());
     airport.setCallsign("Brussels Tower");
     EXPECT_EQ("Brussels Tower", airport.getCallsign());
-
 }
 
 TEST_F(AirportTest, permission) {
@@ -59,6 +54,8 @@ TEST_F(AirportTest, permission) {
     EXPECT_FALSE(simulation.getAirports()[0]->permissionToDescend(3000));
     simulation.getAirports()[0]->getRunways()[0]->setVacant(true);
     EXPECT_TRUE(simulation.getAirports()[0]->permissionToDescend(3000));
+
+
 
     remove("console_output.txt");
 }
