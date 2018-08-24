@@ -64,7 +64,7 @@ int output::outputfile(vector<Airport*> &airports, vector<Airplane*> &airplanes)
     return 0;
 }
 
-int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time) {
+int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int check, Time* &time) {
     REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before requesting a landing");
 
     ofstream file;
@@ -75,51 +75,51 @@ int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int ch
     }
 
     if(check == 1){
-        file << "[" << time.printTime() << "][AIR]" << endl
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", arriving at " << airport.getName() << "." << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][ATC]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", radar contact, descend and maintain five thousand feet, squawk " << "[sqauwk]" << "."<< endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Descend and maintain five thousand feet, sqauwking " << "[sqauwk]" << ", " << airplane.getCallsign() << "." << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     if(check == 2){
-        file << "[" << time.printTime() << "][ATC]" << endl
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", hold south on the one eighty radial, expect further clearence at " << "time" << "." <<  endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Holding south on the one eighty radial, " << airplane.getCallsign() << "." << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     if(check == 3){
-        file << "[" << time.printTime() << "][ATC]" << endl
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", descend and maintain three thousand feet." << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Descend and maintain three thousand feet, " << airplane.getCallsign() << "." << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     if(check == 4){
-        file << "[" << time.printTime() << "][ATC]" << endl
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", cleared ILS approach runway " << runway.getName() << "." << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Cleared ILS approach runway " << runway.getName() << ", " << airplane.getCallsign() << "." << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     if(check == 5) {
-        file << "[" << time.printTime() << "][AIR]" << endl
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", runway " << runway.getName() << " vacated." << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][ATC]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ taxi-instructions" << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
     file.close();
 
@@ -128,7 +128,7 @@ int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int ch
     return 0;
 }
 
-int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time) {
+int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int check, Time* &time) {
     REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before requesting to ascend");
 
     ofstream file;
@@ -139,81 +139,81 @@ int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int 
     }
 
     if(check == 1){
-        file << "[" << time.printTime() << "] [AIR]" << endl
+        file << "[" << time->printTime() << "] [AIR]" << endl
              << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", requesting IFR clearancy to <destination>" << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][ATC]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", "  << airport.getCallsign() << ", cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk " << "[sqauwk]" << ", " << airplane.getCallsign() << "." << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking " << "[sqauwk]" << ", " << airplane.getCallsign() << "." << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     if(check == 2){
-        file << "[" << time.printTime() << "][AIR]" << endl
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << " at gate " << airplane.getGateNumber() << ", requesting pushback." << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][ATC]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", "  << airport.getCallsign() << ", pushback approved."<< endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Pushback approved, " << airplane.getCallsign() << "." << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     if(check == 3) {
-        file << "[" << time.printTime() << "][AIR]" << endl
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ " << airplane.getCallsign() << " is ready to taxi." << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][ATC]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ taxi-instructions" << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     if(check == 4){
-        file << "[" << time.printTime() << "][AIR]" << endl
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", holding short at " << runway.getName() << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][ATC]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", hold position." << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Holding position, " << airplane.getCallsign() << "." << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     if(check == 5){
-        file << "[" << time.printTime() << "][AIR]" << endl
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", holding short at " << runway.getName() << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][ATC]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", line-up runway " << runway.getName() << " and wait." << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Lining up runway " << runway.getName() << " and wait, " << airplane.getCallsign() << "." << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     if(check == 6){
-        file << "[" << time.printTime() << "][AIR]" << endl
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", holding short at " << runway.getName() << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][ATC]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", runway " << runway.getName() << " cleared for take-off." << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Runway " << runway.getName() << " cleared for take-off, " << airplane.getCallsign() << "." << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     if(check == 7){
-        file << "[" << time.printTime() << "][ATC]" << endl
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", runway " << runway.getName() << " cleared for take-off." << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Runway " << runway.getName() << " cleared for take-off, " << airplane.getCallsign() << "." << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     file.close();
@@ -223,7 +223,7 @@ int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int 
     return 0;
 }
 
-int output::taxien(Airplane &airplane, Airport &airport, Runway &runway, int check, Time &time, const string &taxipoint, int gatenumber) {
+int output::taxien(Airplane &airplane, Airport &airport, Runway &runway, int check, Time* &time, const string &taxipoint, int gatenumber) {
     REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before requesting to ascend");
 
     ofstream file;
@@ -234,48 +234,48 @@ int output::taxien(Airplane &airplane, Airport &airport, Runway &runway, int che
     }
 
     if(check == 1) {
-        file << "[" << time.printTime() << "][ATC]" << endl
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", taxi to holding point " << runway.getName() << " via " + taxipoint + "."
              << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Taxi to holding point " << runway.getName() << " via " + taxipoint + ", " << airplane.getCallsign() << "."
              << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     if(check == 2) {
-        file << "[" << time.printTime() << "][ATC]" << endl
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", taxi to runway " << runway.getName() << " via " + taxipoint + "."
              << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Taxi to runway " << runway.getName() << " via " + taxipoint + ", " << airplane.getCallsign() << "."
              << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     if(check == 3) {
-        file << "[" << time.printTime() << "][ATC]" << endl
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", taxi to gate " << gatenumber << " via " + taxipoint + "."
              << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Taxi to gate " << gatenumber << " via " + taxipoint + ", " << airplane.getCallsign() << "."
              << endl << endl;
-        time.addTime(1);
+        time->addTime(1);
     }
 
     if(check == 4) {
-        file << "[" << time.printTime() << "][AIR]" << endl
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ " << airport.getCallsign() << ", " << airplane.getCallsign() << ", holding short at " << runway.getName() << "."
              << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][ATC]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][ATC]" << endl
              << "$ " << airplane.getCallsign() << ", cleared to cross " << runway.getName() << "."
              << endl;
-        time.addTime(1);
-        file << "[" << time.printTime() << "][AIR]" << endl
+        time->addTime(1);
+        file << "[" << time->printTime() << "][AIR]" << endl
              << "$ Cleared to cross " << runway.getName() << "."
              << endl << endl;
     }

@@ -7,9 +7,11 @@
 
 Time::Time() {
     Time::t = unsigned (720);
+    _initCheck = this;
 }
 
 void Time::addTime(unsigned int minute) {
+    REQUIRE(properlyInitialized(), "This Time object is not properly initialized");
     REQUIRE(Time::t >= 0, "The variable is not properly initialized");
     REQUIRE(minute >= 0, "The given variable is not properly initialized");
     Time::t += minute;
@@ -19,6 +21,7 @@ void Time::addTime(unsigned int minute) {
 }
 
 string Time::printTime() {
+    REQUIRE(properlyInitialized(), "This Time object is not properly initialized");
     unsigned  int hours = t / 60;
     stringstream h;
     h << hours;
@@ -36,4 +39,8 @@ string Time::printTime() {
         return "0" + string_hours + ":" + string_minutes;
     }
     return string_hours + ":" + string_minutes;
+}
+
+const bool Time::properlyInitialized() const {
+    return _initCheck == this;
 }
