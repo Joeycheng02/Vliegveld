@@ -70,6 +70,7 @@ public:
 /**
 \n REQUIRE(properlyInitialized(), "This Runway object is not properly initialized");
 \n REQUIRE(Runway::type != type, "The variable already has this value");
+\n REQUIRE(type == "grass" or type == "asphalt", "This is not a valuable value");
 \n ENSURE(getType() == type, "The variable is not set correctly");
 */
     void setType(const string &type);

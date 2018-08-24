@@ -313,7 +313,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                             return -1;
                         }
                         std::string t = text->Value();
-                        if (t != "approaching" and t != "standing at gate" and t != "departing"){
+                        if (t != "approaching" and t != "standing at gate" and t != "departed"){
                             console << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
                             return -1;
                         }

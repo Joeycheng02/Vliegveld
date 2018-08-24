@@ -136,6 +136,7 @@ public:
 /**
 \n REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
 \n REQUIRE(Airplane::type !=type , "The variable already has this value");
+\n REQUIRE(type == "private" or type == "airline" or type == "military" or type == "emergency", "This is not a valuable value");
 \n ENSURE(getType() == type, "The variable is not set correctly");
 */
     void setType(const string &type);
@@ -148,6 +149,7 @@ public:
 /**
 \n REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
 \n REQUIRE(Airplane::engine != engine, "The variable already has this value");
+\n REQUIRE(engine == "jet" or engine == "propeller", "The variable already has this value");
 \n ENSURE(getEngine() == engine, "The variable is not set correctly");
 */
     void setEngine(const string &engine);
@@ -160,6 +162,7 @@ public:
 /**
 \n REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
 \n REQUIRE(Airplane::size != size, "The variable already has this value");
+\n REQUIRE(size == "small" or size == "medium" or size == "large", "The variable already has this value");
 \n ENSURE(getSize() == size, "The variable is not set correctly");
 */
     void setSize(const string &size);

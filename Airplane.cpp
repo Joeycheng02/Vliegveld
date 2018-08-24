@@ -61,6 +61,7 @@ const string &Airplane::getStatus() const {
 void Airplane::setStatus(const string &status) {
     REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
     REQUIRE(Airplane::status != status, "The variable already has this value");
+    REQUIRE(status == "approaching" or status == "standing at gate" or status == "departed", "This is not a valuable value");
     Airplane::status = status;
     ENSURE(getStatus() == status, "The variable is not set correctly");
 }
@@ -124,6 +125,7 @@ const string &Airplane::getType() const {
 void Airplane::setType(const string &type) {
     REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
     REQUIRE(Airplane::type !=type , "The variable already has this value");
+    REQUIRE(type == "private" or type == "airline" or type == "military" or type == "emergency", "This is not a valuable value");
     Airplane::type = type;
     ENSURE(getType() == type, "The variable is not set correctly");
 }
@@ -136,6 +138,7 @@ const string &Airplane::getEngine() const {
 void Airplane::setEngine(const string &engine) {
     REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
     REQUIRE(Airplane::engine != engine, "The variable already has this value");
+    REQUIRE(engine == "jet" or engine == "propeller", "This is not a valuable value");
     Airplane::engine = engine;
     ENSURE(getEngine() == engine, "The variable is not set correctly");
 }
@@ -148,6 +151,7 @@ const string &Airplane::getSize() const {
 void Airplane::setSize(const string &size) {
     REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
     REQUIRE(Airplane::size != size, "The variable already has this value");
+    REQUIRE(size == "small" or size == "medium" or size == "large", "This is not a valuable value");
     Airplane::size = size;
     ENSURE(getSize() == size, "The variable is not set correctly");
 }

@@ -130,6 +130,24 @@ TEST_F(AirplaneTest, Airplane_edgeCases) {
 
     EXPECT_DEATH(simulation.getAirplanes()[0]->setType("private"), "The variable already has this value");
     EXPECT_DEATH(simulation.getAirplanes()[0]->setType("privat"), "This is not a valuable value");
+    simulation.getAirplanes()[0]->setType("military");
+    EXPECT_EQ("military", simulation.getAirplanes()[0]->getType());
+    simulation.getAirplanes()[0]->setType("emergency");
+    EXPECT_EQ("emergency", simulation.getAirplanes()[0]->getType());
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setType("emmergency"), "This is not a valuable value");
+
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setEngine("propeler"), "This is not a valuable value");
+    simulation.getAirplanes()[0]->setEngine("propeller");
+    EXPECT_EQ("propeller", simulation.getAirplanes()[0]->getEngine());
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setEngine("jey"), "This is not a valuable value");
+
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setSize("small"), "The variable already has this value");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setSize("smal"), "This is not a valuable value");
+    simulation.getAirplanes()[0]->setSize("medium");
+    EXPECT_EQ("medium", simulation.getAirplanes()[0]->getSize());
+    simulation.getAirplanes()[0]->setSize("large");
+    EXPECT_EQ("large", simulation.getAirplanes()[0]->getSize());
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setSize("larg"), "This is not a valuable value");
 
 
 

@@ -55,6 +55,7 @@ const string &Runway::getType() const {
 void Runway::setType(const string &type) {
     REQUIRE(properlyInitialized(), "This Runway object is not properly initialized");
     REQUIRE(Runway::type != type, "The variable already has this value");
+    REQUIRE(type == "grass" or type == "asphalt", "This is not a valuable value");
     Runway::type = type;
     ENSURE(getType() == type, "The variable is not set correctly");
 }

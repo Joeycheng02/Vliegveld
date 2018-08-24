@@ -1,19 +1,19 @@
 //
 // Created by nightnarumi on 22/03/18.
 //
-#include "Simulation.h"
-#include "parser.h"
-#include "output.h"
+//#include "Simulation.h"
+//#include "parser.h"
+//#include "output.h"
 #include <gtest/gtest.h>
 
-class VliegveldTest: public  ::testing::Test {
-protected:
-    virtual void SetUp(){
-    }
-
-    virtual void TearDown() {
-    }
-};
+//class VliegveldTest: public  ::testing::Test {
+//protected:
+//    virtual void SetUp(){
+//    }
+//
+//    virtual void TearDown() {
+//    }
+//};
 
 //TEST_F(VliegveldTest, DefConSimulation) {
 //
