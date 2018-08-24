@@ -129,5 +129,10 @@ TEST_F(AirplaneTest, Airplane_edgeCases) {
     simulation.getAirplanes()[0]->setFuelCost(100);
     EXPECT_EQ(100, simulation.getAirplanes()[0]->getFuelCost());
 
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setType("private"), "The variable already has this value");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setType("privat"), "This is not a valuable value");
+
+
+
     remove("console_output.txt");
 }
