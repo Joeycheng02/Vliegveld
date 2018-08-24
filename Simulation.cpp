@@ -3,21 +3,32 @@
 //
 
 #include "Simulation.h"
+#include "DesignByContract.h"
+
 using namespace std;
 
+Simulation::Simulation() {
+    time = new Time;
+    _initCheck = this;
+}
+
 vector<Airport*> &Simulation::getAirports() {
+    REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized");
     return airports;
 }
 
 vector<Airplane*> &Simulation::getAirplanes() {
+    REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized");
     return airplanes;
 }
 
 vector<Runway*> &Simulation::getRunways() {
+    REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized");
     return runways;
 }
 
 void Simulation::start() {
+    REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized");
     for (int i = 0; i < int(airplanes.size()); ++i) {
         if (airplanes[i]->getStatus() == "approaching") {
             airplanes[i]->descending(airports[0], time);
@@ -32,4 +43,8 @@ void Simulation::start() {
             }
         }
     }
+}
+
+const bool Simulation::properlyInitialized() const {
+    return _initCheck == this;
 }

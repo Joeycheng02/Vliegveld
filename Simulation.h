@@ -18,15 +18,32 @@ private:
     vector <Airport*> airports;
     vector <Airplane*> airplanes;
     vector <Runway*> runways;
-    Time time;
+    Time* time;
+    Simulation* _initCheck;
 public:
+    Simulation();
+
+/**
+\n REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized");
+*/
     vector<Airport*> &getAirports();
 
+/**
+\n REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized");
+*/
     vector<Airplane*> &getAirplanes();
 
+/**
+\n REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized");
+*/
     vector<Runway*> &getRunways();
 
+/**
+\n REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized");
+*/
     void start();
+
+    const bool properlyInitialized() const;
 };
 
 
