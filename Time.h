@@ -11,7 +11,7 @@ using namespace std;
 
 class Time {
 private:
-    unsigned int t;
+    int t;
     Time* _initCheck;
 public:
     Time();
@@ -23,7 +23,7 @@ public:
 \n ENSURE(Simulation::time < 1440, "The variable exceeds the allowed time");
 \n ENSURE(Simulation::getTime() >= 0, "The variable can't be a negative number");
 */
-    void addTime(unsigned int time);
+    void addTime(int time);
 
 /**
 \n REQUIRE(properlyInitialized(), "This Time object is not properly initialized");

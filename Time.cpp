@@ -6,11 +6,11 @@
 #include "DesignByContract.h"
 
 Time::Time() {
-    Time::t = unsigned (720);
+    Time::t = 720;
     _initCheck = this;
 }
 
-void Time::addTime(unsigned int minute) {
+void Time::addTime(int minute) {
     REQUIRE(properlyInitialized(), "This Time object is not properly initialized");
     REQUIRE(Time::t >= 0, "The variable is not properly initialized");
     REQUIRE(minute >= 0, "The given variable is not properly initialized");
@@ -22,7 +22,7 @@ void Time::addTime(unsigned int minute) {
 
 string Time::printTime() {
     REQUIRE(properlyInitialized(), "This Time object is not properly initialized");
-    unsigned  int hours = t / 60;
+    int hours = t / 60;
     stringstream h;
     h << hours;
     string string_hours = h.str();
