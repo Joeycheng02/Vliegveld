@@ -17,21 +17,21 @@ public:
     Time();
 
 /**
-\n REQUIRE(properlyInitialized(), "This Time object is not properly initialized");
-\n REQUIRE(Simulation::time >= 0, "The variable is not properly initialized");
-\n REQUIRE(minute >= 0, "The given variable is not properly initialized");
-\n ENSURE(Simulation::time < 1440, "The variable exceeds the allowed time");
-\n ENSURE(Simulation::getTime() >= 0, "The variable can't be a negative number");
+\n REQUIRE(properlyInitialized(), "This Time object is not properly initialized.");
+\n REQUIRE(Simulation::time >= 0, "This Time addTime is not properly initialized.");
+\n REQUIRE(minute >= 0, "The given Time addtime is not properly initialized.");
+\n ENSURE(Simulation::time < 1440, "The Time addtime exceeds the allowed time.");
+\n ENSURE(Simulation::getTime() >= 0, "This Time addtime can't be a negative number.");
 */
     void addTime(int time);
 
 /**
-\n REQUIRE(properlyInitialized(), "This Time object is not properly initialized");
+\n REQUIRE(properlyInitialized(), "This Time object is not properly initialized.");
 */
     string printTime();
 
 /**
-\n REQUIRE(properlyInitialized(), "This Time object is not properly initialized");
+\n REQUIRE(properlyInitialized(), "This Time object is not properly initialized.");
 */
     const bool properlyInitialized() const;
 

@@ -11,17 +11,17 @@ Time::Time() {
 }
 
 void Time::addTime(int minute) {
-    REQUIRE(properlyInitialized(), "This Time object is not properly initialized");
-    REQUIRE(Time::t >= 0, "The variable is not properly initialized");
-    REQUIRE(minute >= 0, "The given variable is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Time object is not properly initialized.");
+    REQUIRE(Time::t >= 0, "This Time addTime is not properly initialized.");
+    REQUIRE(minute >= 0, "The given Time addTime is not properly initialized.");
     Time::t += minute;
     Time::t = Time::t % 1440;
-    ENSURE(Time::t < 1440, "The variable exceeds the allowed time");
-    ENSURE(Time::t >= 0, "The variable can't be a negative number");
+    ENSURE(Time::t < 1440, "This Time addTime exceeds the allowed time.");
+    ENSURE(Time::t >= 0, "This Time addTime can't be a negative number.");
 }
 
 string Time::printTime() {
-    REQUIRE(properlyInitialized(), "This Time object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Time object is not properly initialized.");
     int hours = t / 60;
     stringstream h;
     h << hours;

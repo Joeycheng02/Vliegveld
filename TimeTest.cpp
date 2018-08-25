@@ -36,9 +36,9 @@ TEST_F(TimeTest, SetterTime) {
     EXPECT_EQ("00:00", time.printTime());
     time.addTime(1500);
     EXPECT_EQ("01:00", time.printTime());
-    EXPECT_DEATH(time.addTime(-5), "The given variable is not properly initialized");
+    EXPECT_DEATH(time.addTime(-5), "The given Time addTime is not properly initialized.");
     EXPECT_NO_FATAL_FAILURE(time.addTime(2147483587));
-    EXPECT_DEATH(time.addTime(2147483588), "The variable can't be a negative number");
+    EXPECT_DEATH(time.addTime(2147483588), "This Time addTime can't be a negative number.");
 
 
     remove("console_output.txt");

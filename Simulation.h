@@ -24,22 +24,22 @@ public:
     Simulation();
 
 /**
-\n REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized");
+\n REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized.");
 */
     vector<Airport*> &getAirports();
 
 /**
-\n REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized");
+\n REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized.");
 */
     vector<Airplane*> &getAirplanes();
 
 /**
-\n REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized");
+\n REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized.");
 */
     vector<Runway*> &getRunways();
 
 /**
-\n REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized");
+\n REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized.");
 */
     void start();
 

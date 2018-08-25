@@ -27,6 +27,11 @@ TEST_F(RunwayTest, DefCon) {
     EXPECT_TRUE(runway.isVacant());
     EXPECT_EQ(unsigned(0),runway.getTaxipoint().size());
     EXPECT_EQ(unsigned(0),runway.getCrossing().size());
+    EXPECT_TRUE(runway.properlyInitialized());
+    Runway* a = &runway;
+    EXPECT_TRUE(a->properlyInitialized());
+    Runway b = runway;
+    EXPECT_FALSE(b.properlyInitialized());
 }
 
 TEST_F(RunwayTest, Setter) {
@@ -41,11 +46,12 @@ TEST_F(RunwayTest, Setter) {
     EXPECT_EQ(200,runway.getLength());
     runway.setVacant(false);
     EXPECT_FALSE(runway.isVacant());
+    EXPECT_DEATH(runway.setName(""), "A Runway Name can't have an empty string.");
 }
 
-TEST_F(RunwayTest, runway){
+TEST_F(RunwayTest, OtherTests){
     parser::full_parsing(simulation, "Simulatie.xml");
-    // There is always 1 more taxipoint then corssings.
+    // There is always 1 more taxipoint than crossings.
     EXPECT_TRUE(simulation.getAirports()[0]->getRunways()[0]->getCrossing().size() + 1 == simulation.getAirports()[0]->getRunways()[0]->getTaxipoint().size());
     // The taxipoints are named with the alphabet.
     EXPECT_TRUE(simulation.getAirports()[0]->getRunways()[0]->getTaxipoint()[0] > simulation.getAirports()[0]->getRunways()[0]->getTaxipoint()[1]);
