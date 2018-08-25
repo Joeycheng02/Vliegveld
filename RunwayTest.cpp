@@ -68,13 +68,13 @@ TEST_F(RunwayTest, edgeCases){
     simulation.getRunways()[0]->setAirport("TestAirport");
     EXPECT_EQ("TestAirport", simulation.getRunways()[0]->getAirport());
 
-    EXPECT_DEATH(simulation.getRunways()[0]->setType("asphalt"), "The variable already has this value");
-    EXPECT_DEATH(simulation.getRunways()[0]->setType("asphal"), "This is not a valuable value");
+    EXPECT_DEATH(simulation.getRunways()[0]->setType("asphalt"), "This Runway Type already has this value.");
+    EXPECT_DEATH(simulation.getRunways()[0]->setType("asphal"), "This Runway Type is not a valuable value.");
     simulation.getRunways()[0]->setType("grass");
     EXPECT_EQ("grass", simulation.getRunways()[0]->getType());
 
-    EXPECT_DEATH(simulation.getRunways()[0]->setLength(-5), "The variable can't be a negative number");
-    EXPECT_DEATH(simulation.getRunways()[0]->setLength(-1), "The variable can't be a negative number");
+    EXPECT_DEATH(simulation.getRunways()[0]->setLength(-5), "This Runway Length can't be a negative number.");
+    EXPECT_DEATH(simulation.getRunways()[0]->setLength(-1), "This Runway Length can't be a negative number.");
     simulation.getRunways()[0]->setLength(0);
     EXPECT_EQ(0, simulation.getRunways()[0]->getLength());
     simulation.getRunways()[0]->setLength(164);
