@@ -89,14 +89,14 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                             }
                             std::string t = text->Value();
                             int i;
-                            for (unsigned int k = 0; k < t.size(); k++) {
-                                if (t[k] != '0' and t[k] != '1' and t[k] != '2' and t[k] != '3' and t[k] != '4' and
-                                    t[k] != '5'
-                                    and t[k] != '6' and t[k] != '7' and t[k] != '8' and t[k] != '9') {
-                                    console << "De " << elem2Name << " moet een integer zijn.";
-                                    return -1;
-                                }
-                            }
+//                            for (unsigned int k = 0; k < t.size(); k++) {
+//                                if (t[k] != '0' and t[k] != '1' and t[k] != '2' and t[k] != '3' and t[k] != '4' and
+//                                    t[k] != '5'
+//                                    and t[k] != '6' and t[k] != '7' and t[k] != '8' and t[k] != '9') {
+//                                    console << "De " << elem2Name << " moet een integer zijn.";
+//                                    return -1;
+//                                }
+//                            }
                             sscanf(t.c_str(), "%d", &i);
                             airport->setNumberOfGates(i);
                         }

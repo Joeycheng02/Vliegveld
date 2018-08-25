@@ -1,0 +1,146 @@
+Airport: Heathrow (HRL)
+ --> gates: 51
+ --> runways: 3
+
+
+
+Airplane: Nightstalker (K34875)
+ --> model: Nightstalker 3000
+
+Airplane: Nightwing (L36479)
+ --> model: Nightwing 5400
+
+[12:00][AIR]
+$ London Tower, Nightstalker, arriving at Heathrow.
+[12:01][ATC]
+$ Nightstalker, radar contact, descend and maintain five thousand feet, squawk [sqauwk].
+[12:02][AIR]
+$ Descend and maintain five thousand feet, sqauwking [sqauwk], Nightstalker.
+
+[12:08][ATC]
+$ Nightstalker, descend and maintain three thousand feet.
+[12:09][AIR]
+$ Descend and maintain three thousand feet, Nightstalker.
+
+[12:12][ATC]
+$ Nightstalker, cleared ILS approach runway AB1.
+[12:13][AIR]
+$ Cleared ILS approach runway AB1, Nightstalker.
+
+[12:18][AIR]
+$ London Tower, Nightstalker, runway AB1 vacated.
+[12:19][ATC]
+$ taxi-instructions
+
+[12:23] [AIR]
+$ London Tower, Nightstalker, requesting IFR clearancy to <destination>
+[12:24][ATC]
+$ Nightstalker, London Tower, cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk [sqauwk], Nightstalker.
+[12:25][AIR]
+$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking [sqauwk], Nightstalker.
+
+[12:26][AIR]
+$ London Tower, Nightstalker at gate 1, requesting pushback.
+[12:27][ATC]
+$ Nightstalker, London Tower, pushback approved.
+[12:28][AIR]
+$ Pushback approved, Nightstalker.
+
+[12:29][AIR]
+$ Nightstalker is ready to taxi.
+[12:30][ATC]
+$ taxi-instructions
+
+[12:31][AIR]
+$ London Tower, Nightstalker, holding short at AB1
+[12:32][ATC]
+$ Nightstalker, hold position.
+[12:33][AIR]
+$ Holding position, Nightstalker.
+
+[12:34][AIR]
+$ London Tower, Nightstalker, holding short at AB1
+[12:35][ATC]
+$ Nightstalker, line-up runway AB1 and wait.
+[12:36][AIR]
+$ Lining up runway AB1 and wait, Nightstalker.
+
+[12:37][AIR]
+$ London Tower, Nightstalker, holding short at AB1
+[12:38][ATC]
+$ Nightstalker, runway AB1 cleared for take-off.
+[12:39][AIR]
+$ Runway AB1 cleared for take-off, Nightstalker.
+
+[12:40][ATC]
+$ Nightstalker, runway AB1 cleared for take-off.
+[12:41][AIR]
+$ Runway AB1 cleared for take-off, Nightstalker.
+
+[12:49][AIR]
+$ London Tower, Nightwing, arriving at Heathrow.
+[12:50][ATC]
+$ Nightwing, radar contact, descend and maintain five thousand feet, squawk [sqauwk].
+[12:51][AIR]
+$ Descend and maintain five thousand feet, sqauwking [sqauwk], Nightwing.
+
+[12:57][ATC]
+$ Nightwing, descend and maintain three thousand feet.
+[12:58][AIR]
+$ Descend and maintain three thousand feet, Nightwing.
+
+[13:01][ATC]
+$ Nightwing, cleared ILS approach runway AB1.
+[13:02][AIR]
+$ Cleared ILS approach runway AB1, Nightwing.
+
+[13:07][AIR]
+$ London Tower, Nightwing, runway AB1 vacated.
+[13:08][ATC]
+$ taxi-instructions
+
+[13:15] [AIR]
+$ London Tower, Nightwing, requesting IFR clearancy to <destination>
+[13:16][ATC]
+$ Nightwing, London Tower, cleared to <destination>, maintain five thousand, expect flight level one zero zero - ten minutes after departure, squawk [sqauwk], Nightwing.
+[13:17][AIR]
+$ Cleared to <destination>, initial altitude five thousand, expecting one zero zero in ten, squawking [sqauwk], Nightwing.
+
+[13:18][AIR]
+$ London Tower, Nightwing at gate 1, requesting pushback.
+[13:19][ATC]
+$ Nightwing, London Tower, pushback approved.
+[13:20][AIR]
+$ Pushback approved, Nightwing.
+
+[13:21][AIR]
+$ Nightwing is ready to taxi.
+[13:22][ATC]
+$ taxi-instructions
+
+[13:23][AIR]
+$ London Tower, Nightwing, holding short at AB1
+[13:24][ATC]
+$ Nightwing, hold position.
+[13:25][AIR]
+$ Holding position, Nightwing.
+
+[13:26][AIR]
+$ London Tower, Nightwing, holding short at AB1
+[13:27][ATC]
+$ Nightwing, line-up runway AB1 and wait.
+[13:28][AIR]
+$ Lining up runway AB1 and wait, Nightwing.
+
+[13:29][AIR]
+$ London Tower, Nightwing, holding short at AB1
+[13:30][ATC]
+$ Nightwing, runway AB1 cleared for take-off.
+[13:31][AIR]
+$ Runway AB1 cleared for take-off, Nightwing.
+
+[13:32][ATC]
+$ Nightwing, runway AB1 cleared for take-off.
+[13:33][AIR]
+$ Runway AB1 cleared for take-off, Nightwing.
+

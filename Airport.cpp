@@ -41,11 +41,14 @@ int Airport::getNumberOfGates() const {
 
 void Airport::setNumberOfGates(int numberOfGates) {
     REQUIRE(properlyInitialized(), "This Airport object is not properly initialized");
-    REQUIRE(Airport::numberOfGates >= 0, "The variable is not properly initialized");
+    REQUIRE(Airport::numberOfGates >= 0, "The variable can't be a negative number");
     Airport::numberOfGates = numberOfGates;
+    vector<bool> temp;
     for (int i = 0; i < numberOfGates; ++i) {
-        gates.push_back(true);
+        temp.push_back(true);
     }
+    gates = temp;
+
     ENSURE(getNumberOfGates() == numberOfGates, "The variable is not set correctly");
     ENSURE(getNumberOfGates() >= 0, "The variable can't be a negative number");
 }

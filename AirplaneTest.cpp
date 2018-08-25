@@ -4,7 +4,6 @@
 
 #include "Simulation.h"
 #include "parser.h"
-#include "output.h"
 #include <gtest/gtest.h>
 
 class AirplaneTest: public  ::testing::Test {
@@ -149,7 +148,13 @@ TEST_F(AirplaneTest, Airplane_edgeCases) {
     EXPECT_EQ("large", simulation.getAirplanes()[0]->getSize());
     EXPECT_DEATH(simulation.getAirplanes()[0]->setSize("larg"), "This is not a valuable value");
 
-
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setStatus("approaching"), "The variable already has this value");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setStatus("approachin"), "This is not a valuable value");
+    simulation.getAirplanes()[0]->setStatus("standing at gate");
+    EXPECT_EQ("standing at gate", simulation.getAirplanes()[0]->getStatus());
+    simulation.getAirplanes()[0]->setStatus("departed");
+    EXPECT_EQ("departed", simulation.getAirplanes()[0]->getStatus());
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setStatus("depated"), "This is not a valuable value");
 
     remove("console_output.txt");
 }

@@ -1,0 +1,53 @@
+<SIMULATIE>
+    <AIRPORT>
+        <name>Heathrow</name>
+        <iata>HRL</iata>
+        <callsign>London Tower</callsign>
+        <gates>51</gates>
+    </AIRPORT>
+
+    <RUNWAY>
+        <name>AB1</name>
+        <airport>HRL</airport>
+        <type>asphalt</type>
+        <length>2064</length>
+    </RUNWAY>
+
+    <RUNWAY>
+        <name>K36</name>
+        <airport>HRL</airport>
+        <type>asphalt</type>
+        <length>1914</length>
+    </RUNWAY>
+
+    <RUNWAY>
+        <name>R67</name>
+        <airport>HRL</airport>
+        <type>grass</type>
+        <length>1430</length>
+    </RUNWAY>
+
+    <AIRPLANE>
+        <number>K34875</number>
+        <callsign>Nightstalker</callsign>
+        <model>Nightstalker 3000</model>
+        <type>military</type>
+        <engine>jet</engine>
+        <size>small</size>
+        <status>approaching</status>
+        <capacity>2</capacity>
+        <fuel>10040</fuel>
+    </AIRPLANE>
+
+    <AIRPLANE>
+        <number>L36479</number>
+        <callsign>Nightwing</callsign>
+        <model>Nightwing 5400</model>
+        <type>private</type>
+        <engine>jet</engine>
+        <size>small</size>
+        <status>approaching</status>
+        <capacity>4</capacity>
+        <fuel>20000</fuel>
+    </AIRPLANE>
+</SIMULATIE>

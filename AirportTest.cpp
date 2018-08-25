@@ -54,8 +54,30 @@ TEST_F(AirportTest, permission) {
     EXPECT_FALSE(simulation.getAirports()[0]->permissionToDescend(3000));
     simulation.getAirports()[0]->getRunways()[0]->setVacant(true);
     EXPECT_TRUE(simulation.getAirports()[0]->permissionToDescend(3000));
+}
 
+TEST_F(AirportTest, edgeCases){
 
+    parser::full_parsing(simulation, "Simulatie.xml");
+    EXPECT_DEATH(simulation.getAirports()[0]->setNumberOfGates(-5), "The variable can't be a negative number");
+    EXPECT_DEATH(simulation.getAirports()[0]->setNumberOfGates(-1), "The variable can't be a negative number");
+    simulation.getAirports()[0]->setNumberOfGates(0);
+    EXPECT_EQ(-0, simulation.getAirports()[0]->getNumberOfGates());
+    simulation.getAirports()[0]->setNumberOfGates(164);
+    EXPECT_EQ(164, simulation.getAirports()[0]->getNumberOfGates());
+
+    simulation.getAirports()[0]->setName("test123");
+    EXPECT_EQ("test123", simulation.getAirports()[0]->getName());
+
+    simulation.getAirports()[0]->setIata("test1234");
+    EXPECT_EQ("test1234", simulation.getAirports()[0]->getIata());
+
+    simulation.getAirports()[0]->setCallsign("test12");
+    EXPECT_EQ("test12", simulation.getAirports()[0]->getCallsign());
+
+    EXPECT_EQ(unsigned (164), simulation.getAirports()[0]->getGates().size());
+
+    EXPECT_EQ(unsigned (2), simulation.getAirports()[0]->getRunways().size());
 
     remove("console_output.txt");
 }

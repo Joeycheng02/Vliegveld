@@ -31,8 +31,14 @@ TEST_F(OutputTest, output_test){
     output::outputfile(simulation.getAirports(), simulation.getAirplanes());
     simulation.start();
     EXPECT_TRUE(output::compare_file("output.txt", "output_test2.txt"));
+}
 
+TEST_F(OutputTest, output_test2){
 
-
+    parser::full_parsing(simulation, "test2.xml");
+    output::outputfile(simulation.getAirports(), simulation.getAirplanes());
+    simulation.start();
+    EXPECT_TRUE(output::compare_file("output.txt", "output_test3.txt"));
+    
     remove("console_output.txt");
 }
