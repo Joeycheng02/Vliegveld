@@ -15,25 +15,15 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
     vector<Airplane*> airplanes_temp;
 
     TiXmlDocument doc;
-    if (!doc.LoadFile(path)) {
-        std::cerr << doc.ErrorDesc() << std::endl;
-        return -1;
-    }
+    REQUIRE(doc.LoadFile(path), doc.ErrorDesc());
 
     TiXmlElement *root = doc.FirstChildElement();
-    if (root == NULL) {
-        std::cerr << "Failed to load file: No root element." << std::endl;
-        doc.Clear();
-        return -1;
-    }
+    REQUIRE((root != NULL), "Failed to load file: No root element.");
 
     for (TiXmlElement *elem = root->FirstChildElement(); elem != NULL;
          elem = elem->NextSiblingElement()) {
         std::string elemName = elem->Value();
-        if (elemName != "AIRPORT" and elemName != "RUNWAY" and elemName != "AIRPLANE"){
-            console << elemName << " staat niet in de parser en wordt dus genegeerd." << endl;
-            return -1;
-        }
+        REQUIRE((elemName == "AIRPORT" or elemName == "RUNWAY" or elemName == "AIRPLANE"), "Dit staat niet in de parser en wordt dus genegeerd.");
         if (elemName == "AIRPORT") {
             if(!one_airport) {
                 Airport* airport = new Airport();
@@ -41,19 +31,12 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                      elem2 = elem2->NextSiblingElement()) {
                     string elem2Name = elem2->Value();
 
-                    if (elem2Name != "name" and elem2Name != "iata" and elem2Name != "callsign" and
-                        elem2Name != "gates") {
-                        console << elem2Name << " is geen variabele van Airport." << endl;
-                        return -1;
-                    }
+                    REQUIRE((elem2Name == "name" or elem2Name == "iata" or elem2Name == "callsign" or
+                        elem2Name == "gates"), "Dit is geen variabele van Airport.");
 
                     if (elem2Name == "name") {
                         for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                             TiXmlText *text = e->ToText();
-                            if (text == NULL) {
-                                console << elem2Name << " van airport is niet gegeven." << endl;
-                                return -1;
-                            }
                             std::string t = text->Value();
                             airport->setName(t);
                         }
@@ -61,10 +44,6 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                     if (elem2Name == "iata") {
                         for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                             TiXmlText *text = e->ToText();
-                            if (text == NULL) {
-                                console << elem2Name << " van airport is niet gegeven." << endl;
-                                return -1;
-                            }
                             std::string t = text->Value();
                             airport->setIata(t);
                         }
@@ -72,10 +51,6 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                     if (elem2Name == "callsign") {
                         for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                             TiXmlText *text = e->ToText();
-                            if (text == NULL) {
-                                console << elem2Name << " van airport is niet gegeven." << endl;
-                                return -1;
-                            }
                             std::string t = text->Value();
                             airport->setCallsign(t);
                         }
@@ -83,10 +58,6 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                     if (elem2Name == "gates") {
                         for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                             TiXmlText *text = e->ToText();
-                            if (text == NULL) {
-                                console << elem2Name << " van airport is niet gegeven." << endl;
-                                return -1;
-                            }
                             std::string t = text->Value();
                             int i;
 //                            for (unsigned int k = 0; k < t.size(); k++) {
@@ -114,19 +85,12 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                  elem2 = elem2->NextSiblingElement()) {
                 string elem2Name = elem2->Value();
 
-                if (elem2Name != "name" and elem2Name != "airport" and elem2Name != "type" and elem2Name != "length"
-                        and elem2Name != "TAXIROUTE"){
-                    console << elem2Name << " is geen variabele van Runway." << endl;
-                    return -1;
-                }
+                REQUIRE((elem2Name == "name" or elem2Name == "airport" or elem2Name == "type" or elem2Name == "length"
+                        or elem2Name == "TAXIROUTE"), "Dit is geen variabele van Runway.");
 
                 if (elem2Name == "name") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van runway is niet gegeven." << endl;
-                            return -1;
-                        }
                         std::string t = text->Value();
                         runway->setName(t);
                     }
@@ -134,10 +98,6 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                 if (elem2Name == "airport") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van runway is niet gegeven." << endl;
-                            return -1;
-                        }
                         std::string t = text->Value();
                         runway->setAirport(t);
                     }
@@ -145,35 +105,15 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                 if (elem2Name == "type"){
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van runway is niet gegeven." << endl;
-                            return -1;
-                        }
                         std::string t = text->Value();
-                        if (t != "grass" and t != "asphalt"){
-                            console << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
-                            return -1;
-                        }
                         runway->setType(t);
                     }
                 }
                 if (elem2Name == "length"){
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van runway is niet gegeven." << endl;
-                            return -1;
-                        }
                         std::string t = text->Value();
                         int i;
-                        for(unsigned int k = 0; k<t.size(); k++) {
-                            if (t[k] != '0' and t[k] != '1' and t[k] != '2' and t[k] != '3' and t[k] != '4' and
-                                t[k] != '5'
-                                and t[k] != '6' and t[k] != '7' and t[k] != '8' and t[k] != '9') {
-                                console << "De " << elem2Name << " moet een integer zijn.";
-                                return -1;
-                            }
-                        }
                         sscanf(t.c_str(), "%d", &i);
                         runway->setLength(i);
                     }
@@ -183,18 +123,11 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                         elem3 = elem3->NextSiblingElement()){
                         string elem3Name = elem3->Value();
 
-                        if (elem3Name != "taxipoint" and elem3Name != "crossing") {
-                            console << elem3Name << " is geen variabele van Runway." << endl;
-                            return -1;
-                        }
+                        REQUIRE((elem3Name == "taxipoint" or elem3Name == "crossing"), "Dit is geen variabele van Runway.");
 
                         if (elem3Name == "taxipoint"){
                             for (TiXmlNode *e = elem3->FirstChild(); e != NULL; e = e->NextSibling()) {
                                 TiXmlText *text = e->ToText();
-                                if (text == NULL) {
-                                    console << elem3Name << " van taxiroute is niet gegeven." << endl;
-                                    return -1;
-                                }
                                 std::string t = text->Value();
                                 runway->addTaxipoint(t);
                             }
@@ -202,10 +135,6 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                         if (elem3Name == "crossing"){
                             for (TiXmlNode *e = elem3->FirstChild(); e != NULL; e = e->NextSibling()) {
                                 TiXmlText *text = e->ToText();
-                                if (text == NULL) {
-                                    console << elem3Name << " van taxiroute is niet gegeven." << endl;
-                                    return -1;
-                                }
                                 std::string t = text->Value();
                                 runway->addCrossings_string(t);
                             }
@@ -221,19 +150,12 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                  elem2 = elem2->NextSiblingElement()) {
                 string elem2Name = elem2->Value();
 
-                if (elem2Name != "model" and elem2Name != "number" and elem2Name != "callsign" and elem2Name != "type" and elem2Name != "engine" and elem2Name != "size" and
-                    elem2Name != "status" and elem2Name != "capacity" and elem2Name != "fuel"){
-                    console << elem2Name << " is geen variabele van Airplane." << endl;
-                    return -1;
-                }
+                REQUIRE(elem2Name == "model" or elem2Name == "number" or elem2Name == "callsign" or elem2Name == "type" or elem2Name == "engine" or elem2Name == "size" or
+                    elem2Name == "status" or elem2Name == "capacity" or elem2Name == "fuel", "Dit is geen variabele van Airplane.");
 
                 if (elem2Name == "number") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van airplane is niet gegeven." << endl;
-                            return -1;
-                        }
                         std::string t = text->Value();
                         airplane->setNumber(t);
                     }
@@ -241,10 +163,6 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                 if (elem2Name == "callsign") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van airplane is niet gegeven." << endl;
-                            return -1;
-                        }
                         std::string t = text->Value();
                         airplane->setCallsign(t);
                     }
@@ -252,10 +170,6 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                 if (elem2Name == "model") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van airplane is niet gegeven." << endl;
-                            return -1;
-                        }
                         std::string t = text->Value();
                         airplane->setModel(t);
                     }
@@ -263,79 +177,36 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                 if (elem2Name == "type") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van airplane is niet gegeven." << endl;
-                            return -1;
-                        }
                         std::string t = text->Value();
-                        if (t != "private" and t != "airline" and t != "military" and t != "emergency"){
-                            console << t << " is geen geldig " << elem2Name << " voor een Airplane." << endl;
-                            return -1;
-                        }
                         airplane->setType(t);
                     }
                 }
                 if (elem2Name == "engine") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van airplane is niet gegeven." << endl;
-                            return -1;
-                        }
                         std::string t = text->Value();
-                        if (t != "jet" and t != "propeller"){
-                            console << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
-                            return -1;
-                        }
                         airplane->setEngine(t);
                     }
                 }
                 if (elem2Name == "size") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van airplane is niet gegeven." << endl;
-                            return -1;
-                        }
                         std::string t = text->Value();
-                        if (t != "small" and t != "medium" and t != "large"){
-                            console << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
-                            return -1;
-                        }
                         airplane->setSize(t);
                     }
                 }
                 if (elem2Name == "status") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van airplane is niet gegeven." << endl;
-                            return -1;
-                        }
                         std::string t = text->Value();
-                        if (t != "approaching" and t != "standing at gate" and t != "departed"){
-                            console << t << " is geen geldige " << elem2Name << " voor een Airplane." << endl;
-                            return -1;
-                        }
                         airplane->setStatus(t);
                     }
                 }
                 if (elem2Name == "capacity") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van airplane is niet gegeven." << endl;
-                            return -1;
-                        }
                         const std::string t = text->Value();
                         int i;
-                        for(unsigned int k = 0; k<t.size(); k++){
-                            if(t[k]!='0' and t[k]!='1' and t[k]!='2' and t[k]!='3' and t[k]!='4' and t[k]!='5'
-                               and t[k]!='6' and t[k]!='7' and t[k]!='8' and t[k]!='9'){
-                                console << "De " << elem2Name << " moet een integer zijn.";
-                                return -1;
-                            }
-                        }
                         sscanf(t.c_str(), "%d", &i);
                         airplane->setCapacity(i);
                     }
@@ -343,19 +214,8 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                 if (elem2Name == "fuel") {
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
-                        if (text == NULL) {
-                            console << elem2Name << " van airplane is niet gegeven." << endl;
-                            return -1;
-                        }
                         const std::string t = text->Value();
                         int i;
-                        for(unsigned int k = 0; k<t.size(); k++){
-                            if(t[k]!='0' and t[k]!='1' and t[k]!='2' and t[k]!='3' and t[k]!='4' and t[k]!='5'
-                               and t[k]!='6' and t[k]!='7' and t[k]!='8' and t[k]!='9'){
-                                console << "De " << elem2Name << " moet een integer zijn.";
-                                return -1;
-                            }
-                        }
                         sscanf(t.c_str(), "%d", &i);
                         airplane->setFuel(i);
                     }
@@ -384,10 +244,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
     doc.Clear();
     for (int j = 0; j < int(airplanes.size()); ++j) {
         if (airplanes[j]->getStatus() == "standing at gate") {
-            if (0 == int(airports.size())) {
-                console << "No gates available anymore." << endl;
-                return -1;
-            }
+            REQUIRE(0 != int(airports.size()), "No gates available anymore.");
             if (airplanes[j]->getGateNumber() == -1) {
                 for (int k = 0; k < airports[0]->getNumberOfGates(); ++k) {
                     if (airports[0]->getGates()[k]) {
@@ -445,10 +302,7 @@ void parser::full_parsing(Simulation &simulation, const char *path) {
     ofstream console("console_output.txt", fstream::app);
 
 
-    if(parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), path) == -1){
-        console << "Er is iets mis gegaan met de parsing." << endl;
-        console.close();
-        return;
-    };
+    REQUIRE((parsing(simulation.getAirports(), simulation.getAirplanes(), simulation.getRunways(), path) == 0), "Er is iets mis gegaan met de parsing.");
+    console.close();
     addRunway(simulation.getAirports(), simulation.getRunways());
 }

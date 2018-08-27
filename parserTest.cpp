@@ -53,11 +53,11 @@ TEST_F(ParserTest, Parsing_Test){ // Deze test test alle attributen van de parse
 }
 
 TEST_F(ParserTest, fout_xml){
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_xml_0.xml"), "Failed to open file");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_xml_leeg.xml"), "Error document empty.");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_bestand.cpp"), "Error reading end tag.");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_bestand.h"), "Error reading end tag.");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_bestand.txt"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_xml_0.xml"), "Failed to open file");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_xml_leeg.xml"), "Error document empty.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_bestand.cpp"), "Error document empty.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_bestand.h"), "Error document empty.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_bestand.txt"), "Error document empty.");
     EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_01.xml"), "This Airport numberOfGates can't be a negative number.");
     EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_02.xml"), "This Airport numberOfGates can't be a negative number.");
 //    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_03.xml"), "ssa");
