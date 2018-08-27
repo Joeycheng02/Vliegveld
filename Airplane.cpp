@@ -18,147 +18,147 @@ Airplane::Airplane() {
 }
 
 const string &Airplane::getNumber() const {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
     return number;
 }
 
 void Airplane::setNumber(const string &number) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE(Airplane::number != number, "The variable already has this value");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE(Airplane::number != number, "This Airplane Number already has this value.");
     Airplane::number = number;
-    ENSURE(getNumber() == number, "The variable is not set correctly");
+    ENSURE(getNumber() == number, "This Airplane Number is not set correctly.");
 }
 
 const string &Airplane::getCallsign() const {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
     return callsign;
 }
 
 void Airplane::setCallsign(const string &callsign) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE(Airplane::callsign != callsign, "The variable already has this value");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE(Airplane::callsign != callsign, "This Airplane Callsign already has this value.");
     Airplane::callsign = callsign;
-    ENSURE(getCallsign() == callsign, "The variable is not set correctly");
+    ENSURE(getCallsign() == callsign, "This Airplane Callsign is not set correctly.");
 }
 
 const string &Airplane::getModel() const {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
     return model;
 }
 
 void Airplane::setModel(const string &model) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE(Airplane::model != model, "The variable already has this value");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE(Airplane::model != model, "This Airplane Model already has this value.");
     Airplane::model = model;
-    ENSURE(getModel() == model, "The variable is not set correctly");
+    ENSURE(getModel() == model, "This Airplane Model is not set correctly.");
 }
 
 const string &Airplane::getStatus() const {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
     return status;
 }
 
 void Airplane::setStatus(const string &status) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE(Airplane::status != status, "The variable already has this value");
-    REQUIRE(status == "approaching" or status == "standing at gate" or status == "departed", "This is not a valuable value");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE(Airplane::status != status, "This Airplane Status already has this value.");
+    REQUIRE(status == "approaching" or status == "standing at gate" or status == "departed", "This Airplane Status is not a valuable value.");
     Airplane::status = status;
-    ENSURE(getStatus() == status, "The variable is not set correctly");
+    ENSURE(getStatus() == status, "This Airplane Status is not set correctly.");
 }
 
 int Airplane::getHeight() const {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
     return height;
 }
 
 void Airplane::setHeight(int height) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE(Airplane::height >= 0, "The variable is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE(Airplane::height >= 0, "This Airplane Height is not properly initialized.");
     Airplane::height = height;
-    ENSURE(getHeight() == height, "The variable is not set correctly");
-    ENSURE(getHeight() >= 0, "The variable can't be a negative number");
+    ENSURE(getHeight() == height, "This Airplane Height is not set correctly.");
+    ENSURE(getHeight() >= 0, "This Airplane Height can't be a negative number.");
 }
 
 const string &Airplane::getAirport() const {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
     return airport;
 }
 
 void Airplane::setAirport(const string &airport) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE(Airplane::airport != airport, "The variable already has this value");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE(Airplane::airport != airport, "This Airplane Airport already has this value.");
     Airplane::airport = airport;
-    ENSURE(getAirport() == airport, "The variable is not set correctly");
+    ENSURE(getAirport() == airport, "This Airplane Airport is not set correctly.");
 }
 
 int Airplane::getGateNumber() const {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
     return gateNumber;
 }
 
 void Airplane::setGateNumber(int gateNumber) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE(Airplane::gateNumber >= -1, "The variable is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE(Airplane::gateNumber >= -1, "This Airplane gateNumber is not properly initialized.");
     Airplane::gateNumber = gateNumber;
-    ENSURE(getGateNumber() == gateNumber, "The variable is not set correctly");
-    ENSURE(getGateNumber() >= -1, "The variable can't be less than -1");
+    ENSURE(getGateNumber() == gateNumber, "This Airplane gateNumber is not set correctly.");
+    ENSURE(getGateNumber() >= -1, "This Airplane gateNumber can't be less than -1.");
 }
 
 int Airplane::getCapacity() const {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
     return capacity;
 }
 
 void Airplane::setCapacity(int capacity) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE(Airplane::capacity >=0, "The variable is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE(Airplane::capacity >=0, "This Airplane Capacity is not properly initialized.");
     Airplane::capacity = capacity;
-    ENSURE(getCapacity() == capacity, "The variable is not set correctly");
-    ENSURE(getCapacity() >= 0, "The variable can't be a negative number");
+    ENSURE(getCapacity() == capacity, "This Airplane Capacity is not set correctly.");
+    ENSURE(getCapacity() >= 0, "This Airplane Capacity can't be a negative number.");
 }
 
 const string &Airplane::getType() const {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
     return type;
 }
 
 void Airplane::setType(const string &type) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE(Airplane::type !=type , "The variable already has this value");
-    REQUIRE(type == "private" or type == "airline" or type == "military" or type == "emergency", "This is not a valuable value");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE(Airplane::type !=type , "This Airplane Type already has this value.");
+    REQUIRE(type == "private" or type == "airline" or type == "military" or type == "emergency", "This Airplane Type is not a valuable value.");
     Airplane::type = type;
-    ENSURE(getType() == type, "The variable is not set correctly");
+    ENSURE(getType() == type, "This Airplane Type is not set correctly.");
 }
 
 const string &Airplane::getEngine() const {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
     return engine;
 }
 
 void Airplane::setEngine(const string &engine) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE(Airplane::engine != engine, "The variable already has this value");
-    REQUIRE(engine == "jet" or engine == "propeller", "This is not a valuable value");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE(Airplane::engine != engine, "This Airplane Engine already has this value.");
+    REQUIRE(engine == "jet" or engine == "propeller", "This Airplane Engine is not a valuable value.");
     Airplane::engine = engine;
-    ENSURE(getEngine() == engine, "The variable is not set correctly");
+    ENSURE(getEngine() == engine, "This Airplane Engine is not set correctly.");
 }
 
 const string &Airplane::getSize() const {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
     return size;
 }
 
 void Airplane::setSize(const string &size) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE(Airplane::size != size, "The variable already has this value");
-    REQUIRE(size == "small" or size == "medium" or size == "large", "This is not a valuable value");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE(Airplane::size != size, "This Airplane Size already has this value.");
+    REQUIRE(size == "small" or size == "medium" or size == "large", "This Airplane Size is not a valuable value.");
     Airplane::size = size;
-    ENSURE(getSize() == size, "The variable is not set correctly");
+    ENSURE(getSize() == size, "This Airplane Size is not set correctly.");
 }
 
 int Airplane::descending(Airport* &airport, Time* &time) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE (getStatus() == "approaching", "Airplane is not approaching");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE (getStatus() == "approaching", "Airplane is not approaching.");
 
     ofstream console ("console_output.txt", fstream::app);
     if (!console) {
@@ -262,8 +262,8 @@ int Airplane::descending(Airport* &airport, Time* &time) {
     }
     console << "[" << time->printTime() << "] " << getCallsign() << " has been checked for technical malfunctions" << endl << endl;
 
-    ENSURE(getStatus() == "standing at gate", "Airplane is not standing at a gate");
-    ENSURE(getAirport() == airport->getName(), "Airplane is not standing at the right airport");
+    ENSURE(getStatus() == "standing at gate", "Airplane is not standing at a gate.");
+    ENSURE(getAirport() == airport->getName(), "Airplane is not standing at the right airport.");
 
     console.close();
     return 0;
@@ -271,9 +271,9 @@ int Airplane::descending(Airport* &airport, Time* &time) {
 
 
 int Airplane::ascending (Airport* &airport, Time* &time) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE (getStatus() == "standing at gate", "Airplane is not standing at a gate");
-    REQUIRE (getAirport() == airport->getName(), "This airplane does not belong to the given aiport.");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE (getStatus() == "standing at gate", "Airplane is not standing at a gate.");
+    REQUIRE (getAirport() == airport->getName(), "This Airplane does not belong to the given Airport.");
 
     ofstream console("console_output.txt", fstream::app);
     if (!console) {
@@ -361,37 +361,37 @@ int Airplane::ascending (Airport* &airport, Time* &time) {
     airport->getRunways()[runwayNumber]->setVacant(true);
     setAirport("No airport assigned");
 
-    ENSURE(airport->getRunways()[runwayNumber]->isVacant(), "Runway is still occupied");
-    ENSURE(getGateNumber() == -1, "Airplane is still at a gate");
+    ENSURE(airport->getRunways()[runwayNumber]->isVacant(), "Runway is still occupied.");
+    ENSURE(getGateNumber() == -1, "Airplane is still at a gate.");
     console.close();
     return 0;
 }
 
 int Airplane::getFuelCost() const {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
     return fuel_cost;
 }
 
 void Airplane::setFuelCost(int fuel_cost) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE(Airplane::fuel_cost != fuel_cost, "The variable already has this value");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE(Airplane::fuel_cost != fuel_cost, "This Airplane FuelCost already has this value.");
     Airplane::fuel_cost = fuel_cost;
-    ENSURE(getFuelCost() == fuel_cost, "The variable is not set correctly");
-    ENSURE(getFuelCost() >= 0, "The variable can't be a negative number");
+    ENSURE(getFuelCost() == fuel_cost, "This Airplane FuelCost is not set correctly.");
+    ENSURE(getFuelCost() >= 0, "This Airplane FuelCost can't be a negative number.");
 
 }
 
 int Airplane::getFuel() const {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
     return fuel;
 }
 
 void Airplane::setFuel(int fuel) {
-    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized");
-    REQUIRE(Airplane::fuel != fuel, "The variable already has this value");
+    REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+    REQUIRE(Airplane::fuel != fuel, "This Airplane Fuel already has this value.");
     Airplane::fuel = fuel;
-    ENSURE(getFuel() == fuel, "The variable is not set correctly");
-    ENSURE(getFuel() >= 0, "The variable can't be a negative number");
+    ENSURE(getFuel() == fuel, "This Airplane Fuel is not set correctly.");
+    ENSURE(getFuel() >= 0, "This Airplane Fuel can't be a negative number.");
 
 }
 

@@ -34,6 +34,11 @@ TEST_F(AirplaneTest, DefCon) {
     EXPECT_EQ("", airplane.getSize());
     EXPECT_EQ(0, airplane.getFuelCost());
     EXPECT_EQ(0, airplane.getFuel());
+    EXPECT_TRUE(airplane.properlyInitialized());
+    Airplane* a = &airplane;
+    EXPECT_TRUE(a->properlyInitialized());
+    Airplane b = airplane;
+    EXPECT_FALSE(b.properlyInitialized());
 }
 
 TEST_F(AirplaneTest, Setter) {
@@ -76,7 +81,7 @@ TEST_F(AirplaneTest, Ascending){
     EXPECT_TRUE(simulation.getAirplanes()[1]->getStatus() == "departed");
     EXPECT_EQ(5000, simulation.getAirplanes()[1]->getHeight());
     EXPECT_EQ(-1, simulation.getAirplanes()[1]->getGateNumber());
-    EXPECT_DEATH(simulation.getAirplanes()[1]->ascending(simulation.getAirports()[0], _time), "Airplane is not standing at a gate");
+    EXPECT_DEATH(simulation.getAirplanes()[1]->ascending(simulation.getAirports()[0], _time), "Airplane is not standing at a gate.");
 }
 
 TEST_F(AirplaneTest, Descending) {
@@ -89,72 +94,72 @@ TEST_F(AirplaneTest, Descending) {
     EXPECT_EQ(0, simulation.getAirplanes()[0]->getHeight());
     EXPECT_EQ(1, simulation.getAirplanes()[1]->getGateNumber());
     EXPECT_EQ(2, simulation.getAirplanes()[0]->getGateNumber());
-    EXPECT_DEATH(simulation.getAirplanes()[0]->descending(simulation.getAirports()[0], _time), "Airplane is not approaching");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->descending(simulation.getAirports()[0], _time), "Airplane is not approaching.");
 }
 
 TEST_F(AirplaneTest, Airplane_edgeCases) {
     parser::full_parsing(simulation, "test.xml");
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setCapacity(-100), "The variable can't be a negative number");
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setCapacity(-1), "The variable can't be a negative number");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setCapacity(-100), "This Airplane Capacity can't be a negative number.");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setCapacity(-1), "This Airplane Capacity can't be a negative number.");
     simulation.getAirplanes()[0]->setCapacity(148751);
     EXPECT_EQ(148751, simulation.getAirplanes()[0]->getCapacity());
 
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setGateNumber(-5), "The variable can't be less than -1");
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setGateNumber(-2), "The variable can't be less than -1");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setGateNumber(-5), "This Airplane gateNumber can't be less than -1.");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setGateNumber(-2), "This Airplane gateNumber can't be less than -1.");
     simulation.getAirplanes()[0]->setGateNumber(-1);
     EXPECT_EQ(-1, simulation.getAirplanes()[0]->getGateNumber());
     simulation.getAirplanes()[0]->setGateNumber(164);
     EXPECT_EQ(164, simulation.getAirplanes()[0]->getGateNumber());
 
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setHeight(-10000), "The variable can't be a negative number");
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setHeight(-1), "The variable can't be a negative number");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setHeight(-10000), "This Airplane Height can't be a negative number.");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setHeight(-1), "This Airplane Height can't be a negative number.");
     simulation.getAirplanes()[0]->setHeight(1);
     EXPECT_EQ(1, simulation.getAirplanes()[0]->getHeight());
     simulation.getAirplanes()[0]->setHeight(10000);
     EXPECT_EQ(10000, simulation.getAirplanes()[0]->getHeight());
 
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setFuel(-453), "The variable can't be a negative number");
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setFuel(-1), "The variable can't be a negative number");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setFuel(-453), "This Airplane Fuel can't be a negative number.");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setFuel(-1), "This Airplane Fuel can't be a negative number.");
     simulation.getAirplanes()[0]->setFuel(1);
     EXPECT_EQ(1, simulation.getAirplanes()[0]->getFuel());
     simulation.getAirplanes()[0]->setFuel(2000);
     EXPECT_EQ(2000, simulation.getAirplanes()[0]->getFuel());
 
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setFuelCost(-10), "The variable can't be a negative number");
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setFuelCost(-1), "The variable can't be a negative number");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setFuelCost(-10), "This Airplane FuelCost can't be a negative number.");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setFuelCost(-1), "This Airplane FuelCost can't be a negative number.");
     simulation.getAirplanes()[0]->setFuelCost(1);
     EXPECT_EQ(1, simulation.getAirplanes()[0]->getFuelCost());
     simulation.getAirplanes()[0]->setFuelCost(100);
     EXPECT_EQ(100, simulation.getAirplanes()[0]->getFuelCost());
 
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setType("private"), "The variable already has this value");
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setType("privat"), "This is not a valuable value");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setType("private"), "This Airplane Type already has this value.");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setType("privat"), "This Airplane Type is not a valuable value.");
     simulation.getAirplanes()[0]->setType("military");
     EXPECT_EQ("military", simulation.getAirplanes()[0]->getType());
     simulation.getAirplanes()[0]->setType("emergency");
     EXPECT_EQ("emergency", simulation.getAirplanes()[0]->getType());
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setType("emmergency"), "This is not a valuable value");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setType("emmergency"), "This Airplane Type is not a valuable value.");
 
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setEngine("propeler"), "This is not a valuable value");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setEngine("propeler"), "This Airplane Engine is not a valuable value.");
     simulation.getAirplanes()[0]->setEngine("propeller");
     EXPECT_EQ("propeller", simulation.getAirplanes()[0]->getEngine());
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setEngine("jey"), "This is not a valuable value");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setEngine("jey"), "This Airplane Engine is not a valuable value.");
 
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setSize("small"), "The variable already has this value");
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setSize("smal"), "This is not a valuable value");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setSize("small"), "This Airplane Size already has this value.");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setSize("smal"), "This Airplane Size is not a valuable value.");
     simulation.getAirplanes()[0]->setSize("medium");
     EXPECT_EQ("medium", simulation.getAirplanes()[0]->getSize());
     simulation.getAirplanes()[0]->setSize("large");
     EXPECT_EQ("large", simulation.getAirplanes()[0]->getSize());
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setSize("larg"), "This is not a valuable value");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setSize("larg"), "This Airplane Size is not a valuable value.");
 
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setStatus("approaching"), "The variable already has this value");
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setStatus("approachin"), "This is not a valuable value");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setStatus("approaching"), "This Airplane Status already has this value.");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setStatus("approachin"), "This Airplane Status is not a valuable value.");
     simulation.getAirplanes()[0]->setStatus("standing at gate");
     EXPECT_EQ("standing at gate", simulation.getAirplanes()[0]->getStatus());
     simulation.getAirplanes()[0]->setStatus("departed");
     EXPECT_EQ("departed", simulation.getAirplanes()[0]->getStatus());
-    EXPECT_DEATH(simulation.getAirplanes()[0]->setStatus("depated"), "This is not a valuable value");
+    EXPECT_DEATH(simulation.getAirplanes()[0]->setStatus("depated"), "This Airplane Status is not a valuable value.");
 
     remove("console_output.txt");
 }

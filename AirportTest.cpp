@@ -27,6 +27,11 @@ TEST_F(AirportTest, DefCon) {
     EXPECT_EQ("", airport.getName());
     EXPECT_EQ("", airport.getIata());
     EXPECT_EQ("", airport.getCallsign());
+    EXPECT_TRUE(airport.properlyInitialized());
+    Airport* a = &airport;
+    EXPECT_TRUE(a->properlyInitialized());
+    Airport b = airport;
+    EXPECT_FALSE(b.properlyInitialized());
 }
 
 TEST_F(AirportTest, Setter) {
@@ -59,8 +64,8 @@ TEST_F(AirportTest, permission) {
 TEST_F(AirportTest, edgeCases){
 
     parser::full_parsing(simulation, "Simulatie.xml");
-    EXPECT_DEATH(simulation.getAirports()[0]->setNumberOfGates(-5), "The variable can't be a negative number");
-    EXPECT_DEATH(simulation.getAirports()[0]->setNumberOfGates(-1), "The variable can't be a negative number");
+    EXPECT_DEATH(simulation.getAirports()[0]->setNumberOfGates(-5), "This Airport numberOfGates can't be a negative number.");
+    EXPECT_DEATH(simulation.getAirports()[0]->setNumberOfGates(-1), "This Airport numberOfGates can't be a negative number.");
     simulation.getAirports()[0]->setNumberOfGates(0);
     EXPECT_EQ(-0, simulation.getAirports()[0]->getNumberOfGates());
     simulation.getAirports()[0]->setNumberOfGates(164);

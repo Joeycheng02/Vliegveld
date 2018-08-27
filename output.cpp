@@ -8,8 +8,8 @@
 
 int output::outputfile(vector<Airport*> &airports, vector<Airplane*> &airplanes) {
 
-    REQUIRE(!airplanes.empty(), "There are no airplanes available");
-    REQUIRE(!airports.empty(), "There are no airports available");
+    REQUIRE(!airplanes.empty(), "There are no airplanes available.");
+    REQUIRE(!airports.empty(), "There are no airports available.");
 
     //Open the file + exception.
     ofstream console("console_output.txt");
@@ -65,7 +65,7 @@ int output::outputfile(vector<Airport*> &airports, vector<Airplane*> &airplanes)
 }
 
 int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int check, Time* &time) {
-    REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before requesting a landing");
+    REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before requesting a landing.");
 
     ofstream file;
     file.open("output.txt", ios_base::app);
@@ -123,13 +123,13 @@ int output::landing(Airplane &airplane, Airport &airport, Runway &runway, int ch
     }
     file.close();
 
-    ENSURE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty after landing");
+    ENSURE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty after landing.");
 
     return 0;
 }
 
 int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int check, Time* &time) {
-    REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before requesting to ascend");
+    REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before requesting to ascend.");
 
     ofstream file;
     file.open("output.txt", ios_base::app);
@@ -218,13 +218,13 @@ int output::ascending(Airplane &airplane, Airport &airport, Runway &runway, int 
 
     file.close();
 
-    ENSURE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty after ascending");
+    ENSURE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty after ascending.");
 
     return 0;
 }
 
 int output::taxien(Airplane &airplane, Airport &airport, Runway &runway, int check, Time* &time, const string &taxipoint, int gatenumber) {
-    REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before requesting to ascend");
+    REQUIRE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty before requesting to ascend.");
 
     ofstream file;
     file.open("output.txt", ios_base::app);
@@ -282,7 +282,7 @@ int output::taxien(Airplane &airplane, Airport &airport, Runway &runway, int che
 
     file.close();
 
-    ENSURE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty after ascending");
+    ENSURE(!compare_file("output.txt", "empty.txt"), "The output.txt can't be empty after ascending.");
 
     return 0;
 }

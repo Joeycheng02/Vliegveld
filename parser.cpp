@@ -7,9 +7,9 @@
 
 int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, vector<Runway*> &runways, const char* path) {
 
-    REQUIRE(airplanes.empty(), "Airplanes must be empty");
-    REQUIRE(airports.empty(), "Airports must be empty");
-    REQUIRE(runways.empty(), "Runways must be empty");
+    REQUIRE(airplanes.empty(), "Airplanes must be empty.");
+    REQUIRE(airports.empty(), "Airports must be empty.");
+    REQUIRE(runways.empty(), "Runways must be empty.");
     ofstream console("console_output.txt", fstream::app);
     bool one_airport = false;
     vector<Airplane*> airplanes_temp;
@@ -405,9 +405,9 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
         }
     }
 
-    ENSURE(!airplanes.empty(), "Airplanes can't be empty");
-    ENSURE(!airports.empty(), "Airports can't be empty");
-    ENSURE(!runways.empty(), "Runways can't be empty");
+    ENSURE(!airplanes.empty(), "Airplanes can't be empty.");
+    ENSURE(!airports.empty(), "Airports can't be empty.");
+    ENSURE(!runways.empty(), "Runways can't be empty.");
     console.close();
 
     return 0;
@@ -415,8 +415,8 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
 
 void parser::addRunway(vector <Airport*> &airports, vector <Runway*> &runways) {
 
-    REQUIRE(!runways.empty(), "There are no runways available");
-    REQUIRE(!airports.empty(), "There are no airports available");
+    REQUIRE(!runways.empty(), "There are no runways available.");
+    REQUIRE(!airports.empty(), "There are no airports available.");
 
     for (int i = 0; i < int(runways.size()); ++i) {
         for (int j = 0; j < int(airports.size()); ++j) {
@@ -426,7 +426,7 @@ void parser::addRunway(vector <Airport*> &airports, vector <Runway*> &runways) {
         }
     }
     for (int k = 0; k < int(airports.size()); ++k) {
-        ENSURE(!airports[k]->getRunways().empty(), "Airport has no runway");
+        ENSURE(!airports[k]->getRunways().empty(), "Airport has no runway.");
     }
 
     for(unsigned int R = 0; R < runways.size(); R++){
