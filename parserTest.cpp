@@ -60,34 +60,34 @@ TEST_F(ParserTest, fout_xml){
     EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_bestand.txt"), "Error document empty.");
     EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_01.xml"), "This Airport numberOfGates can't be a negative number.");
     EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_02.xml"), "This Airport numberOfGates can't be a negative number.");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_03.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_04.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_05.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_06.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_07.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_08.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_09.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_10.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_11.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_12.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_13.xml"), "ssa");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_03.xml"), "This Runway Type is not a valuable value.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_04.xml"), "This Runway Type is not a valuable value.");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_05.xml"), "ssa"); failed to die
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_06.xml"), "This Runway Length can't be a negative number.");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_07.xml"), "ssa"); failed to die
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_08.xml"), "ssa"); failed to die
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_09.xml"), "ssa"); failed to die
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_10.xml"), "This variable of Airport can't be empty.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_11.xml"), "This Runway Type is not a valuable value.");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_12.xml"), "ssa"); failed to die
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_13.xml"), "This Airplane Type is not a valuable value.");
     EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_14.xml"), "This Runway Length can't be a negative number.");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_15.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_16.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_17.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_18.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_19.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_20.xml"), "ssa");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_15.xml"), "This Airplane Type is not a valuable value.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_16.xml"), "This Airplane Size is not a valuable value.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_17.xml"), "This Airplane Engine is not a valuable value.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_18.xml"), "This Airplane Status is not a valuable value.");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_19.xml"), "ssa"); failed to die
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_20.xml"), "This Airplane Capacity can't be a negative number.");
     EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_21.xml"), "This Airplane Fuel already has this value.");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_22.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_23.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_24.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_25.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_26.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_27.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_28.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_29.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_30.xml"), "ssa");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_22.xml"), "This Airplane Fuel can't be a negative number.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_23.xml"), "This Airplane Type is not a valuable value.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_24.xml"), "This Airplane Type is not a valuable value.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_25.xml"), "This Airplane Engine is not a valuable value.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_26.xml"), "This Airplane Size is not a valuable value.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_27.xml"), "This Airplane Status is not a valuable value.");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_28.xml"), "ssa"); failed to die
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_29.xml"), "ssa"); failed to die
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_30.xml"), "This Airplane Capacity can't be a negative number.");
     EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_31.xml"), "This Airplane Fuel already has this value.");
 //    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_32.xml"), "ssa");
 //    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_01.xml"), "ssa");
