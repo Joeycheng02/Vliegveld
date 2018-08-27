@@ -18,10 +18,14 @@ private:
     vector <Airport*> airports;
     vector <Airplane*> airplanes;
     vector <Runway*> runways;
+    Time _time;
     Time* time;
     Simulation* _initCheck;
 public:
     Simulation();
+
+    ~Simulation();
+
 
 /**
 \n REQUIRE(properlyInitialized(), "This Simulation object is not properly initialized.");

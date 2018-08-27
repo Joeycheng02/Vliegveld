@@ -161,7 +161,6 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
                         std::string t = text->Value();
-                        cout << t << endl;
                         airplane->setNumber(t);
                     }
                 }

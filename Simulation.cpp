@@ -8,8 +8,20 @@
 using namespace std;
 
 Simulation::Simulation() {
-    time = new Time;
+    time = &_time;
     _initCheck = this;
+}
+
+Simulation::~Simulation() {
+    for (int i = 0; i < int(airplanes.size()-1); ++i) {
+        delete(airplanes[i]);
+    }
+    for (int j = 0; j < int(airports.size()-1); ++j) {
+        delete(airports[j]);
+    }
+    for (int k = 0; k < int(runways.size()-1); ++k) {
+        delete(runways[k]);
+    }
 }
 
 vector<Airport*> &Simulation::getAirports() {

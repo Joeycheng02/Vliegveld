@@ -31,6 +31,9 @@ private:
 public:
     Airplane();
 
+/**
+\n REQUIRE(properlyInitialized(), "This Airplane object is not properly initialized.");
+*/
     const string &getNumber() const;
 
 /**
