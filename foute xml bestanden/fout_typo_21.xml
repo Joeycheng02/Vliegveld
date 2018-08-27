@@ -45,7 +45,7 @@
 
     <AIRPLANE>
         <number>N12125</number>
-        <callsign>Cessna 841</callsign>
+        <callsign></callsign>
         <model>Cessna 341</model>
         <type>airline</type>
         <engine>jet</engine>

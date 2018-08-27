@@ -7,7 +7,7 @@
     </AIRPORT>
 
     <RUNWAY>
-        <name>12R</name>
+        <nae>12R</nae
         <airport>ANR</airport>
         <type>grass</type>
         <length>1500</length>

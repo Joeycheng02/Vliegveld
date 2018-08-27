@@ -50,7 +50,7 @@
         <status>standing at gate</status>
 
 
-        <capacity>string</capacity>
+        <capacity>-1</capacity>
 
 
         <fuel>50000</fuel>

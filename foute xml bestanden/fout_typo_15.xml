@@ -15,7 +15,7 @@
 
 
         <TAXIROUTE>
-            <taxipoint>Bravo</taxipoint>
+            <taxipoint></taxipoint>
             <crossing>11R</crossing>
             <taxipoint>Alpha</taxipoint>
         </TAXIROUTE>

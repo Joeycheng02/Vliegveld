@@ -30,14 +30,16 @@
 
     <AIRPLANE>
         <number>N11842</number>
-
-
-
-
         <model>Cessna 340</model>
         <type>private</type>
         <engine>propeller</engine>
-        <size>small</size>
+
+
+
+        <size>smll</size>
+
+
+
         <status>approaching</status>
         <capacity>6</capacity>
         <fuel>5000</fuel>

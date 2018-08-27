@@ -14,12 +14,10 @@
         <TAXIROUTE>
             <taxipoint>Bravo</taxipoint>
             <crossing>11R</crossing>
-            <taxipoint>Alpha</taxipoint>
+            <taxipoint></taxipoint>
         </TAXIROUTE>
     </RUNWAY>
 
-
-    <RUNWAY>fout</RUNWAY>
 
 
 

@@ -36,7 +36,7 @@
         <model>Cessna 340</model>
         <type>private</type>
         <engine>propeller</engine>
-        <size>small</size>
+        <size></size>
         <status>approaching</status>
         <capacity>6</capacity>
         <fuel>5000</fuel>
