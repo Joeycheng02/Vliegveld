@@ -31,6 +31,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                      elem2 = elem2->NextSiblingElement()) {
                     string elem2Name = elem2->Value();
 
+                    REQUIRE(elem2->FirstChild() != NULL, "This variable of Airport can't be empty.");
                     REQUIRE((elem2Name == "name" or elem2Name == "iata" or elem2Name == "callsign" or
                         elem2Name == "gates"), "Dit is geen variabele van Airport.");
 
@@ -85,6 +86,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                  elem2 = elem2->NextSiblingElement()) {
                 string elem2Name = elem2->Value();
 
+                REQUIRE(elem2->FirstChild() != NULL, "This variable of Runway can't be empty.");
                 REQUIRE((elem2Name == "name" or elem2Name == "airport" or elem2Name == "type" or elem2Name == "length"
                         or elem2Name == "TAXIROUTE"), "Dit is geen variabele van Runway.");
 
@@ -123,6 +125,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                         elem3 = elem3->NextSiblingElement()){
                         string elem3Name = elem3->Value();
 
+                        REQUIRE(elem3->FirstChild() != NULL, "This variable of Taxiroute can't be empty.");
                         REQUIRE((elem3Name == "taxipoint" or elem3Name == "crossing"), "Dit is geen variabele van Runway.");
 
                         if (elem3Name == "taxipoint"){
@@ -150,6 +153,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                  elem2 = elem2->NextSiblingElement()) {
                 string elem2Name = elem2->Value();
 
+                REQUIRE(elem2->FirstChild() != NULL, "This variable of Airplane can't be empty.");
                 REQUIRE(elem2Name == "model" or elem2Name == "number" or elem2Name == "callsign" or elem2Name == "type" or elem2Name == "engine" or elem2Name == "size" or
                     elem2Name == "status" or elem2Name == "capacity" or elem2Name == "fuel", "Dit is geen variabele van Airplane.");
 
@@ -157,6 +161,7 @@ int parser::parsing(vector<Airport*> &airports, vector<Airplane*> &airplanes, ve
                     for (TiXmlNode *e = elem2->FirstChild(); e != NULL; e = e->NextSibling()) {
                         TiXmlText *text = e->ToText();
                         std::string t = text->Value();
+                        cout << t << endl;
                         airplane->setNumber(t);
                     }
                 }
