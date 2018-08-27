@@ -89,74 +89,72 @@ TEST_F(ParserTest, fout_xml){
 //    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_29.xml"), "ssa"); failed to die
     EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_30.xml"), "This Airplane Capacity can't be a negative number.");
     EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_31.xml"), "This Airplane Fuel already has this value.");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_32.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_01.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_02.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_03.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_04.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_05.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_06.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_07.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_08.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_09.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_10.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_11.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_12.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_13.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_14.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_15.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_16.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_17.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_18.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_19.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_20.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_21.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_01.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_01.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_02.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_03.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_04.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_05.xml"), "ssa");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_inhoud_32.xml"), "This Airplane Fuel can't be a negative number.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_01.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_02.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_03.xml"), "Dit staat niet in de parser en wordt dus genegeerd.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_04.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_05.xml"), "Error reading Attributes.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_06.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_07.xml"), "Dit staat niet in de parser en wordt dus genegeerd.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_08.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_09.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_10.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_11.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_12.xml"), "Error reading Attributes.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_13.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_14.xml"), "Error reading Attributes.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_15.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_16.xml"), "Error reading Attributes.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_17.xml"), "Dit staat niet in de parser en wordt dus genegeerd.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_18.xml"), "Error reading Attributes.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_19.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_20.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_syntax_21.xml"), "Error reading end tag.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_01.xml"), "Dit is geen variabele van Airport.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_01.xml"), "Dit is geen variabele van Airport.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_02.xml"), "Dit staat niet in de parser en wordt dus genegeerd.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_03.xml"), "Dit staat niet in de parser en wordt dus genegeerd.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_04.xml"), "Dit is geen variabele van Runway.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_05.xml"), "Dit is geen variabele van Runway.");
     EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_06.xml"), "This Runway Airport already has this value.");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_07.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_08.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_09.xml"), "ssa");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_07.xml"), "Dit is geen variabele van Runway.");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_08.xml"), "ssa"); failed to die
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_09.xml"), "ssa"); failed to die
     EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_10.xml"), "This Airplane Callsign already has this value");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_11.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_12.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_13.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_14.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_15.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_16.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_17.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_18.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_19.xml"), "ssa");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_11.xml"), "Dit is geen variabele van Runway.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_12.xml"), "Dit staat niet in de parser en wordt dus genegeerd.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_13.xml"), "Dit is geen variabele van Airport.");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_14.xml"), "ssa"); failed to die
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_15.xml"), "ssa"); failed to die
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_16.xml"), "Dit staat niet in de parser en wordt dus genegeerd.");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_17.xml"), "ssa"); failed to die
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_18.xml"), "Dit is geen variabele van Runway.");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_19.xml"), "ssa"); failed to die
     EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_20.xml"), "This Airport Name already has this value.");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_21.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_22.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_23.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_24.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_25.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_26.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_27.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_28.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_29.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_30.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_31.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_32.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_33.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_34.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_35.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_36.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_37.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_38.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_39.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_40.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_41.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_42.xml"), "ssa");
-//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_43.xml"), "ssa");
-
-
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_21.xml"), "ssa"); failed to die
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_22.xml"), "Dit is geen variabele van Airport.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_23.xml"), "Dit is geen variabele van Airport.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_24.xml"), "Dit is geen variabele van Airport.");
+//    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_25.xml"), "ssa"); failed to die
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_26.xml"), "Dit staat niet in de parser en wordt dus genegeerd.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_27.xml"), "Dit is geen variabele van Runway.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_28.xml"), "Dit is geen variabele van Runway.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_29.xml"), "Dit is geen variabele van Runway.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_30.xml"), "Dit is geen variabele van Runway.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_31.xml"), "Dit is geen variabele van Runway.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_32.xml"), "Dit is geen variabele van Runway.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_33.xml"), "Dit is geen variabele van Runway.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_34.xml"), "Dit is geen variabele van Airplane.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_35.xml"), "Dit is geen variabele van Airplane.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_36.xml"), "Dit is geen variabele van Airplane.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_37.xml"), "Dit staat niet in de parser en wordt dus genegeerd.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_38.xml"), "Dit is geen variabele van Airplane.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_39.xml"), "Dit is geen variabele van Airplane.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_40.xml"), "Dit is geen variabele van Airplane.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_41.xml"), "Dit is geen variabele van Airplane.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_42.xml"), "Dit is geen variabele van Airplane.");
+    EXPECT_DEATH(parser::full_parsing(simulation, "foute xml bestanden/fout_typo_43.xml"), "Dit is geen variabele van Airplane.");
 
     remove("console_output.txt");
 }
